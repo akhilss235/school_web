@@ -1,184 +1,95 @@
-.section {
-    display: flex;
-  }
-  .sidebar-title {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 20px 20px;
-  color: #505050; /* Change as needed */
-  text-align: center;
-  border-bottom: 1px solid #e0e0e0; /* Optional for separation */
+.container-fluid {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  background: white;
+  height: 100vh;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.sidebar.open {
+  width: 250px;
+}
+.sidebar.closed {
+  width: 50px;
+}
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
-  .sidebar {
-    background: white;
-    overflow: hidden;
-    height: 100vh;
-    transition: all 0.5s;
-  }
-  
-  .top_section {
-    display: flex;
-    align-items: center;
-    padding: 20px 15px;
-  }
-  
-  .bars {
-    display: flex;
-    font-size: 25px;
-    margin-left: 50px;
-  }
-  
-  .linkss {
-    display: flex;
-    color: #505050;
-    padding: 10px 10px;
-    font-size: 20px;
-    gap: 20px;
-    text-decoration: none;
-    transition: all 0.5s;
-  }
-  
-  .linkss.active {
-    color: white !important;
-    background-color: #9aaae4;
-    border-radius: 0px 15px 15px 0px;
-  }
-  
-  .icon,
-  .link_text {
-    font-size: 20px;
-  }
-  
-  .content {
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 100vh;
-    flex: 1;
-    background-color: rgb(246, 248, 250);
-    overflow-x: auto;
-  }
-  
-  body {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  
-  .link {
-    display: flex;
-    color: #505050;
-    padding: 10px 10px;
-    font-size: 20px;
-    gap: 20px;
-    text-decoration: none;
-    transition: all 0.5s ;
-  }
-  
-  .link:hover {
-    color: #dc3545; /* Bootstrap danger color for logout */
+.linkss {
+  display: flex;
+  color: #505050;
+  padding: 10px;
+  font-size: 20px;
+  gap: 20px;
+  text-decoration: none;
+  transition: all 0.5s;
 }
+
 .linkss.active {
-    color: #ffffff; /* White text for active link */
-    background-color: #007bff; /* Bootstrap primary color */
-    border-radius: 0px 15px 15px 0px; /* Rounded corners */
-}
+  color: #203583;
+  background-color: #c9def3;
+  border-left: 4px solid #007bff;
 
+}
 .linkss:hover {
-    background-color: #e7f1ff; /* Light blue on hover */
-    color: #0056b3; /* Darker blue text on hover */
-}
-.bars:hover {
-    color: #0056b3; /* Dark blue on hover */
-}
-  
-  .link:hover {
-    color: white;
-   color: red;
-    border-radius: 0px 15px 15px 0px;
-  }
-  
-  
-  .bars:hover {
-   color: #b4c0ee;
-  }
-  
-  
-  
-  .linkss2.active {
-    color: #007bff; /* Bootstrap primary color */
-    background-color: #e9ecef; /* Light gray for active */
-}
-  
-  .link_text2 {
-    font-size: 1rem; 
-  }
-  .linkss2 {
-    display: flex;
-    color: #505050;
-    padding: 20px 20px 20px 20px ;
-    font-size: auto; 
-    width: 200px;
-    text-decoration: none;
-    transition: all 0.5s;
-    background-color: #FFFFFF;
- 
-  
-  }
-  
+  color: #203583;
+  border-left: 4px solid #007bff;
 
-  
-  .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.content {
+  overflow-y: auto;
+  flex: 1;
+  background-color: rgb(246, 248, 250);
+}
+.Offcanvasicons {
+  visibility: hidden;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on small screens */
   }
-  
-  .main-content {
-    flex-grow: 1;
-    color: #505050;
-    margin-left: 10px!important;
+  .Offcanvasicons {
+    visibility: visible;
   }
-  
-  .hed {
-    min-height: auto;
-    color: #9aabe8;
-    background-color: #FFFFFF;
+  .offcanvas {
+    display: block; /* Show offcanvas menu */
   }
-  
-  .heder {
-   
-    width: 100%;
-    height: auto;
-  }
-  
-  @media (max-width: 768px) {
-    .linkss2 {
-        width: 10%;
-    }
-    .main-content {
-        margin-left: 0px!important;
-    }
-    .hed {
-        min-height: auto;
-        color: #aeb9e4;
-        background-color: #FFFFFF;
-    }
-    .heder {
-        display: flex;
-             width: 100%;
-             height: auto;
-         }
-  }
-  
-  
-  @media (max-width: 768px) {
-    .linkss2 {
-        width: 100%;
-    }
-    .main-content {
-        margin-left: 0px!important;
-    }
-    .heder {
-   display: flex;
-        width: 100%;
-        height: auto;
-    }
-  }
+}
+
+.dropdown-icon {
+  display: flex;
+  align-items: center;
+}
+
+.submenu {
+  display: flex;
+  color: #505050;
+  padding: 10px;
+  font-size: 15px;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.submenu.active {
+  color: #203583;
+
+}
+.submenu:hover {
+  color: #203583;
+
+}
+.icons {
+  font-size: 10px;
+}

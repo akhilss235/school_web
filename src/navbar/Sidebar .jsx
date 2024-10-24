@@ -4,60 +4,90 @@ import { NavLink } from "react-router-dom";
 import { BsCalendar3Event } from "react-icons/bs";
 import { PiCalendarStarLight } from "react-icons/pi";
 import { HiOutlineBars3 } from "react-icons/hi2";
-import { useNavigate } from "react-router-dom";
 import Topbar from "./Topbar";
 import "../Styles/Sidebar.css";
-import Logout from "../Model/Logout";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { MdOutlineDashboard } from "react-icons/md";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"; // Import the dropdown icons
+import { GoDotFill } from "react-icons/go";
 
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // Start with the sidebar open
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
 
   const toggleSidebar = () => setIsOpen((prev) => !prev);
   const handleCloseModal = () => setShowModal(false);
-  const handleShowModal = () => setShowModal(true);
-  const handleLogout = () => {
-    navigate("/login");
-  };
 
   const menuItems = [
     {
       path: "/Dashboard",
       name: "Dashboard",
-      icon: <BsCalendar3Event style={{ width: "25px" }} />,
+      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+      subMenu: [
+        { path: "Dashboard", name: "Admin Dashboard", icon : <GoDotFill  />, },
+        { path: "Dashboard/Teacher", name: "Teacher Dashboard", icon : <GoDotFill />, },
+        { path: "Dashboard/Student", name: "Student Dashboard", icon : <GoDotFill  />, },
+      ],
     },
     {
-      path: "/AdminEvents",
-      name: "Events",
+      path: "/Students",
+      name: "Students",
       icon: <PiCalendarStarLight style={{ width: "25px" }} />,
     },
   ];
 
-  const MenuItem = ({ item }) => (
-    <NavLink to={item.path} className="linkss" activeClassName="active">
-      <div className="icon mt-1 mb-1">{item.icon}</div>
-      <div
-        style={{ display: isOpen ? "block" : "none" }}
-        className="link_text mt-1 mb-1"
-      >
-        {item.name}
+  const MenuItem = ({ item, index }) => {
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+    const handleToggleSubMenu = (e) => {
+      e.preventDefault();
+      setIsSubMenuOpen((prev) => !prev);
+    };
+
+    return (
+      <div key={index}>
+        <NavLink 
+          to={item.path} 
+          className="linkss" 
+          activeClassName="active" 
+          onClick={item.subMenu ? handleToggleSubMenu : null}
+        >
+          <div className="icon mt-1 mb-1">{item.icon}</div>
+          <div style={{ display: isOpen ? "block" : "none" }} className="link_text mt-1 mb-1">
+            {item.name}
+          </div>
+          {/* Dropdown icon */}
+          {item.subMenu && (
+            <div className="dropdown-icon" style={{ marginLeft: "auto" }}>
+              {isSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </div>
+          )}
+        </NavLink>
+        {item.subMenu && isSubMenuOpen && (
+          <div className="sub-menu" style={{ paddingLeft: "30px", display: isOpen ? "block" : "none" }}>
+            {item.subMenu.map((subItem, subIndex) => (
+
+              <NavLink key={subIndex} to={subItem.path} className="submenu" >
+              <div className="icons mt-1 mb-1">{subItem.icon}</div>
+                <div className="link_text">{subItem.name}</div>
+              </NavLink>
+            ))}
+          </div>
+        )}
       </div>
-    </NavLink>
-  );
+    );
+  };
+
+  const toggleOffcanvas = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <>
-      <div
-        className="section d-flex"
-        style={{ fontFamily: "Roboto, sans-serif" }}
-      >
-        <div style={{ width: isOpen ? "300px" : "50px" }} className="sidebar">
+      <div className="container-fluid">
+        <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
           <div className="top_section d-flex justify-content-between align-items-center">
-            <h2
-              className="sidebar-title"
-              style={{ display: isOpen ? "block" : "none" }}
-            >
+            <h2 className="sidebar-title" style={{ display: isOpen ? "block" : "none" }}>
               My App
             </h2>
             <div onClick={toggleSidebar} style={{ cursor: "pointer" }}>
@@ -66,44 +96,26 @@ const Sidebar = ({ children }) => {
           </div>
 
           {menuItems.map((item, index) => (
-            <MenuItem key={index} item={item} />
+            <MenuItem key={index} item={item} index={index} />
           ))}
-
-          <div
-            className="link d-flex"
-            style={{ marginTop: "10%" }}
-            onClick={handleShowModal}
-          >
-            <div className="icon">
-              <FaSignOutAlt />
-            </div>
-            <div
-              style={{ display: isOpen ? "block" : "none" }}
-              className="link_text d-flex"
-            >
-              Logout
-            </div>
-          </div>
         </div>
-
         <main className="content">
-          <Topbar /> {children}
+          <Topbar toggleOffcanvas={toggleOffcanvas} />
+          {children}
         </main>
       </div>
 
-
-
-
-
-
-
-
-      
-      <Logout
-        show={showModal}
-        handleClose={handleCloseModal}
-        handleLogout={handleLogout}
-      />
+      {/* Offcanvas for smaller screens */}
+      <Offcanvas show={showModal} onHide={handleCloseModal}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>My App</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {menuItems.map((item, index) => (
+            <MenuItem key={index} item={item} index={index} />
+          ))}
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 };
