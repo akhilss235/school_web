@@ -40,7 +40,6 @@ const Sidebar = ({ children }) => {
   },
 ];
 
-
   const MenuItem = ({ item, index }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const location = useLocation();
