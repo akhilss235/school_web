@@ -17,41 +17,34 @@ const Sidebar = ({ children }) => {
   const handleCloseModal = () => setShowModal(false);
 
   const menuItems = [
-    {
-      path: "/",
-      name: "Dashboard",
-      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
-      subMenu: [
-        { path: "/", name: "Admin Dashboard", icon: <GoDotFill /> },
-        { path: "/Dashboard/Teacher", name: "Teacher Dashboard", icon: <GoDotFill /> },
-        { path: "/Dashboard/Student", name: "Student Dashboard", icon: <GoDotFill /> },
-      ],
-    },
+  {
+    path: "/",
+    name: "Dashboard",
+    icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+    subMenu: [
+      { path: "/", name: "Admin Dashboard", icon: <GoDotFill /> },
+      { path: "/Dashboard/Teacher", name: "Teacher Dashboard", icon: <GoDotFill /> },
+      { path: "/Dashboard/Student", name: "Student Dashboard", icon: <GoDotFill /> },
+    ],
+  },
+  {
+    path: "/Students",
+    name: "Students",
+    icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+    subMenu: [
+      { path: "/Students", name: "All Students", icon: <GoDotFill /> },
+      { path: "/List", name: "Students List", icon: <GoDotFill /> },
+      { path: "/Details", name: "Students Details", icon: <GoDotFill /> },
+      { path: "/Promotion", name: "Students Promotion", icon: <GoDotFill /> },
+    ],
+  },
+];
 
-    {
-      path: "/Students",
-      name: "Students",
-      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
-      subMenu: [
-        { path: "/Students", name: "All Students", icon: <GoDotFill /> },
-        { path: "/Students/List", name: "Students List", icon: <GoDotFill /> },
-        { path: "/Students/Details", name: "Students Details", icon: <GoDotFill /> },
-        { path: "/Students/Promotion", name: "Students Promotion", icon: <GoDotFill /> },
-
-      ],
-    }, 
-
-    // {
-    //   path: "/Students",
-    //   name: "Students",
-    //   icon: <PiCalendarStarLight style={{ width: "25px" }} />,
-    // },
-  ];
 
   const MenuItem = ({ item, index }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const location = useLocation();
-
+  
     useEffect(() => {
       if (item.subMenu) {
         const isActiveSubMenu = item.subMenu.some(subItem => location.pathname.includes(subItem.path));
@@ -60,24 +53,24 @@ const Sidebar = ({ children }) => {
         setIsSubMenuOpen(false);
       }
     }, [location.pathname, item.subMenu]);
-
+  
     const handleToggleSubMenu = (e) => {
       e.preventDefault();
       setIsSubMenuOpen(prev => !prev);
     };
-
-    const isActive = () => {
-      if (item.subMenu) {
-        return item.subMenu.some(subItem => location.pathname === subItem.path);
-      }
-      return location.pathname === item.path;
+  
+    const isMainActive = () => {
+      return (
+        location.pathname === item.path ||
+        (item.subMenu && item.subMenu.some(subItem => location.pathname === subItem.path))
+      );
     };
-
+  
     return (
       <div key={index}>
         <NavLink 
           to={item.path} 
-          className={`linkss ${isActive() ? "active" : ""}`} 
+          className={`linkss ${isMainActive() ? "active" : ""}`} 
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
           <div className="icon mt-1 mb-1">{item.icon}</div>
@@ -107,7 +100,7 @@ const Sidebar = ({ children }) => {
       </div>
     );
   };
-
+  
   const toggleOffcanvas = () => {
     setShowModal((prev) => !prev);
   };

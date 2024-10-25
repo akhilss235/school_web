@@ -59,19 +59,21 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="Dashboard/Teacher" element={<Teacher />} />
             <Route path="Dashboard/Student" element={<Student />} />
+
+
+ 
+              <Route path="Students" element={<Students />} />
+              <Route path="List" element={<List />} />
+              <Route path="Details" element={<Details />} />
+              <Route path="Promotion" element={<Promotion />} />
+        
           </Route>
+
+
+
         </Routes>
 
-        <Routes>
-          <Route path="/Students" element={<SidebarLayout />}>
-            <Route index element={<Students />} />
-            <Route path="/Students/List" element={<List />} />
-            <Route path="/Students/Details" element={<Details />} />
-            <Route path="/Students/Promotion" element={<Promotion />} />
-
-
-          </Route>
-        </Routes>
+   
       </Router>
     </div>
   );

@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .sidebar {
-  background: white;
+  background: #FFFFFF;
   height: 100vh;
   overflow: hidden;
   transition: width 0.5s;
@@ -31,14 +31,14 @@
 }
 
 .linkss.active {
-  color: #203583;
-  background-color: #c9def3;
-  border-left: 4px solid #007bff;
+  color: #3474EB;
+  background-color: #E6EFFF;
+  border-left: 4px solid #3474EB;
 
 }
 .linkss:hover {
   color: #203583;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #3474EB;
 
 }
 
@@ -83,11 +83,11 @@
 }
 
 .submenu.active {
-  color: #203583;
+  color: #3474EB;
 
 }
 .submenu:hover {
-  color: #203583;
+  color: #3474EB;
 
 }
 .icons {
