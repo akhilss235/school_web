@@ -1,18 +1,16 @@
-import React, { useState } from "react";
-import { FaSignOutAlt } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { BsCalendar3Event } from "react-icons/bs";
-import { PiCalendarStarLight } from "react-icons/pi";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { HiOutlineBars3 } from "react-icons/hi2";
+import { MdOutlineDashboard } from "react-icons/md";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"; 
+import { GoDotFill } from "react-icons/go";
+import { PiCalendarStarLight } from "react-icons/pi";
 import Topbar from "./Topbar";
 import "../Styles/Sidebar.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { MdOutlineDashboard } from "react-icons/md";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"; // Import the dropdown icons
-import { GoDotFill } from "react-icons/go";
 
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(true); // Start with the sidebar open
+  const [isOpen, setIsOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
   const toggleSidebar = () => setIsOpen((prev) => !prev);
@@ -20,13 +18,13 @@ const Sidebar = ({ children }) => {
 
   const menuItems = [
     {
-      path: "/Dashboard",
+      path: "/",
       name: "Dashboard",
       icon: <MdOutlineDashboard style={{ width: "25px" }} />,
       subMenu: [
-        { path: "Dashboard", name: "Admin Dashboard", icon : <GoDotFill  />, },
-        { path: "Dashboard/Teacher", name: "Teacher Dashboard", icon : <GoDotFill />, },
-        { path: "Dashboard/Student", name: "Student Dashboard", icon : <GoDotFill  />, },
+        { path: "/", name: "Admin Dashboard", icon: <GoDotFill /> },
+        { path: "/Dashboard/Teacher", name: "Teacher Dashboard", icon: <GoDotFill /> },
+        { path: "/Dashboard/Student", name: "Student Dashboard", icon: <GoDotFill /> },
       ],
     },
     {
@@ -38,25 +36,40 @@ const Sidebar = ({ children }) => {
 
   const MenuItem = ({ item, index }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+      if (item.subMenu) {
+        const isActiveSubMenu = item.subMenu.some(subItem => location.pathname.includes(subItem.path));
+        setIsSubMenuOpen(isActiveSubMenu);
+      } else {
+        setIsSubMenuOpen(false);
+      }
+    }, [location.pathname, item.subMenu]);
 
     const handleToggleSubMenu = (e) => {
       e.preventDefault();
-      setIsSubMenuOpen((prev) => !prev);
+      setIsSubMenuOpen(prev => !prev);
+    };
+
+    const isActive = () => {
+      if (item.subMenu) {
+        return item.subMenu.some(subItem => location.pathname === subItem.path);
+      }
+      return location.pathname === item.path;
     };
 
     return (
       <div key={index}>
         <NavLink 
           to={item.path} 
-          className="linkss" 
-          activeClassName="active" 
+          className={`linkss ${isActive() ? "active" : ""}`} 
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
           <div className="icon mt-1 mb-1">{item.icon}</div>
           <div style={{ display: isOpen ? "block" : "none" }} className="link_text mt-1 mb-1">
             {item.name}
           </div>
-          {/* Dropdown icon */}
           {item.subMenu && (
             <div className="dropdown-icon" style={{ marginLeft: "auto" }}>
               {isSubMenuOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -66,9 +79,12 @@ const Sidebar = ({ children }) => {
         {item.subMenu && isSubMenuOpen && (
           <div className="sub-menu" style={{ paddingLeft: "30px", display: isOpen ? "block" : "none" }}>
             {item.subMenu.map((subItem, subIndex) => (
-
-              <NavLink key={subIndex} to={subItem.path} className="submenu" >
-              <div className="icons mt-1 mb-1">{subItem.icon}</div>
+              <NavLink 
+                key={subIndex} 
+                to={subItem.path} 
+                className={`submenu ${location.pathname === subItem.path ? "active" : ""}`}
+              >
+                <div className="icons mt-1 mb-1">{subItem.icon}</div>
                 <div className="link_text">{subItem.name}</div>
               </NavLink>
             ))}
@@ -105,7 +121,6 @@ const Sidebar = ({ children }) => {
         </main>
       </div>
 
-      {/* Offcanvas for smaller screens */}
       <Offcanvas show={showModal} onHide={handleCloseModal}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>My App</Offcanvas.Title>

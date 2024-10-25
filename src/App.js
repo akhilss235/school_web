@@ -42,12 +42,9 @@ import Student from "./components/Student";
 import withSideBarLayout from "./navbar/Sidebar ";
 import Students from "./components/Students";
 import { Outlet } from "react-router-dom";
+import AllStudents from "./components/AllStudents";
 
-const SidebarLayout = () => (
-  <div>
-    {withSideBarLayout(<Outlet />)}
-  </div>
-);
+const SidebarLayout = () => <div>{withSideBarLayout(<Outlet />)}</div>;
 
 function App() {
   return (
@@ -57,14 +54,16 @@ function App() {
           <Route path="/" element={<SidebarLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="Dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="Dashboard/Teacher" element={<Teacher />} />
             <Route path="Dashboard/Student" element={<Student />} />
           </Route>
         </Routes>
 
         <Routes>
-          <Route path="/"  element={<SidebarLayout />}>
-            <Route path="Students" element={<Students />} />
+          <Route path="/Students" element={<SidebarLayout />}>
+            <Route index element={<Students />} />
+            <Route path="AllStudents" element={<AllStudents />} />
           </Route>
         </Routes>
       </Router>
