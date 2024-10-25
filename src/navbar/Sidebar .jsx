@@ -27,11 +27,25 @@ const Sidebar = ({ children }) => {
         { path: "/Dashboard/Student", name: "Student Dashboard", icon: <GoDotFill /> },
       ],
     },
+
     {
       path: "/Students",
       name: "Students",
-      icon: <PiCalendarStarLight style={{ width: "25px" }} />,
-    },
+      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+      subMenu: [
+        { path: "/Students", name: "All Students", icon: <GoDotFill /> },
+        { path: "/Students/List", name: "Students List", icon: <GoDotFill /> },
+        { path: "/Students/Details", name: "Students Details", icon: <GoDotFill /> },
+        { path: "/Students/Promotion", name: "Students Promotion", icon: <GoDotFill /> },
+
+      ],
+    }, 
+
+    // {
+    //   path: "/Students",
+    //   name: "Students",
+    //   icon: <PiCalendarStarLight style={{ width: "25px" }} />,
+    // },
   ];
 
   const MenuItem = ({ item, index }) => {
