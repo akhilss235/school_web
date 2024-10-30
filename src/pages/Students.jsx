@@ -1,8 +1,12 @@
 import React from 'react'
+import StudentListtable from '../Table/StudentListtable'
 
 function Students() {
   return (
-    <div>Students</div>
+    <div>
+
+      <StudentListtable />
+    </div>
   )
 }
 
