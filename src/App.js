@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Sidebar from "./components/Sidebar "; // Ensure correct import
-import Students from "./components/Students";
+import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/Sidebar"; // Ensure correct import
+import Students from "./pages/Students";
 import { Outlet } from "react-router-dom";
 import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
