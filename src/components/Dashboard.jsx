@@ -1,8 +1,13 @@
 import React from 'react'
+import Profile from './Profile'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+    
+
+    
+    </div>
   )
 }
 
