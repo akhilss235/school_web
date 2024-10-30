@@ -3,6 +3,7 @@ import profile from "../img/profile.png"; // Ensure the path is correct
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 import { CgProfile } from "react-icons/cg";
 import { CiLogout } from "react-icons/ci";
+import "../Styles/profile.css"
 
 function Profile() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -29,24 +30,8 @@ function Profile() {
           style={{ maxHeight: "40px" }}
         />
       </div>
-
-      {showDropdown && (
         <div
-          style={{
-            position: "absolute",
-            right: 0,
-            zIndex: 1000,
-            backgroundColor: "#fff",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-            width: "200px",
-            padding: "10px",
-            opacity: 1,
-            transition: "opacity 0.3s ease, transform 0.3s ease",
-            transform: "translateY(0)",
-          }}
-          className={`dropdown-menu ${showDropdown ? "show" : ""}`}
+          className={`profile-dropdown ${showDropdown ? "open" : ""}`}
         >
           <div className="d-flex align-items-center mb-2">
             <img
@@ -91,7 +76,7 @@ function Profile() {
             <CiLogout /> Logout
           </div>
         </div>
-      )}
+      
     </div>
   );
 }
