@@ -1,86 +1,97 @@
-import React from 'react';
-import { Button, Table, Form } from 'react-bootstrap';
-import { FiPlus } from 'react-icons/fi';
-import { GoFilter } from 'react-icons/go';
-import { IconContext } from 'react-icons';
-import BasicBreadcrumbs from '../components/BasicBreadcrumbs';
+import React from "react";
+import { Button, Table, Row, Col, Dropdown } from "react-bootstrap"; // Import Dropdown
+import BasicBreadcrumbs from "../components/BasicBreadcrumbs";
+import Search from "../filter/Search";
+import Filter from "../filter/Filter";
+import { GetDate } from "../filter/Date";
+import { FiPlus } from "react-icons/fi";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { GoDotFill } from "react-icons/go";
 
 function StudentListTable() {
+    const filterOptions = [
+        { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
+        { label: "Section", options: ["All", "A", "B", "C"] },
+        { label: "Gender", options: ["All", "Male", "Female"] },
+        { label: "Status", options: ["All", "Active", "Inactive"] },
+    ];
 
-  return (
-    <div className="p-3">
-    <div className=' text-start'> 
-    <h4><b>Student List</b></h4>
-    
-    <BasicBreadcrumbs />
-    </div>
-<div style={{backgroundColor:''}}>
+    const handleApplyFilters = (filters) => {
+        console.log("Applied Filters:", filters);
+    };
 
+    return (
+        <div className="p-3">
+            <div className="text-start mb-3">
+                <h4><b>Student List</b></h4>
+                <BasicBreadcrumbs />
+            </div>
 
+            <Row className="align-items-center mb-4" style={{ backgroundColor: '#FFFFFF' }}>
+                <Col xs={12} md={8} lg={6} className="d-flex flex-wrap">
+                    <div className="me-3 mb-2 mb-md-0">
+                        <Filter filterOptions={filterOptions} onApply={handleApplyFilters} />
+                    </div>
+                    <div className="me-3 mb-2 mb-md-0">
+                        <GetDate title="From" />
+                    </div>
+                    <div className="me-3 mb-2 mb-md-0">
+                        <GetDate title="To" />
+                    </div>
+                </Col>
 
-    <div className="row mb-2 mt-4 align-items-center" style={{gap:"10px"}}>
-        <div className="col-auto mt-2">
-          <div
-            className="card d-flex align-items-center justify-content-center filterbody p-2"
-            style={{ height: "35px" }}
-          >
-            <IconContext.Provider
-              value={{ className: "react-icons", size: "1.5em" }}
-            >
-              <div className="d-flex align-items-center">
-                <GoFilter className="Filteric" />
-                <span className="Filteric p-1">Filter</span>
-              </div>
-            </IconContext.Provider>
-          </div>
+                <Col xs={12} md={4} lg={6} className="d-flex justify-content-md-end mt-2 mt-md-0">
+                    <Search />
+                    <Button variant="#148CF0" style={{ backgroundColor: '#148CF0', color: '#FFFFFF' }} className="ms-3"><FiPlus /> Add Student</Button>
+                </Col>
+            </Row>
+
+            <div className="table-responsive" style={{ backgroundColor: '#FFFFFF' }}>
+                <Table responsive bordered hover>
+                    <thead style={{ color: "#505050" }}>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Class</th>
+                            <th>Section</th>
+                            <th> DOB</th>
+                            <th>Gender</th>
+                            <th>Date Of Join</th>
+                            <th>Phone No.</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20240015678</td>
+                            <td>Emma Thomas</td>
+                            <td>I</td>
+                            <td>A</td>
+                            <td>02/06/2012</td>
+                            <td>Female</td>
+                            <td>07/12/2024</td>
+                            <td>+91 90876 54331</td>
+                            <td style={{ color: '#16BE16' }}><GoDotFill /> Active</td>
+                            <td>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="link" bsPrefix="p-0"> {/* Removes default button styling */}
+                                        <BsThreeDotsVertical />
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#/edit">Edit</Dropdown.Item>
+                                        <Dropdown.Item href="#/view">View</Dropdown.Item>
+                                        <Dropdown.Item href="#/delete">Delete</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </div>
         </div>
-
-
-
-        <div className="col-auto mt-2">
-          {/* <GetDate
-            title={"From"} */}
-
-        </div>
-
-        <div className="col-auto mt-2">
-          {/* <GetDate
-            title={"To"}
-  */}
-      
-        </div>
-
-        <div className="col-auto mt-2">
-          <Form.Control
-            placeholder="Search...."
-            type="text"
-
-          />
-        </div>
-
-        
-      </div>
- 
-
-    
-      {/* <div className="table-responsive">
-        <Table responsive>
-          <thead style={{ color: "#505050" }}>
-            <tr>
-              <th>Created on</th>
-              <th>Account Head</th>
-              <th>Sub Account Head</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </Table>
-      </div> */}
-      </div>
-    </div>
-  );
+    );
 }
 
 export default StudentListTable;
