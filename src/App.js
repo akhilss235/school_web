@@ -5,8 +5,6 @@ import Dashboard from "./components/Dashboard";
 import Sidebar from "./components/Sidebar "; // Ensure correct import
 import Students from "./components/Students";
 import { Outlet } from "react-router-dom";
-import List from "./submenu/List";
-import Details from "./submenu/Details";
 import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
 
@@ -25,8 +23,6 @@ function App() {
           <Route path="/" element={<SidebarLayout />}>
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Students" element={<Students />} />
-            <Route path="List" element={<List />} />
-            <Route path="Details" element={<Details />} />
             <Route path="Promotion" element={<Promotion />} />
           </Route>
         </Routes>

@@ -56,7 +56,7 @@ function Profile() {
             />
             <div>
               <p className="mb-0"><b>Kevin Larry</b></p>
-              <p className="mb-0" style={{ fontSize: "0.9rem", color: "#6c757d" }}>Administrator</p>
+              <p className="mb-0" style={{ fontSize: "0.9rem", color: "#148CF0" }}>Administrator</p>
             </div>
           </div>
 

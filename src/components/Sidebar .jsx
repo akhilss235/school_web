@@ -26,9 +26,7 @@ const Sidebar = ({ children }) => {
       name: "Students",
       icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
-        { path: "/Students", name: "All Students", icon: <GoDotFill /> },
-        { path: "/List", name: "Students List", icon: <GoDotFill /> },
-        { path: "/Details", name: "Students Details", icon: <GoDotFill /> },
+        { path: "/Students", name: "Students List", icon: <GoDotFill /> },
         { path: "/Promotion", name: "Students Promotion", icon: <GoDotFill /> },
       ],
     },
