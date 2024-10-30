@@ -17,7 +17,6 @@
 .top_section {
   display: flex;
   align-items: center;
-  padding: 20px;
 }
 
 .linkss {
@@ -31,14 +30,14 @@
 }
 
 .linkss.active {
-  color: #3474EB;
-  background-color: #E6EFFF;
-  border-left: 4px solid #3474EB;
+  color: #148CF0;
+  background-color: #EBF5FD;
+  border-left: 2px solid #148CF0;
 
 }
 .linkss:hover {
-  color: #203583;
-  border-left: 4px solid #3474EB;
+  color: #148CF0;
+  border-left: 2px solid #148CF0;
 
 }
 
@@ -49,7 +48,7 @@
 .content {
   overflow-y: auto;
   flex: 1;
-  background-color: rgb(246, 248, 250);
+  background-color: #FBFDFE;
 }
 .Offcanvasicons {
   visibility: hidden;
@@ -83,11 +82,11 @@
 }
 
 .submenu.active {
-  color: #3474EB;
+  color: #148CF0;
 
 }
 .submenu:hover {
-  color: #3474EB;
+  color: #148CF0;
 
 }
 .icons {

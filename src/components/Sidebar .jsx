@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { HiOutlineBars3 } from "react-icons/hi2";
-import { MdOutlineDashboard } from "react-icons/md";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"; 
 import { GoDotFill } from "react-icons/go";
 import Topbar from "./Topbar";
 import "../Styles/Sidebar.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { PiStudent } from "react-icons/pi";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -19,12 +19,12 @@ const Sidebar = ({ children }) => {
     {
       path: "/Dashboard",
       name: "Dashboard",
-      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+      icon: <MdOutlineSpaceDashboard style={{ width: "25px" }} />,
     },
     {
       path: "/Students",
       name: "Students",
-      icon: <MdOutlineDashboard style={{ width: "25px" }} />,
+      icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
         { path: "/Students", name: "All Students", icon: <GoDotFill /> },
         { path: "/List", name: "Students List", icon: <GoDotFill /> },
@@ -66,7 +66,9 @@ const Sidebar = ({ children }) => {
         >
           <div className="icon mt-1 mb-1">{item.icon}</div>
           <div style={{ display: isOpen ? "block" : "none" }} className="link_text mt-1 mb-1">
-            {item.name}
+         <h6>
+         {item.name}
+         </h6>  
           </div>
           {item.subMenu && (
             <div className="dropdown-icon" style={{ marginLeft: "auto" }}>
@@ -94,22 +96,18 @@ const Sidebar = ({ children }) => {
 
   return (
     <>
+      <Topbar toggleOffcanvas={() => setShowModal(!showModal)} toggleSidebar={toggleSidebar} />
+
       <div className="container-fluid">
         <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
           <div className="top_section d-flex justify-content-between align-items-center">
-            <h2 className="sidebar-title" style={{ display: isOpen ? "block" : "none" }}>
-              My App
-            </h2>
-            <div onClick={toggleSidebar} style={{ cursor: "pointer" }}>
-              <HiOutlineBars3 style={{ fontSize: "25px" }} />
-            </div>
+            {/* Optional logo section */}
           </div>
           {menuItems.map((item, index) => (
             <MenuItem key={index} item={item} />
           ))}
         </div>
         <main className="content">
-          <Topbar toggleOffcanvas={() => setShowModal(!showModal)} />
           {children}
         </main>
       </div>

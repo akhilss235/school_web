@@ -1,0 +1,22 @@
+/* span {
+    color: #505050;
+} */
+
+@media (max-width: 700px) {
+    .navbar-custom {
+      padding: 1rem;
+    }
+    .Offcanvasicons {
+      font-size: 20px;
+    }
+    .card {
+      width: auto;
+    }
+  }
+
+/* App.css */
+body {
+    font-family: 'Roboto', sans-serif;
+
+  }
+  
