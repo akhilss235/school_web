@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import IMG from "../../img/Upload.png";
 import { CiSquareAlert } from "react-icons/ci";
 import Form from "react-bootstrap/Form";
+import InfoHeader from "../../components/InfoHeader";
+
 function PersonalInformation() {
     const [imagePreview, setImagePreview] = useState(null);
 
@@ -15,10 +17,10 @@ function PersonalInformation() {
     };
   
   return (
-    <div>
+    <div >
 
 
-<div
+{/* <div
         className="d-flex p-3"
         style={{
           backgroundColor: "#EBF5FD",
@@ -32,7 +34,8 @@ function PersonalInformation() {
           />
           <b>Personal Information</b>
         </h4>
-      </div>
+      </div> */}
+      <InfoHeader iconName="Student" title="Personal Information"/>
 
       <div className="d-flex justify-content-start mt-5">
         {/* Image preview or placeholder */}

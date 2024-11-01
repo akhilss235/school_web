@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './SvgComponent';
+
 // 
 const InfoHeader = ({ title, iconName, size=24 }) => {
   return (
@@ -10,12 +11,12 @@ const InfoHeader = ({ title, iconName, size=24 }) => {
         borderBottom: "2px solid #2393F1",
       }}
     >
-      <h4 className="d-flex">
+      <h5 className="d-flex">
         <span className="me-3">
           <Icon  iconName={iconName} fill="white"/>
         </span>
         <b style={{marginTop:"10px",fontSize:size}}>{title}</b>
-      </h4>
+      </h5>
     </div>
   );
 };
