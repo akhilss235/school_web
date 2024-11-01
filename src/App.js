@@ -8,6 +8,7 @@ import { Outlet } from "react-router-dom";
 import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
 import { StudentDetails } from "./pages/StudentDetails";
+import AddStudent from "./Forms/student/AddStudent";
 
 
 const SidebarLayout = () => (
@@ -27,6 +28,8 @@ function App() {
             <Route path="Students" element={<Students />} />
             <Route path="Promotion" element={<Promotion />} />
             <Route path="Students/Details" element={<StudentDetails />} />
+            <Route path="Students/AddStudent" element={<AddStudent />} />
+
           </Route>
         </Routes>
       </Router>
