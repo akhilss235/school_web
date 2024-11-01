@@ -4,7 +4,7 @@ import Icon from './SvgComponent';
 const InfoHeader = ({ title, iconName, size=24 }) => {
   return (
     <div
-      className="d-flex p-3 mt-5"
+      className="d-flex p-3"
       style={{
         backgroundColor: "#EBF5FD",
         borderBottom: "2px solid #2393F1",
