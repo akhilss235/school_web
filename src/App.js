@@ -7,6 +7,8 @@ import Students from "./pages/Students";
 import { Outlet } from "react-router-dom";
 import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
+import { StudentDetails } from "./pages/StudentDetails";
+
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -24,6 +26,7 @@ function App() {
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Students" element={<Students />} />
             <Route path="Promotion" element={<Promotion />} />
+            <Route path="Students/Details" element={<StudentDetails />} />
           </Route>
         </Routes>
       </Router>

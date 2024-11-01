@@ -1,0 +1,13 @@
+.student-detail-page{
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.detail-section{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

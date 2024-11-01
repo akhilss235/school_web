@@ -1,0 +1,14 @@
+.info{
+    background-color: white;
+    border-radius: 15px;
+    height: auto;
+    width: auto;
+    box-shadow: 2px 2px 8px 0px #ABABAB29;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.student-card{
+
+}
