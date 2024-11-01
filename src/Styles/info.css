@@ -8,7 +8,39 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    transition: .5s ease-in-out;
 }
-.student-card{
+.item {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: .5s ease-in-out;
+}
+.item-active{
+    color: #148CF0;
+}
 
+
+.item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    height: 2px; 
+    background: #148CF0; 
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.item-active::after {
+    transform: scaleX(1);
+}
+.icon-card-container {
+    opacity: 0;
+    transition: 0.5s ease-in-out; 
+}
+
+.icon-card-visible {
+    opacity: 1;
 }

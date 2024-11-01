@@ -2,6 +2,7 @@ import React from 'react'
 import { Info } from './Info'
 import { ContactInfo } from './ContactInfo'
 import { StudentCard } from './StudentCard'
+import { TravelInfo } from '../TravelInfo'
 
 export const DetailSection = () => {
   const data = {
@@ -17,6 +18,7 @@ export const DetailSection = () => {
           <p className='m-0 fw-semibold'  style={{fontSize:"18px"}}>Sibling Information</p>
           <StudentCard isInfo={false} data={data}/>
         </div>
+        <TravelInfo />
     </div>
   )
 }

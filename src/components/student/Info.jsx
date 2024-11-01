@@ -7,7 +7,7 @@ export const Info = () => {
     const studentInfoValue = ["001", "Male", "11/12/2000", "B+ve", "Theriyaathu", "Hindu", "BC", "Caste", "Tamil"]
     const data = {
         name:"Emma Watson",
-        "class":"X",
+        "number":"211241252",
         "status":"Active"
       }
   return (
