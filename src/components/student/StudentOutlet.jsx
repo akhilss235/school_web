@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 export const StudentOutlet = () => {
   return (
-    <div className='d-flex flex-column' style={{width:"100%"}}>
+    <div className='d-flex flex-column gap-3' style={{width:"100%"}}>
       <DetailNav />
       <Outlet />
     </div>

@@ -4,11 +4,12 @@ import { HiOutlineTableCells } from "react-icons/hi2";
 import { IoIosFingerPrint } from "react-icons/io";
 import { IoCashOutline } from "react-icons/io5";
 import { PiExam } from "react-icons/pi";
+import { useNavigate } from 'react-router-dom';
 
 export const DetailNav = ({title="students"}) => {
 
+    const navigate = useNavigate()
     const [activeNav, setActiveNav] = useState(title === "students" ? "Students" : "Teacher Details")
-
     const data = {
         students:[
             {
@@ -29,7 +30,7 @@ export const DetailNav = ({title="students"}) => {
             {
                 id:"4",
                 icon: <IoCashOutline className='react-icon' />,
-                title:"Fee"
+                title:"Fees"
             },
             {
                 id:"5",
@@ -41,6 +42,11 @@ export const DetailNav = ({title="students"}) => {
 
     const handleChangeNav = (item)=>{
         setActiveNav(item)
+        if(item === "Students"){
+            navigate(`/students/Details`)
+        }else{
+            navigate(`/students/Details/${item}`)
+        }
     }
   return (
     <div className='d-flex flex-row gap-4 align-items-center'>

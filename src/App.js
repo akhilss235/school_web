@@ -9,6 +9,10 @@ import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
 import { StudentDetails } from "./pages/StudentDetails";
 import AddStudent from "./Forms/student/AddStudent";
+import { Details } from "./components/student/Outlet/Details";
+import { TimeTable } from "./components/student/Outlet/TimeTable";
+import { Attendance } from "./components/student/Outlet/Attendance";
+import { Fees } from "./components/student/Outlet/Fees";
 
 
 const SidebarLayout = () => (
@@ -27,9 +31,13 @@ function App() {
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Students" element={<Students />} />
             <Route path="Promotion" element={<Promotion />} />
-            <Route path="Students/Details" element={<StudentDetails />} />
             <Route path="Students/AddStudent" element={<AddStudent />} />
-
+            <Route path="Students/Details" element={<StudentDetails />}>
+              <Route index element={<Details />} />
+              <Route path="Time Table" element={<TimeTable />} />
+              <Route path="Attendance" element={<Attendance />} />
+              <Route path="Fees" element={<Fees />} />
+            </Route>
           </Route>
         </Routes>
       </Router>
