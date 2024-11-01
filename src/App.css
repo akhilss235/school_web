@@ -18,6 +18,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #505050;
+  /* overflow-y: hidden; */
 }
 b {
   color: #505050;
@@ -122,8 +123,5 @@ input[type="file"] {
   
   .radio-wrapper-2 label {
     padding-inline-start: .5rem;
-    font-size: .875rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    color: rgb(17 24 39/1);
+    color: #505050;
   }

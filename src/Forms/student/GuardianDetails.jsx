@@ -1,45 +1,63 @@
+// import React, { useState } from "react";
+// import InfoHeader from "../../components/InfoHeader";
+// import ParentInfo from "./ParentInfo";
+
+// function GuardianInformation() {
+//   return (
+//     <div className="mb-5">
+//       <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
+//       <ParentInfo title="Father’s Info" titles="Father" />
+//       <ParentInfo title="Mother’s Info"  titles="Mother"/>
+
+//     </div>
+//   );
+// }
+
+// export default GuardianInformation;
 import React, { useState } from "react";
 import IMG from "../../img/Upload.png";
 import Form from "react-bootstrap/Form";
-
 function GuardianDetails() {
-  const [guardianImage, setGuardianImage] = useState(null);
+  const [GuardianDetails, setGuardianDetails] = useState(null);
 
-  const handleGuardianImageUpload = (e) => {
+  const handleGuardianDetails = (e) => {
     const file = e.target.files[0];
-    setGuardianImage(URL.createObjectURL(file));
+    setGuardianDetails(URL.createObjectURL(file));
   };
 
   const handleRemoveImage = () => {
-    setGuardianImage(null);
+    setGuardianDetails(null);
   };
 
   return (
     <div>
-      <div className="section1">
+      <div className="section1 mb-5" >
         <h4 className="mt-5">Guardian Details</h4>
+        <div class="radio-wrapper-2">
+          <label for="example-3">
+            <b>If Guardian Is</b>
+          </label>
 
-        <div className="radio-wrapper-2 d-flex my-4">
           <div className="mx-3">
-            <input id="parents-radio" type="radio" name="guardianType" />
-            <label htmlFor="parents-radio">Parents</label>
+            <input id="example-2" type="radio" name="radio-examples" />
+            <label for="example-2">Parents</label>
           </div>
           <div className="mx-3">
-            <input id="guardian-radio" type="radio" name="guardianType" />
-            <label htmlFor="guardian-radio">Guardian</label>
+            <input id="example-2" type="radio" name="radio-examples" />
+            <label for="example-2">Guardian</label>
           </div>
           <div className="mx-3">
-            <input id="others-radio" type="radio" name="guardianType" />
-            <label htmlFor="others-radio">Others</label>
+            <input id="example-2" type="radio" name="radio-examples" />
+            <label for="example-2">Others</label>
           </div>
         </div>
 
         <div className="d-flex justify-content-start mt-5">
           {/* Image preview or placeholder */}
           <div>
-            {guardianImage ? (
+            {GuardianDetails ? (
               <img
-                src={guardianImage}
+                src={GuardianDetails}
                 alt="Preview"
                 style={{ maxWidth: "100%", maxHeight: "150px" }}
               />
@@ -51,41 +69,35 @@ function GuardianDetails() {
               />
             )}
           </div>
-          
-          {/* Upload and Remove buttons */}
           <div className="mx-3">
-            <label htmlFor="file-upload" className="btn btn-primary">
+            <label htmlFor="file-uploads" className="custom-file-upload">
               Upload
             </label>
             <input
-              id="file-upload"
+              id="file-uploads"
               type="file"
               accept="image/*"
-              onChange={handleGuardianImageUpload}
-              style={{ display: "none" }}
+              onChange={handleGuardianDetails}
             />
-            
+
             <button
               type="button"
-              className="btn btn-danger mx-3"
+              className="btn mx-3"
               onClick={handleRemoveImage}
+              style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             >
               Remove
             </button>
 
-            <div className="mt-2">
-              Upload image size 4MB, Format JPG, PNG, SVG
-            </div>
+            <div>Upload image size 4MB, Format JPG, PNG, SVG</div>
           </div>
         </div>
-
-        {/* Form fields */}
         <div className="row">
           <div className="col-sm-3 mt-3">
             <Form.Label>
-              <b>Name</b>
+              <b> Name</b>
             </Form.Label>
-            <Form.Control type="text" placeholder="Enter Name" />
+            <Form.Control type="text" placeholder={`Enter  Name`} />
           </div>
           <div className="col-sm-3 mt-3">
             <Form.Label>

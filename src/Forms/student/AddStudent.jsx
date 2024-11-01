@@ -14,29 +14,25 @@ function AddStudent() {
         <BasicBreadcrumbs />
       </div>
       <div className="mt-3">
-      <PersonalInformation />
-
+        <PersonalInformation />
       </div>
       <div className="mt-5">
-     
-      <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
-      <ParentInfo title="Father’s Info" titles="Father" />
-      <ParentInfo title="Mother’s Info"  titles="Mother"/>
+        <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
+        <ParentInfo title="Father’s Info" titles="Father" />
+        <ParentInfo title="Mother’s Info" titles="Mother" />
 
-<GuardianDetails />
+        <GuardianDetails />
 
+        <InfoHeader iconName="Parents" title="Siblings" />
 
-      <InfoHeader iconName="Parents" title="Siblings" />
-
-
-
-
-
-
-      <div className="d-flex justify-content-end mt-5">
-        <button type="button" className="btn btn-danger mx-2">Cancel</button>
-        <button type="submit" className="btn btn-primary">Save</button>
-      </div>
+        <div className="d-flex justify-content-end mt-5">
+          <button type="button" className="btn btn-danger mx-2">
+            Cancel
+          </button>
+          <button type="submit" className="btn btn-primary">
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -44,74 +40,12 @@ function AddStudent() {
 
 export default AddStudent;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function AddStudent() {
 
 //   const [studentData, setStudentData] = useState({
-//     personalInfo: {}, 
-//     fatherInfo: {},   
-//     motherInfo: {},    
+//     personalInfo: {},
+//     fatherInfo: {},
+//     motherInfo: {},
 //   });
 
 //   const handleInputChange = (section, field, value) => {
@@ -210,20 +144,6 @@ export default AddStudent;
 // }
 
 // export default AddStudent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import Form from "react-bootstrap/Form";

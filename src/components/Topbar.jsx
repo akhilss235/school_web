@@ -11,7 +11,7 @@ import AddNew from "./AddNew";
 function Topbar({ toggleOffcanvas }) {
   return (
     <Navbar
-      className="navbar-custom p-4"
+      className="navbar-custom p-4 sticky"
       style={{ fontFamily: "Roboto, sans-serif", backgroundColor: "##FFFFFF" }}
     >
       <div className="d-flex justify-content-between align-items-center w-100 flex-wrap">
