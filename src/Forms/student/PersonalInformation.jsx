@@ -6,8 +6,9 @@ function PersonalInformation() {
     const [imagePreview, setImagePreview] = useState(null);
 
     const handleFileChange = (e) => {
-      const file = e.target.files[0];
-    };
+        const file = e.target.files[0];
+        setImagePreview(URL.createObjectURL(file));
+        };
   
     const handleRemoveImage = () => {
       setImagePreview(null);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import IMG from "../../img/Upload.png";
 import Form from "react-bootstrap/Form";
-import Icon from "../../components/SvgComponent";
+// import Icon from "../../components/SvgComponent";
+import InfoHeader from "../../components/InfoHeader";
 
 function GuardianInformation() {
   const [Father, setFather] = useState(null);
@@ -19,7 +20,9 @@ function GuardianInformation() {
 
   return (
     <div>
-      <div
+          {/* <InfoHeader title="Parents & Guardian Information" iconName="Parents" /> */}
+<InfoHeader iconName="Parents" title="Parents & Guardian Information"/>
+      {/* <div
         className="d-flex p-3 mt-5"
         style={{
           backgroundColor: "#EBF5FD",
@@ -33,7 +36,7 @@ function GuardianInformation() {
           <b className="mt-2">Parents & Guardian Information</b>
         </h4>
       </div>
-      
+       */}
       <div className="section1">
         <h4 className="mt-5">Father’s Info</h4>
         <div className="d-flex justify-content-start mt-3">
