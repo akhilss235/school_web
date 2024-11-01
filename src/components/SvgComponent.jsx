@@ -3,12 +3,15 @@ import { ReactComponent as MobileIcon } from '../img/Group 1000002232.svg';
 import { ReactComponent as EmailIcon } from '../img/Mask group.svg'; 
 import { ReactComponent as HostelIcon } from '../img/hostel.svg'; 
 import { ReactComponent as TransportIcon } from '../img/transport.svg'; 
+import { ReactComponent as Parents } from '../img/Parents.svg'; 
 
 const icons = {
   mobile: MobileIcon,
   email: EmailIcon,
   hostel:HostelIcon,
-  transport:TransportIcon
+  transport:TransportIcon,
+  Parents:Parents
+
 };
 
 const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => {

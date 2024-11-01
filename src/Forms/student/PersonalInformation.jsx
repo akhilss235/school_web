@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import IMG from "../../img/Upload.png";
 import { CiSquareAlert } from "react-icons/ci";
 import Form from "react-bootstrap/Form";
@@ -8,16 +7,12 @@ function PersonalInformation() {
 
     const handleFileChange = (e) => {
       const file = e.target.files[0];
-      if (file) {
-        setImagePreview(URL.createObjectURL(file));
-      }
     };
   
-    // Function to handle image removal
     const handleRemoveImage = () => {
       setImagePreview(null);
-      document.getElementById("file-upload").value = ""; // Clear file input
     };
+  
   return (
     <div>
 
