@@ -18,7 +18,7 @@ export const AddressCard = ({ data }) => {
     ]
     return(
     <div style={{}}>
-      <IconCard data={addData} />
+      <IconCard data={addData} isAddress={true} />
     </div>
   )
 };

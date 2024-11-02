@@ -46,13 +46,16 @@ export const Details = () => {
       "address": "228, Avvai Shanmugam Salai, Ganapathy Colony, Gopalapuram, Chennai, Tamil Nadu 600086"
     }]
   }
+  const addressColumn = {"Previous School Name":"name", "School Address":"address"}
+
   return (
     <div className='d-flex flex-column gap-4'>
-      <CustomCard iconName={"Parents"} title={"Parents Information"} label={"parents"} data={data["parents"]} isRow={false}/>
+      <CustomCard iconName={"Parents"} title={"Parents Information"} label={"parents"} data={data["parents"]} />
       <div className='d-flex flex-row gap-3'>
-        <CustomCard iconName={"Documents"} title={"Documents"} label={"Documents"} data={data["documents"]} isRow={false}/>
-        <CustomCard iconName={"Address"} title={"Address"} label={"Address"} data={data["address"]} isRow={false}/>
+        <CustomCard iconName={"Documents"} title={"Documents"} label={"Documents"} data={data["documents"]} />
+        <CustomCard iconName={"Address"} title={"Address"} label={"Address"} data={data["address"]}/>
       </div>
+      <CustomCard iconName={"School"} title={"Previous School Details"} label={"School"} data={data["previousSchool"]} columns={addressColumn} />
     </div>
   )
 }

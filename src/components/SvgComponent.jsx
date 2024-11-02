@@ -10,6 +10,7 @@ import { ReactComponent as PdfIcon } from '../img/pdf.svg';
 import { ReactComponent as AddressIcon } from '../img/map.svg'; 
 import { ReactComponent as LocationIcon } from '../img/location.svg';
 import { ReactComponent as PinIcon } from '../img/pin.svg';
+import { ReactComponent as SchoolIcon } from '../img/school.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -22,7 +23,8 @@ const icons = {
   Pdf:  PdfIcon,
   Address:AddressIcon,
   Location:LocationIcon,
-  Pin:PinIcon
+  Pin:PinIcon,
+  School:SchoolIcon
 };
 
 const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => {
