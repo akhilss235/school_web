@@ -224,3 +224,15 @@ input[type="file"] {
     margin-left: -0.8em;
   }
 
+.addnewbuttone {
+  border-color: #3474EB !important;
+  color: #3474EB !important;
+  background-color: #FFFFFF !important;
+
+}
+
+.addnewbuttone:hover {
+  border-color: #3474EB !important;
+  color: #FFFFFF !important;
+  background-color: #3474EB !important;
+}

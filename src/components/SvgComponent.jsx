@@ -13,6 +13,14 @@ import { ReactComponent as PinIcon } from '../img/pin.svg';
 import { ReactComponent as SchoolIcon } from '../img/school.svg';
 import { ReactComponent as Siblings } from '../img/Siblings.svg';
 
+
+// import { ReactComponent as Addres } from '../img/Addres.svg';
+// import { ReactComponent as TransportInformation } from '../img/Transport.svg';
+import { ReactComponent as HostelInformation } from '../img/HostelInformation.svg';
+// import { ReactComponent as Documents } from '../img/Documents.svg';
+import { ReactComponent as PreviousSchoolDetails } from '../img/PreviousSchoolDetails.svg';
+import { ReactComponent as StudentLoginDetails } from '../img/StudentLoginDetails.svg';
+
 const icons = {
   mobile: MobileIcon,
   email: EmailIcon,
@@ -26,7 +34,13 @@ const icons = {
   Location:LocationIcon,
   Pin:PinIcon,
   School:SchoolIcon ,
-  Siblings:Siblings 
+  Siblings:Siblings ,
+  // Addres:Addres,
+  // TransportInformation:TransportInformation,
+  HostelInformation:HostelInformation,
+  // Documents:Documents,
+  PreviousSchoolDetails:PreviousSchoolDetails ,
+  StudentLoginDetails:StudentLoginDetails 
 
 };
 

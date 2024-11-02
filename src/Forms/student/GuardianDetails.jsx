@@ -1,19 +1,4 @@
-// import React, { useState } from "react";
-// import InfoHeader from "../../components/InfoHeader";
-// import ParentInfo from "./ParentInfo";
 
-// function GuardianInformation() {
-//   return (
-//     <div className="mb-5">
-//       <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
-//       <ParentInfo title="Father’s Info" titles="Father" />
-//       <ParentInfo title="Mother’s Info"  titles="Mother"/>
-
-//     </div>
-//   );
-// }
-
-// export default GuardianInformation;
 import React, { useState } from "react";
 import IMG from "../../img/Upload.png";
 import Form from "react-bootstrap/Form";
