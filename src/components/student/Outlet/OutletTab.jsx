@@ -1,8 +1,15 @@
-import React from 'react'
-import { useOutletHook } from '../../../hooks/outletTab'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeTab, selectTab } from '../../../features/student/tabSlice'
 
 export const OutletTab = ({columns}) => {
-    const {selectedTab, handleChangeTab} = useOutletHook(columns)
+
+    const dispatch = useDispatch()
+    const {selectedTab, isVisible} = useSelector(selectTab)
+
+    const handleChangeTab = (item) =>{
+        dispatch(changeTab(item))
+    }
 
   return (
     <div className="d-flex flex-row gap-3 align-items-center" style={{cursor:"pointer"}}>
