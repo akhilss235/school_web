@@ -17,3 +17,14 @@
     width: 25px;
     height: 25px;
 }
+.outletTab{
+    border: 1px solid #D9D9D9;
+    border-radius:10px;
+    transition: .5s ease-in-out;
+}
+.selectedOutletTab{
+    background-color: #148CF0;
+    color: white;
+    border: 1px solid #148CF0;
+
+}

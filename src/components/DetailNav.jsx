@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PiStudentLight } from "react-icons/pi";
 import { HiOutlineTableCells } from "react-icons/hi2";
 import { IoIosFingerPrint } from "react-icons/io";
 import { IoCashOutline } from "react-icons/io5";
 import { PiExam } from "react-icons/pi";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const DetailNav = ({title="students"}) => {
 
     const navigate = useNavigate()
-    const [activeNav, setActiveNav] = useState(title === "students" ? "Students" : "Teacher Details")
+    const location = useLocation()
+    const [activeNav, setActiveNav] = useState(title === "Details" ? "Students" : "Teacher Details")
     const data = {
         students:[
             {
                 id:"1",
                 icon: <PiStudentLight className='react-icon'/>,
-                title:"Students"
+                title:"Details"
             },
             {
                 id:"2",
@@ -42,12 +43,19 @@ export const DetailNav = ({title="students"}) => {
 
     const handleChangeNav = (item)=>{
         setActiveNav(item)
-        if(item === "Students"){
+        if(item === "Details"){
             navigate(`/students/Details`)
         }else{
             navigate(`/students/Details/${item}`)
         }
     }
+
+    useEffect(() => {
+        const pathSegments = location.pathname.split('/').filter(segment => segment);
+        const lastSegment = pathSegments[pathSegments.length - 1].replace(/%20/g, " ");
+        setActiveNav(lastSegment);
+    }, [location.pathname]);
+
   return (
     <div className='d-flex flex-row gap-4 align-items-center'>
         {data[title]?.map((item) => (
