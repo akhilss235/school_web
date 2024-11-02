@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"; 
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 import Topbar from "./Topbar";
 import "../Styles/Sidebar.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { PiStudent } from "react-icons/pi";
+import logo from "../img/School.png";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -38,7 +39,9 @@ const Sidebar = ({ children }) => {
 
     useEffect(() => {
       if (item.subMenu) {
-        const isActiveSubMenu = item.subMenu.some(subItem => location.pathname.includes(subItem.path));
+        const isActiveSubMenu = item.subMenu.some((subItem) =>
+          location.pathname.includes(subItem.path)
+        );
         setIsSubMenuOpen(isActiveSubMenu);
       }
     }, [location.pathname, item.subMenu]);
@@ -51,22 +54,24 @@ const Sidebar = ({ children }) => {
     const isMainActive = () => {
       return (
         location.pathname === item.path ||
-        (item.subMenu && item.subMenu.some(subItem => location.pathname === subItem.path))
+        (item.subMenu &&
+          item.subMenu.some((subItem) => location.pathname === subItem.path))
       );
     };
 
     return (
       <div>
-        <NavLink 
-          to={item.path} 
-          className={`linkss ${isMainActive() ? "active" : ""}`} 
+        <NavLink
+          to={item.path}
+          className={`linkss ${isMainActive() ? "active" : ""}`}
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
           <div className="icon mt-1 mb-1">{item.icon}</div>
-          <div style={{ display: isOpen ? "block" : "none" }} className="link_text mt-1 mb-1">
-         <h6>
-         {item.name}
-         </h6>  
+          <div
+            style={{ display: isOpen ? "block" : "none" }}
+            className="link_text mt-1 mb-1"
+          >
+            <h6>{item.name}</h6>
           </div>
           {item.subMenu && (
             <div className="dropdown-icon" style={{ marginLeft: "auto" }}>
@@ -75,12 +80,17 @@ const Sidebar = ({ children }) => {
           )}
         </NavLink>
         {item.subMenu && isSubMenuOpen && (
-          <div className="sub-menu" style={{ paddingLeft: "30px", display: isOpen ? "block" : "none" }}>
+          <div
+            className="sub-menu"
+            style={{ paddingLeft: "30px", display: isOpen ? "block" : "none" }}
+          >
             {item.subMenu.map((subItem, subIndex) => (
-              <NavLink 
-                key={subIndex} 
-                to={subItem.path} 
-                className={`submenu ${location.pathname === subItem.path ? "active" : ""}`}
+              <NavLink
+                key={subIndex}
+                to={subItem.path}
+                className={`submenu ${
+                  location.pathname === subItem.path ? "active" : ""
+                }`}
               >
                 <div className="icons mt-1 mb-1">{subItem.icon}</div>
                 <div className="link_text">{subItem.name}</div>
@@ -94,7 +104,10 @@ const Sidebar = ({ children }) => {
 
   return (
     <>
-      <Topbar toggleOffcanvas={() => setShowModal(!showModal)} toggleSidebar={toggleSidebar} />
+      <Topbar
+        toggleOffcanvas={() => setShowModal(!showModal)}
+        toggleSidebar={toggleSidebar}
+      />
 
       <div className="container-fluid">
         <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
@@ -105,13 +118,14 @@ const Sidebar = ({ children }) => {
             <MenuItem key={index} item={item} />
           ))}
         </div>
-        <main className="content">
-          {children}
-        </main>
+        <main className="content">{children}</main>
       </div>
       <Offcanvas show={showModal} onHide={handleCloseModal}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>My App</Offcanvas.Title>
+          <div className="">
+            {" "}
+            <img src={logo} alt="Logo" style={{ maxHeight: "40px" }}  className="d-flex justify-content-center"/>
+          </div>
         </Offcanvas.Header>
         <Offcanvas.Body>
           {menuItems.map((item, index) => (

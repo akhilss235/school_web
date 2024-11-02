@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import IMG from "../../img/Upload.png";
 import Form from "react-bootstrap/Form";
@@ -16,7 +15,7 @@ function GuardianDetails() {
 
   return (
     <div>
-      <div className="section1 mb-5" >
+      <div className="section1 mb-5">
         <h4 className="mt-5">Guardian Details</h4>
         <div class="radio-wrapper-2">
           <label for="example-3">
@@ -55,7 +54,10 @@ function GuardianDetails() {
             )}
           </div>
           <div className="mx-3">
-            <label htmlFor="file-uploads" className="custom-file-upload mx-3 mb-2">
+            <label
+              htmlFor="file-uploads"
+              className="custom-file-upload mx-3 mb-2"
+            >
               Upload
             </label>
             <input
