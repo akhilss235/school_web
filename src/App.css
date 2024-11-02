@@ -197,7 +197,7 @@ input[type="file"] {
     border-radius: 1.5em;
     padding: 2px;
     transition: all 0.4s ease;
-    border: 1px solid #e8eae9;
+    border: 1px solid #148CF0;
   }
   .checkbox-wrapper-7 .tgl-ios + .tgl-btn:after {
     border-radius: 2em;
@@ -209,7 +209,7 @@ input[type="file"] {
     will-change: padding;
   }
   .checkbox-wrapper-7 .tgl-ios + .tgl-btn:active {
-    box-shadow: inset 0 0 0 2em #e8eae9;
+    box-shadow: inset 0 0 0 2em #148CF0;
   }
   .checkbox-wrapper-7 .tgl-ios + .tgl-btn:active:after {
     padding-right: 0.8em;
@@ -236,3 +236,71 @@ input[type="file"] {
   color: #FFFFFF !important;
   background-color: #3474EB !important;
 }
+.custom-file {
+  display: inline-block;
+  padding: 12px 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+border-style: dashed;
+  width: 300px;
+  border-color: #148CF0;
+  height: 50px;
+  color: #148CF0;
+}
+
+.iconsvg {
+  height: 40px;
+  width: 40px;
+}
+
+
+@media (min-width: 768px) {
+  .tiltleresposive {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* Adjust font size on smaller screens */
+@media (max-width: 576px) {
+  .tiltleresposive {
+    font-size: 1rem !important;
+  }
+  .iconsvg {
+    height: 25px;
+    width: 25px;
+  }
+  .svgsection {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .InfoHeaderbg {
+ 
+    padding: 10px;
+  }
+}
+
+
+/* Adjust font size on smaller screens */
+@media (max-width: 322px) {
+  .Upload {
+    font-size: small;
+  }
+}
+
+
+.svgsection {
+  width: 50px ;
+  height: 50px;
+}
+.InfoHeaderbg {
+  background-color: #EBF5FD;
+  border-bottom: 2px solid #2393F1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 20px;
+}
+
+

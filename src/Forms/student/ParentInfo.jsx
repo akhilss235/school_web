@@ -26,7 +26,7 @@ const ParentInfo = ({ title ,titles}) => {
           />
         </div>
         <div className="mx-3">
-          <label htmlFor={`${title}-file-upload`} className="custom-file-upload">
+          <label htmlFor={`${title}-file-upload`} className="custom-file-upload mx-3 mb-2">
             Upload
           </label>
           <input

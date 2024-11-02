@@ -55,26 +55,28 @@ function PersonalInformation() {
           )}
         </div>
         <div className="mx-3">
-          <label htmlFor="file-upload" className="custom-file-upload">
+        
+          <label htmlFor="file-upload" className="custom-file-upload mx-3 mb-2">
             Upload
           </label>
           <input
             id="file-upload"
             type="file"
+
             accept="image/*"
             onChange={handleFileChange}
           />
 
           <button
             type="button"
-            className="btn mx-3"
+            className="btn btns mx-3"
             onClick={handleRemoveImage} 
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
           >
             Remove
           </button>
 
-          <div>Upload image size 4MB, Format JPG, PNG, SVG</div>
+          <div ><p className="Upload">Upload image size 4MB, Format JPG, PNG, SVG</p></div>
         </div> 
       </div>
 

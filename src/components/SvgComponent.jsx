@@ -44,7 +44,7 @@ const icons = {
 
 };
 
-const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => {
+const Icon = ({ iconName, fill="#EBF5FD" }) => {
   const IconComponent = icons[iconName];
 
   if (!IconComponent) {
@@ -52,8 +52,8 @@ const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => 
   }
 
   return (
-    <div style={{width:"50px", height:"50px", "backgroundColor":fill ,borderRadius:"10px"}} className='d-flex justify-content-center align-items-center' >
-        <IconComponent width={width} height={height} />
+    <div style={{"backgroundColor":fill ,borderRadius:"10px"}} className='d-flex justify-content-center align-items-center svgsection' >
+        <IconComponent  className='iconsvg'/>
     </div>
   );
 };

@@ -5,6 +5,13 @@ import GuardianDetails from "./GuardianDetails";
 import InfoHeader from "../../components/InfoHeader";
 import ParentInfo from "./ParentInfo";
 import Siblings from "./Siblings";
+import StAdderss from "./StAdderss";
+import TransportInformation from "./TransportInformation";
+import HostelInformation from "./HostelInformation";
+import StDocuments from "./StDocuments";
+import PreviousSchoolDetails from "./PreviousSchoolDetails";
+import StudentLoginDetails from "./StudentLoginDetails";
+import ParentLoginDetails from "./ParentLoginDetails";
 function AddStudent() {
   return (
     <div className="p-3">
@@ -21,16 +28,46 @@ function AddStudent() {
         <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
         <ParentInfo title="Father’s Info" titles="Father" />
         <ParentInfo title="Mother’s Info" titles="Mother" />
-
         <GuardianDetails />
-
         {/* <InfoHeader iconName="Parents" title="Siblings" /> */}
-<Siblings />
-        <div className="d-flex justify-content-end mt-5">
-          <button type="button" className="btn btn-danger mx-2">
-            Cancel
+        <Siblings />
+        <div className="mt-5">
+          <InfoHeader iconName="Address" title="Address" />
+          <StAdderss />
+        </div>
+        <div className="mt-5">
+          <TransportInformation />
+        </div>
+        <div className="mt-5">
+          <HostelInformation />
+        </div>
+        <div className="mt-5">
+          <StDocuments />
+        </div>
+        <div className="mt-5">
+          <PreviousSchoolDetails />
+        </div>
+        <div className="mt-5">
+          <InfoHeader
+            iconName="StudentLoginDetails"
+            title="Student Login Details"
+          />
+          <StudentLoginDetails />
+        
+        </div>
+        <div className="mt-5">
+          <InfoHeader
+            iconName="StudentLoginDetails"
+            title="Parent Login Details"
+          />
+          <ParentLoginDetails />
+ 
+        </div>
+        <div className="d-flex justify-content-end mt-5 me-5 mb-5">
+          <button type="button" className="btn btn-white mx-2" style={{color:'red',backgroundColor:'white',width:'200px'}}>
+          Discard
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary"style={{color:'#FFFFFF',backgroundColor:'#148CF0',width:'200px'}}>
             Save
           </button>
         </div>
