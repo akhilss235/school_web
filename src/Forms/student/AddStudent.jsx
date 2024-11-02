@@ -4,6 +4,7 @@ import PersonalInformation from "./PersonalInformation";
 import GuardianDetails from "./GuardianDetails";
 import InfoHeader from "../../components/InfoHeader";
 import ParentInfo from "./ParentInfo";
+import Siblings from "./Siblings";
 function AddStudent() {
   return (
     <div className="p-3">
@@ -23,8 +24,8 @@ function AddStudent() {
 
         <GuardianDetails />
 
-        <InfoHeader iconName="Parents" title="Siblings" />
-
+        {/* <InfoHeader iconName="Parents" title="Siblings" /> */}
+<Siblings />
         <div className="d-flex justify-content-end mt-5">
           <button type="button" className="btn btn-danger mx-2">
             Cancel

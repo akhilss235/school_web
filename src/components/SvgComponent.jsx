@@ -11,6 +11,7 @@ import { ReactComponent as AddressIcon } from '../img/map.svg';
 import { ReactComponent as LocationIcon } from '../img/location.svg';
 import { ReactComponent as PinIcon } from '../img/pin.svg';
 import { ReactComponent as SchoolIcon } from '../img/school.svg';
+import { ReactComponent as Siblings } from '../img/Siblings.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -24,8 +25,9 @@ const icons = {
   Address:AddressIcon,
   Location:LocationIcon,
   Pin:PinIcon,
-  School:SchoolIcon 
-  
+  School:SchoolIcon ,
+  Siblings:Siblings 
+
 };
 
 const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => {
