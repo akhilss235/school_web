@@ -5,6 +5,11 @@ import { ReactComponent as HostelIcon } from '../img/hostel.svg';
 import { ReactComponent as TransportIcon } from '../img/transport.svg'; 
 import { ReactComponent as Parents } from '../img/Parents.svg'; 
 import { ReactComponent as Student } from '../img/Student.svg'; 
+import { ReactComponent as DocumentIcon } from '../img/document.svg'; 
+import { ReactComponent as PdfIcon } from '../img/pdf.svg'; 
+import { ReactComponent as AddressIcon } from '../img/map.svg'; 
+import { ReactComponent as LocationIcon } from '../img/location.svg';
+import { ReactComponent as PinIcon } from '../img/pin.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -13,6 +18,11 @@ const icons = {
   transport:TransportIcon,
   Parents:Parents,
   Student:Student,
+  Documents:DocumentIcon,
+  Pdf:  PdfIcon,
+  Address:AddressIcon,
+  Location:LocationIcon,
+  Pin:PinIcon
 };
 
 const Icon = ({ iconName, width = "30px", height = "30px", fill="#EBF5FD" }) => {

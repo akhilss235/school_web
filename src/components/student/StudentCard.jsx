@@ -4,7 +4,7 @@ import { GoDotFill } from "react-icons/go";
 
 export const StudentCard = ({isInfo=true, data}) => {
   return (
-    <div className='d-flex flex-row gap-3' style={{paddingBottom:isInfo ? "20px" :"0px",borderBottom:isInfo ? "1px solid #D1D1D1" : ""}}>
+    <div className='d-flex flex-row gap-3' style={{width:"260px",paddingBottom:isInfo ? "20px" :"0px",borderBottom:isInfo ? "1px solid #D1D1D1" : ""}}>
         <div style={{height:"100px", width:"100px"}}>
             <img src={require("../../img/student.png")} alt="student image"  style={{height:"100%", width:"100%"}}/>
         </div>
@@ -18,9 +18,9 @@ export const StudentCard = ({isInfo=true, data}) => {
                 )
             }
             <p className='m-0' style={{fontWeight:"600"}}>{data?.name}</p>
-            <p className='m-0 ' style={{color:"#148CF0"}}>{data?.number}</p>
+            <p className='m-0 ' style={{color:"#148CF0"}}>{data?.number || data?.relation}</p>
             {
-                !isInfo && (
+                !isInfo && data?.class && (
                     <p className='m-0' style={{fontWeight:"600"}}>Class: {data?.class}</p>
                 )
             }

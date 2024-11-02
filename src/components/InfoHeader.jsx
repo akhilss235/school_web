@@ -9,6 +9,8 @@ const InfoHeader = ({ title, iconName, size=24 }) => {
       style={{
         backgroundColor: "#EBF5FD",
         borderBottom: "2px solid #2393F1",
+        borderTopLeftRadius:"15px",
+        borderTopRightRadius:"15px"
       }}
     >
       <h5 className="d-flex">
