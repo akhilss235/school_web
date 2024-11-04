@@ -13,6 +13,7 @@ import { Details } from "./components/student/Outlet/Details";
 import { Attendance } from "./components/student/Outlet/attendance/Attendance";
 import { Fees } from "./components/student/Outlet/Fees";
 import { TimeTable } from "./components/student/Outlet/timeTable/TimeTable";
+import { Exam } from "./components/student/Outlet/Exam/Exam";
 
 
 const SidebarLayout = () => (
@@ -37,6 +38,7 @@ function App() {
               <Route path="Time Table" element={<TimeTable />} />
               <Route path="Attendance" element={<Attendance />} />
               <Route path="Fees" element={<Fees />} />
+              <Route path="Exams" element={<Exam />} />
             </Route>
           </Route>
         </Routes>

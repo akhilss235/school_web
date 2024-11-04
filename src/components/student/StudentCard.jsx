@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoDotFill } from "react-icons/go";
+import { StatusTag } from '../StatusTag';
 
 
 export const StudentCard = ({isInfo=true, data}) => {
@@ -11,10 +12,7 @@ export const StudentCard = ({isInfo=true, data}) => {
         <div className="d-flex flex-column gap-1 justify-content-center">
             {
                 isInfo && (
-                    <div className='d-flex flex-row gap-1 align-items-center justify-content-center' style={{backgroundColor:"#ECF9EA", borderRadius:"5px", width:"80px", height:"20px"}}>
-                        <GoDotFill style={{color:"#16BE16", width:"15px", height:"15px",paddingTop:"2px"}} />
-                        <p className='m-0' style={{color:"#16BE16", fontSize:"16px", textAlign:"center"}} >{data?.status}</p>
-                    </div>
+                    <StatusTag status={data?.status} />
                 )
             }
             <p className='m-0' style={{fontWeight:"600"}}>{data?.name}</p>
