@@ -42,7 +42,7 @@ function Filter({ filterOptions, onApply }) {
         <div className="filter-container" style={{ position: "relative" }}>
             <div
                 className="card d-flex align-items-center justify-content-center filterbody p-2"
-                style={{ height: "35px", cursor: "pointer" }}
+                style={{ height: "37.6px", cursor: "pointer" }}
                 onClick={toggleDropdown}
             >
                 <IconContext.Provider value={{ className: "react-icons", size: "1.5em" }}>

@@ -6,11 +6,13 @@ import { selectTab } from "../../../../features/student/tabSlice";
 import Leaves from "./Leaves";
 import AttendanceRecords from "./AttendanceRecords";
 import { IoCalendarOutline } from "react-icons/io5";
+import DropdownFilter from "./DropdownFilter";
+
 
 export const Attendance = () => {
   const columns = ["Leaves", "Attendance"];
   const { selectedTab } = useSelector(selectTab);
-
+  const [selectedLeaveType, setSelectedLeaveType] = useState("");
   // Function to render content based on selected tab
   const renderTabContent = () => {
     switch (selectedTab) {
@@ -23,25 +25,36 @@ export const Attendance = () => {
     }
   };
 
+
+  const filterOptions = {
+    label: "Academic Year",
+    options: [
+"2024/2025"
+    ],
+  };
+
+  const handleLeaveTypeChange = (event) => {
+    setSelectedLeaveType(event.target.value);
+  };
+
   return (
-    <div>
-      <Row>
+    <div className="p-0">
+      <Row className="mb-4">
         <Col>
           <OutletTab columns={columns} />
         </Col>
-        <Col>
+        <Col sm={'auto'}>
           {selectedTab === "Attendance" && (
-            <div className="card" style={{ borderColor: "#D9D9D9" }}>
-              <div className="d-flex mx-1 p-2">
-                <span style={{ color: "#505050" }}>
-                  <IoCalendarOutline /> Academic Year: 2024/2025
-                </span>
-              </div>
-            </div>
+
+                <DropdownFilter
+                filterOptions={filterOptions}
+                selectedOption={selectedLeaveType}
+                handleOptionChange={handleLeaveTypeChange}
+              />
           )}
         </Col>
       </Row>
-      <div className="mt-4">{renderTabContent()}</div>
+      <div className="pt-3 p-3" style={{backgroundColor:'aliceblue',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };
