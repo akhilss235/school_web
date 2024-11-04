@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { OutletTab } from '../OutletTab'
-import { useDispatch, useSelector } from 'react-redux'
-import { changeTab, selectTab } from '../../../../features/student/tabSlice'
+import { useSelector } from 'react-redux'
+import { selectTab } from '../../../../features/student/tabSlice'
 import { ExamResult } from './ExamResult'
 import { ExamTimeTable } from '../timeTable/ExamTimeTable'
 
 export const Exam = () => {
-    const dispatch = useDispatch()
     const items = ["Exam Result", "Exam Time Table"]
     const { isVisible, selectedTab } = useSelector(selectTab)
-
-    useEffect(()=>{
-        dispatch(changeTab(items[0]))
-    },[dispatch])
 
 
   return (

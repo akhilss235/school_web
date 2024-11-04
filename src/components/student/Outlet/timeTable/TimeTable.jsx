@@ -1,21 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { OutletTab } from '../OutletTab'
 import { Class } from './Class'
-import { useDispatch, useSelector } from 'react-redux'
-import { changeTab, selectTab } from '../../../../features/student/tabSlice'
+import { useSelector } from 'react-redux'
+import { selectTab } from '../../../../features/student/tabSlice'
 import { ExamTimeTable } from './ExamTimeTable'
 
 export const TimeTable = () => {
   
-  const dispatch = useDispatch()
   const items = ["Class Time Table", "Exam Time Table"]
-
-  useEffect(()=>{
-      dispatch(changeTab(items[0]))
-  },[dispatch])
-
   const {isVisible, selectedTab} = useSelector(selectTab)
-
   return (
     <div className='d-flex flex-column gap-3'>
       <OutletTab columns={items} />

@@ -11,6 +11,10 @@ export const OutletTab = ({columns}) => {
         dispatch(changeTab(item))
     }
 
+    useEffect(()=>{
+        dispatch(changeTab(columns[0]))
+    },[dispatch])
+
   return (
     <div className="d-flex flex-row gap-3 align-items-center" style={{cursor:"pointer"}}>
         {
