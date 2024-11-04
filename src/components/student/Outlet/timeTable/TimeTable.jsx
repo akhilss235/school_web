@@ -3,6 +3,7 @@ import { OutletTab } from '../OutletTab'
 import { Class } from './Class'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeTab, selectTab } from '../../../../features/student/tabSlice'
+import { ExamTimeTable } from './ExamTimeTable'
 
 export const TimeTable = () => {
   
@@ -22,7 +23,7 @@ export const TimeTable = () => {
           {
             selectedTab === "Class Time Table"
             ? <Class />
-            : <p>Hello mr thamaraikannan</p>
+            : <ExamTimeTable />
           }
       </div>
     </div>
