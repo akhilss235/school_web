@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { OutletTab } from './OutletTab'
+import { OutletTab } from '../OutletTab'
 import { Class } from './Class'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeTab, selectTab } from '../../../features/student/tabSlice'
+import { changeTab, selectTab } from '../../../../features/student/tabSlice'
 
 export const TimeTable = () => {
   

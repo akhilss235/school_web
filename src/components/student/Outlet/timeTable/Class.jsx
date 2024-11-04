@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClassScheduleCard } from '../../ClassScheduleCard'
+import { ClassScheduleCard } from '../../../ClassScheduleCard'
 import { Break } from './Break';
 
 export const Class = () => {
