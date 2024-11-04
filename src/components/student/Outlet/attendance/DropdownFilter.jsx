@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
-import { Form, InputGroup } from 'react-bootstrap';
+import React from "react";
+import { InputGroup, Form } from "react-bootstrap";
 
-const DropdownFilter = ({ label, options, onChange }) => {
-  const [selectedValue, setSelectedValue] = useState("");
-
-  const handleChange = (event) => {
-    const { value } = event.target;
-    setSelectedValue(value);
-    onChange(value);
-  };
-
+const DropdownFilter = ({
+  filterOptions,
+  selectedOption,
+  handleOptionChange,
+}) => {
   return (
-    <InputGroup className="mb-3 dropdown-filter">
-      <InputGroup.Text className="dropdown-label">{label}</InputGroup.Text>
+    <InputGroup>
+      <InputGroup.Text id="basic-addon1" style={{ backgroundColor: "#FFFFFF" }}>
+        {filterOptions.label} :
+      </InputGroup.Text>
       <Form.Select
-        value={selectedValue}
-        onChange={handleChange}
-        className="dropdown-select"
+        aria-describedby="basic-addon1"
+        style={{ borderLeft: "none" }}
+        value={selectedOption}
+        onChange={handleOptionChange}
       >
-        <option value="" disabled hidden>
-          Select {label}
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>
+        {filterOptions.options.map((option, index) => (
+          <option key={index} value={option === "All" ? "" : option}>
             {option}
           </option>
         ))}
