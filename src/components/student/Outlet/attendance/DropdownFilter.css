@@ -1,0 +1,26 @@
+/* Style for InputGroup and removing color difference */
+.dropdown-filter .dropdown-label {
+    background-color: #fff;       /* White background for the label */
+    color: #495057;               /* Normal text color */
+    border-right: none !important; /* Middle border */
+    border-radius: 0;             /* Remove rounded corners */
+  }
+  
+  .dropdown-filter .dropdown-select {
+    border-left: none !important;            /* Remove default left border */
+    border-radius: 0;             /* Remove rounded corners */
+    color: #495057;               /* Consistent text color */
+    background-color: #fff;       /* White background */
+  }
+  
+  .dropdown-filter .input-group-text,
+  .dropdown-filter .form-select {
+    box-shadow: none;             /* Remove shadow */
+    border-left: none !important;
+  }
+  .dropdown-label{
+    border-right: none;
+  }
+  .form-select{
+    border-left: none !important;
+  }
