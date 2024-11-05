@@ -1,9 +1,12 @@
 import React from 'react'
 import Icon from './SvgComponent'
 
-export const IconCard = ({data, isGray=false, isAddress=false}) => {
+export const IconCard = ({data, isGray=false, isAddress=false, isBorder=false, borderColor=""}) => {
   return (
-    <div className='d-flex flex-column gap-3 '>
+    <div 
+      className={`d-flex flex-column gap-3`}
+      // style={{border: isBorder ? "1px solid" : ""}}
+    >
       {data?.map((item) => (
         <div className='d-flex flex-row gap-3 align-items-center' key={item.id}>
         <div style={{ width: "50px", flexShrink: 0 }}>
