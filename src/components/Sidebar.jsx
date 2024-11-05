@@ -28,8 +28,13 @@ const Sidebar = ({ children }) => {
       icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
         { path: "/Students", name: "Students List", icon: <GoDotFill /> },
-        { path: "/Promotion", name: "Students Promotion", icon: <GoDotFill /> },
+        { path: "/Student Promotion", name: "Students Promotion", icon: <GoDotFill /> },
       ],
+    },
+    {
+      path: "/Teachers",
+      name: "Teachers",
+      icon: <MdOutlineSpaceDashboard style={{ width: "25px" }} />,
     },
   ];
 

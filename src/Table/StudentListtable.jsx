@@ -141,7 +141,7 @@ function StudentListTable() {
                     </Dropdown.Item>
 
                     <Dropdown.Item
-                      href="#/delete"
+                      href="Students/Promote student"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                       
                     >
