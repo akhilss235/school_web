@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import PersonalInformation from "./PersonalInformation";
-import GuardianDetails from "./GuardianDetails";
 import InfoHeader from "../../components/InfoHeader";
-import ParentInfo from "./ParentInfo";
-import Siblings from "./Siblings";
 import StAdderss from "./StAdderss";
 import TransportInformation from "./TransportInformation";
 import HostelInformation from "./HostelInformation";
 import StDocuments from "./StDocuments";
-import PreviousSchoolDetails from "./PreviousSchoolDetails";
 import StudentLoginDetails from "./StudentLoginDetails";
 import ParentLoginDetails from "./ParentLoginDetails";
+import WorkExperience from "./WorkExperience";
 function AddTeachers() {
   return (
     <div className="p-3">
@@ -25,12 +22,10 @@ function AddTeachers() {
         <PersonalInformation />
       </div>
       <div className="mt-5">
-        <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
-        <ParentInfo title="Father’s Info" titles="Father" />
-        <ParentInfo title="Mother’s Info" titles="Mother" />
-        <GuardianDetails />
-        {/* <InfoHeader iconName="Parents" title="Siblings" /> */}
-        <Siblings />
+      <div className="mt-5">
+     <WorkExperience />
+        </div>
+
         <div className="mt-5">
           <InfoHeader iconName="Address" title="Address" />
           <StAdderss />
@@ -45,7 +40,6 @@ function AddTeachers() {
           <StDocuments />
         </div>
         <div className="mt-5">
-          <PreviousSchoolDetails />
         </div>
         <div className="mt-5">
           <InfoHeader

@@ -16,8 +16,8 @@
 
 /* App.css */
 body {
-  font-family: "Roboto", sans-serif;
-  color: #505050;
+  font-family: "Roboto", sans-serif !important; 
+  color: #505050 !important;
   /* overflow-y: hidden; */
 }
 b {
@@ -398,7 +398,7 @@ border-style: dashed;
   background-color: #ED1C00;
   color: white;
 }
-.custom-modal{
-  box-shadow: 2px 2px 8px 0px #ABABAB29 !important;
+.custom-modal {
+  box-shadow: 2px 2px 8px 0px rgba(171, 171, 171, 0.29) !important;
   border: none !important;
 }

@@ -3,6 +3,7 @@ import IMG from "../../img/Upload.png";
 import { CiSquareAlert } from "react-icons/ci";
 import Form from "react-bootstrap/Form";
 import InfoHeader from "../../components/InfoHeader";
+import Select from "react-select";
 
 function PersonalInformation() {
     const [imagePreview, setImagePreview] = useState(null);
@@ -11,11 +12,30 @@ function PersonalInformation() {
         const file = e.target.files[0];
         setImagePreview(URL.createObjectURL(file));
         };
-  
+        const myData = [
+          { label: "English", value: 1 },
+          { label: "Malayalam", value: 2 },
+        ];
+      
+        const [selectedType, setSelectedType] = useState("Types1");
+      
+        const handleTypeClick = (type) => {
+          setSelectedType(type);
+        };
+      
     const handleRemoveImage = () => {
       setImagePreview(null);
     };
-  
+    const customStyles = {
+      container: (provided) => ({
+        ...provided,
+        flex: 1,
+      }),
+      control: (provided) => ({
+        ...provided,
+        borderColor: "#ccc",
+      }),
+    };
   return (
     <div >
 
@@ -144,22 +164,28 @@ function PersonalInformation() {
 
       </div>
 
+
+
+
+
+
+
       <div className="row">
         <div className="col-sm-3 mt-3">
         <Form.Label>
-            <b>Date </b>
+            <b>Primary Contact Number </b>
           </Form.Label>
-        <Form.Control type="text" placeholder="Enter Caste" />
+        <Form.Control type="number" placeholder="Enter Primary Contact Number" />
 
         </div>
 
         <div className="col-sm-3 mt-3">
           <Form.Label>
-            <b>Date of Birth</b>
+            <b>Email Address</b>
           </Form.Label>
-          <Form.Control type="date" />
+          <Form.Control type="email" placeholder="Enter " />
         </div>
-
+  
         <div className="col-sm-3 mt-3">
           <Form.Label>
             <b>Blood Group</b>
@@ -170,42 +196,44 @@ function PersonalInformation() {
           </Form.Select>{" "}
         </div>
         <div className="col-sm-3 mt-3">
-          <Form.Label>
-            <b>House</b>
+        <Form.Label>
+            <b>Date of Birth</b>
           </Form.Label>
-          <Form.Select>
-            <option> select House</option>
-            <option value="1">One</option>
-          </Form.Select>{" "}
+          <Form.Control type="date" placeholder="Enter Date of Birth" />
         </div>
       </div>
+
+
+
+
+
+
 
       <div className="row">
         <div className="col-sm-3 mt-3">
           <Form.Label>
-            <b>Religion</b>
+            <b>Father’s Name</b>
+          </Form.Label>
+          <Form.Control type="text" placeholder="Enter Father’s Name" />
+
+        </div>
+
+        <div className="col-sm-3 mt-3">
+        <Form.Label>
+            <b>Mother’s Name</b>
+          </Form.Label>
+          <Form.Control type="text" placeholder="Enter Mother’s Name" />
+
+        </div>
+
+        <div className="col-sm-3 mt-3">
+        <Form.Label>
+            <b>Marital Status</b>
           </Form.Label>
           <Form.Select>
-            <option> select Religion</option>
+            <option> select Marital Status</option>
             <option value="1">One</option>
           </Form.Select>{" "}
-        </div>
-
-        <div className="col-sm-3 mt-3">
-          <Form.Label>
-            <b>Category</b>
-          </Form.Label>
-          <Form.Select>
-            <option> select Category</option>
-            <option value="1">One</option>
-          </Form.Select>
-        </div>
-
-        <div className="col-sm-3 mt-3">
-          <Form.Label>
-            <b>Caste</b>
-          </Form.Label>
-          <Form.Control type="text" placeholder="Enter Caste" />
         </div>
         <div className="col-sm-3 mt-3">
           <Form.Label>
@@ -221,19 +249,24 @@ function PersonalInformation() {
       <div className="row">
         <div className="col-sm-3 mt-3">
           <Form.Label>
-            <b>Primary Contact Number</b>
+            <b>Qualification</b>
           </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter Primary Contact Number"
+            placeholder="Enter Qualification"
           />
         </div>
 
         <div className="col-sm-3 mt-3">
-          <Form.Label>
-            <b>Email Address</b>
-          </Form.Label>
-          <Form.Control type="text" placeholder="Enter Email Address" />
+        <Form.Label>Language Known </Form.Label>
+          <Select
+            name="Language"
+            options={myData}
+            isMulti={true}
+            closeMenuOnSelect={false}
+            styles={customStyles}
+       
+          />
         </div>
       </div>
 

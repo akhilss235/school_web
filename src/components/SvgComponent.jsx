@@ -21,6 +21,7 @@ import { ReactComponent as HostelInformation } from '../img/HostelInformation.sv
 // import { ReactComponent as Documents } from '../img/Documents.svg';
 import { ReactComponent as PreviousSchoolDetails } from '../img/PreviousSchoolDetails.svg';
 import { ReactComponent as StudentLoginDetails } from '../img/StudentLoginDetails.svg';
+import { ReactComponent as WorkExperience } from '../img/WorkExperience.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -43,7 +44,7 @@ const icons = {
   PreviousSchoolDetails:PreviousSchoolDetails ,
   StudentLoginDetails:StudentLoginDetails,
   Warning:WarningIcon,
-
+  WorkExperience:WorkExperience,
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {

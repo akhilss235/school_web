@@ -158,6 +158,8 @@ function Teacherstable() {
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
       <StInactivate
+          className='custom-modal'
+
         show={modalInactivate}
         onHide={() => setModalInactivate(false)}
       />
