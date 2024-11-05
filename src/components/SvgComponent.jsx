@@ -21,7 +21,14 @@ import { ReactComponent as HostelInformation } from '../img/HostelInformation.sv
 // import { ReactComponent as Documents } from '../img/Documents.svg';
 import { ReactComponent as PreviousSchoolDetails } from '../img/PreviousSchoolDetails.svg';
 import { ReactComponent as StudentLoginDetails } from '../img/StudentLoginDetails.svg';
+<<<<<<< Updated upstream
 import { ReactComponent as WorkExperience } from '../img/WorkExperience.svg';
+=======
+import { ReactComponent as PresentIcon } from '../img/present.svg';
+import { ReactComponent as AbsentIcon } from '../img/absent.svg';
+import { ReactComponent as FirstHalfIcon } from '../img/firsthalf.svg';
+import { ReactComponent as HolidayIcon } from '../img/holiday.svg';
+>>>>>>> Stashed changes
 
 const icons = {
   mobile: MobileIcon,
@@ -44,7 +51,14 @@ const icons = {
   PreviousSchoolDetails:PreviousSchoolDetails ,
   StudentLoginDetails:StudentLoginDetails,
   Warning:WarningIcon,
+<<<<<<< Updated upstream
   WorkExperience:WorkExperience,
+=======
+  Present:PresentIcon,
+  Absent:AbsentIcon,
+  FirstHalf:FirstHalfIcon,
+  Holiday:HolidayIcon,
+>>>>>>> Stashed changes
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {
