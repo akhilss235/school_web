@@ -49,6 +49,7 @@
   overflow-y: auto;
   flex: 1;
   background-color: #FBFDFE;
+  overflow-x: hidden;
 }
 .Offcanvasicons {
   visibility: hidden;
