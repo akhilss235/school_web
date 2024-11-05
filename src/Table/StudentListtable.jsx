@@ -14,9 +14,11 @@ import Promote from "../img/Promote.png";
 import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import StLoginDetails from '../Model/StLoginDetails';
+import StInactivate from '../Model/StInactivate';
 
 function StudentListTable() {
   const [modalShow, setModalShow] = useState(false);
+  const [modalInactivate, setModalInactivate] = useState(false);
 
   const filterOptions = [
     { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
@@ -141,17 +143,18 @@ function StudentListTable() {
                     <Dropdown.Item
                       href="#/delete"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
+                      
                     >
                       {" "}
                       <img
                         src={Promote}
                         alt="Logo"
-                        className="me-2"
+                        className="me-3"
                         style={{ maxHeight: "40px" }}
                       />
                       Promote Student
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/delete" style={{ color: "red" }}>
+                    <Dropdown.Item href="#/delete" style={{ color: "red" }}  onClick={() => setModalInactivate(true)}>
                       <MdOutlineToggleOff className="me-2" /> Inactivate
                     </Dropdown.Item>
                   </Dropdown.Menu>
@@ -162,6 +165,7 @@ function StudentListTable() {
         </Table>
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
+      <StInactivate show={modalInactivate} onHide={() => setModalInactivate(false)}/>
     </div>
   );
 }
