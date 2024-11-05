@@ -66,10 +66,12 @@ const Sidebar = ({ children }) => {
           className={`linkss ${isMainActive() ? "active" : ""}`}
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
-          <div className="icon mt-1 mb-1">{item.icon}</div>
+          <div className="icon mt-1 mb-1">
+            <>{item.icon}</>{" "}
+          </div>
           <div
             style={{ display: isOpen ? "block" : "none" }}
-            className="link_text mt-1 mb-1"
+            className="link_text mt-2 mb-1"
           >
             <h6>{item.name}</h6>
           </div>
@@ -124,7 +126,12 @@ const Sidebar = ({ children }) => {
         <Offcanvas.Header closeButton>
           <div className="">
             {" "}
-            <img src={logo} alt="Logo" style={{ maxHeight: "40px" }}  className="d-flex justify-content-center"/>
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ maxHeight: "40px" }}
+              className="d-flex justify-content-center"
+            />
           </div>
         </Offcanvas.Header>
         <Offcanvas.Body>
