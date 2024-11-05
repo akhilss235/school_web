@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { CloseIcon } from '../components/CloseIcon';
 import { StudentCard } from '../components/student/StudentCard';
@@ -9,7 +8,7 @@ function StLoginDetails(props) {
   const data = {
     name:"emma stone",
     "number":"211241252",
-    "status":"Active"
+    "class": "I A"
   }
   const columns = ["User Type", "Username", "Password"]
   const rows = [

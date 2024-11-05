@@ -5,7 +5,6 @@ import Dashboard from "./pages/Dashboard";
 import Sidebar from "./components/Sidebar"; // Ensure correct import
 import Students from "./pages/Students";
 import { Outlet } from "react-router-dom";
-import Promotion from "./submenu/Promotion";
 import Login from "./pages/Login";
 import { StudentDetails } from "./pages/StudentDetails";
 import AddStudent from "./Forms/student/AddStudent";
@@ -14,6 +13,7 @@ import { Attendance } from "./components/student/Outlet/attendance/Attendance";
 import { Fees } from "./components/student/Outlet/Fees";
 import { TimeTable } from "./components/student/Outlet/timeTable/TimeTable";
 import { Exam } from "./components/student/Outlet/Exam/Exam";
+import { Promotion } from "./pages/Promotion";
 
 
 const SidebarLayout = () => (
@@ -31,8 +31,9 @@ function App() {
           <Route path="/" element={<SidebarLayout />}>
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Students" element={<Students />} />
-            <Route path="Promotion" element={<Promotion />} />
             <Route path="Students/AddStudent" element={<AddStudent />} />
+            <Route path="Students/Student Promotion" element={<Promotion />} />
+            <Route path="Students/Promote student" element={<Promotion isStudent={true} />} />
             <Route path="Students/Details" element={<StudentDetails />}>
               <Route index element={<Details />} />
               <Route path="Time Table" element={<TimeTable />} />

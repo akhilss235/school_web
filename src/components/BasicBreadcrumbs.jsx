@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 function BasicBreadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
+  const pathName = pathnames.map((item)=> item.replace(/%20/g, " "))
 
   const linkStyle = {
     textDecoration: 'none',
@@ -18,8 +19,8 @@ function BasicBreadcrumbs() {
         <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/Dashboard', style: linkStyle }}>
         Dashboard
         </Breadcrumb.Item>
-        {pathnames.map((value, index) => {
-          const to = `/${pathnames.slice(0, index + 1).join('/Dashboard')}`;
+        {pathName.map((value, index) => {
+          const to = `/${pathName.slice(0, index + 1).join('/Dashboard')}`;
           return (
             <Breadcrumb.Item key={to} linkAs={Link} linkProps={{ to, style: linkStyle }}>
               {value.charAt(0).toUpperCase() + value.slice(1)}

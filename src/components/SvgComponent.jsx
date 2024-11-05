@@ -12,6 +12,7 @@ import { ReactComponent as LocationIcon } from '../img/location.svg';
 import { ReactComponent as PinIcon } from '../img/pin.svg';
 import { ReactComponent as SchoolIcon } from '../img/school.svg';
 import { ReactComponent as Siblings } from '../img/Siblings.svg';
+import { ReactComponent as WarningIcon } from '../img/warning.svg';
 
 
 // import { ReactComponent as Addres } from '../img/Addres.svg';
@@ -40,7 +41,8 @@ const icons = {
   HostelInformation:HostelInformation,
   // Documents:Documents,
   PreviousSchoolDetails:PreviousSchoolDetails ,
-  StudentLoginDetails:StudentLoginDetails 
+  StudentLoginDetails:StudentLoginDetails,
+  Warning:WarningIcon,
 
 };
 
