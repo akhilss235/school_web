@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap"; // Import Dropdown
 import BasicBreadcrumbs from "../components/BasicBreadcrumbs";
 import Search from "../filter/Search";
@@ -13,8 +13,11 @@ import { CiLock } from "react-icons/ci";
 import Promote from "../img/Promote.png";
 import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import StLoginDetails from '../Model/StLoginDetails';
 
 function StudentListTable() {
+  const [modalShow, setModalShow] = useState(false);
+
   const filterOptions = [
     { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
     { label: "Section", options: ["All", "A", "B", "C"] },
@@ -29,6 +32,10 @@ function StudentListTable() {
 
   function AddStudent () {
     navigate("/Students/AddStudent");
+  }
+  
+  function ViewStudent () {
+    navigate("Students/Details");
   }
   return (
     <div >
@@ -115,7 +122,7 @@ function StudentListTable() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href="#/edit"
+                      href="Students/Details"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View Student
@@ -126,10 +133,8 @@ function StudentListTable() {
                     >
                       <FaRegEdit className="me-2" /> Edit
                     </Dropdown.Item>
-                    <Dropdown.Item
-                      href="#/delete"
-                      style={{ borderBottom: "1px solid #D1D1D1" }}
-                    >
+                    <Dropdown.Item onClick={() => setModalShow(true)} style={{ borderBottom: "1px solid #D1D1D1" }}>
+
                       <CiLock className="me-2" /> Login Details
                     </Dropdown.Item>
 
@@ -156,6 +161,7 @@ function StudentListTable() {
           </tbody>
         </Table>
       </div>
+      <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }

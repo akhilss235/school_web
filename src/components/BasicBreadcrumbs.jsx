@@ -16,7 +16,7 @@ function BasicBreadcrumbs() {
     <div>
       <Breadcrumb>
         <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/Dashboard', style: linkStyle }}>
-        School
+        Dashboard
         </Breadcrumb.Item>
         {pathnames.map((value, index) => {
           const to = `/${pathnames.slice(0, index + 1).join('/Dashboard')}`;
