@@ -2,6 +2,7 @@ import React from 'react'
 import BasicBreadcrumbs from '../components/BasicBreadcrumbs'
 import Icon from '../components/SvgComponent'
 import { StudentCard } from '../components/student/StudentCard'
+import { PromoteCard } from '../components/student/PromoteCard'
 
 export const Promotion = ({isStudent}) => {
 
@@ -10,6 +11,17 @@ export const Promotion = ({isStudent}) => {
     "number":"211241252",
     "class": "I A"
   }
+  const selectData = [{
+    title: 'Promote to Section',
+    academicYear : "2024 - 2025",
+    type:"select",
+    value:["2023 - 2024", "2024 - 2025", "2025 - 2026", "2026-2027"]
+  }]
+
+  const currentSectionData = [{
+    title: 'Current Session',
+    academicYear : "2024 - 2025",
+}]
   return (
     <section className="p-4 d-flex flex-column gap-5">
       <div className=' text-start'> 
@@ -23,13 +35,16 @@ export const Promotion = ({isStudent}) => {
       <div className='d-flex flex-column gap-3 p-3' style={{boxShadow: "2px 2px 8px 0px #ABABAB29", "width":"100%", backgroundColor:"white", borderRadius:"10px"}}>
         <h6>Promotion</h6>
         <p>Select a Class to Promote next session and new class</p>
-        <div className='p-3' style={{backgroundColor:"#EBF5FD", borderRadius:"15px"}}>
-          <StudentCard data={data} isInfo={false} />
+        {
+          isStudent &&
+          <div className='p-3' style={{backgroundColor:"#EBF5FD", borderRadius:"15px"}}>
+            <StudentCard data={data} isInfo={false} />
+          </div>
+        }
+        <div className='d-flex flex-row gap-3'>
+          <PromoteCard data={currentSectionData}/>
+          <PromoteCard data={selectData} />
         </div>
-        {/* <div className='d-flex flex-row gap-3'>
-          <div></div>
-          <div></div>
-        </div> */}
         <div className='d-flex flex-row justify-content-center align-items-center gap-2'>
           <div 
             className='reset-btn' 

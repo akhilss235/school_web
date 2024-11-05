@@ -11,7 +11,7 @@ export const DetailSection = () => {
     "number":"325235325"
   }
   return (
-    <div className='d-flex flex-column gap-3'>
+    <div className='d-flex flex-column gap-3 info-section'>
         <Info />
         <ContactInfo />
         <div className='info'>

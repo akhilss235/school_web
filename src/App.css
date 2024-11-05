@@ -71,10 +71,15 @@ input[type="file"] {
   border-radius: 5px;
 }
 
-
-
-
-
+.select {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  appearance: none;
+  border-radius: 5px;
+  background: url('https://cdn-icons-png.flaticon.com/512/54/54785.png') no-repeat right 15px center;
+  background-size: 15px 15px; 
+  cursor: pointer;
+}
 
 
   .radio-wrapper-2 {
@@ -376,4 +381,24 @@ border-style: dashed;
   border : 2px solid #EBEBEB;
   background-color: white;
 }
-
+.discard-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #FEEAEC;
+  color: #ED1C00;
+  border : 2px solid #ED1C00;
+  transition: .5s ease-in-out;
+}
+.discard-btn:hover{
+  background-color: #ED1C00;
+  color: white;
+}
+.custom-modal{
+  box-shadow: 2px 2px 8px 0px #ABABAB29 !important;
+  border: none !important;
+}

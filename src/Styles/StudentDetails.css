@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    transition: .5s ease-in-out;
 }
 .detail-section{
     display: flex;
@@ -12,7 +13,6 @@
     gap: 30px;
     transition: .5s ease-in-out;
 }
-
 .react-icon{
     width: 25px;
     height: 25px;
@@ -27,4 +27,12 @@
     color: white;
     border: 1px solid #148CF0;
 
+}
+@media screen and (max-width:1024px) {
+    .detail-section{
+        flex-direction: column;
+    }
+    .info-section{
+        width: 100%;
+    }
 }
