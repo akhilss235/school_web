@@ -25,8 +25,8 @@ function Filter({ filterOptions, onApply }) {
     };
 
     const handleApply = () => {
-        onApply(selectedFilters);  // Send selected filters back to the parent
-        setShowDropdown(false);    // Optionally close dropdown after applying
+        onApply(selectedFilters);  
+        setShowDropdown(false);    
     };
 
     const handleReset = () => {
@@ -35,14 +35,14 @@ function Filter({ filterOptions, onApply }) {
             return acc;
         }, {});
         setSelectedFilters(resetFilters);
-        onApply(resetFilters);      // Reset filters in the parent component
+        onApply(resetFilters);     
     };
 
     return (
         <div className="filter-container" style={{ position: "relative" }}>
             <div
                 className="card d-flex align-items-center justify-content-center filterbody p-2"
-                style={{ height: "37.6px", cursor: "pointer" }}
+                style={{ height: "39.6px", cursor: "pointer" }}
                 onClick={toggleDropdown}
             >
                 <IconContext.Provider value={{ className: "react-icons", size: "1.5em" }}>
@@ -94,9 +94,9 @@ const dropdownStyles = {
     position: "absolute",
     top: "100%", 
     left: 0,
-    width: "220px",
+    width: "320px",
     backgroundColor: "#fff",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+    boxShadow: "0 4px 8px rgba(0,0,1,0.4)",
     padding: "15px",
     zIndex: 1000,
     borderRadius: "4px",

@@ -8,6 +8,8 @@ import "../Styles/Sidebar.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { PiStudent } from "react-icons/pi";
 import logo from "../img/School.png";
+import { PiChalkboardTeacherThin } from "react-icons/pi";
+import { LuUsers } from "react-icons/lu";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,7 +36,12 @@ const Sidebar = ({ children }) => {
     {
       path: "/Teachers",
       name: "Teachers",
-      icon: <MdOutlineSpaceDashboard style={{ width: "25px" }} />,
+      icon: <PiChalkboardTeacherThin style={{ width: "25px" }} />,
+    },
+    {
+      path: "/Staffs",
+      name: "Staffs",
+      icon: <LuUsers style={{ width: "25px" }} />,
     },
   ];
 

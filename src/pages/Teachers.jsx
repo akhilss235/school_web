@@ -1,8 +1,12 @@
 import React from 'react'
+import Teacherstable from '../Table/Teacherstable'
 
 function Teachers() {
   return (
-    <div>Teachers</div>
+    <div className='p-3'>
+            <Teacherstable />
+
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap"; // Import Dropdown
 import BasicBreadcrumbs from "../components/BasicBreadcrumbs";
 import Search from "../filter/Search";
@@ -13,8 +13,8 @@ import { CiLock } from "react-icons/ci";
 import Promote from "../img/Promote.png";
 import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import StLoginDetails from '../Model/StLoginDetails';
-import StInactivate from '../Model/StInactivate';
+import StLoginDetails from "../Model/StLoginDetails";
+import StInactivate from "../Model/StInactivate";
 
 function Teacherstable() {
   const [modalShow, setModalShow] = useState(false);
@@ -32,15 +32,15 @@ function Teacherstable() {
   };
   const navigate = useNavigate();
 
-  function AddStudent () {
-    navigate("/Students/AddStudent");
+  function AddTeacher() {
+    navigate("/Teachers/Add Teachers");
   }
-  
-  function ViewStudent () {
-    navigate("Students/Details");
+
+  function ViewStudent() {
+    navigate("Teachers/Details");
   }
   return (
-    <div >
+    <div>
       <div className="text-start mb-3">
         <h4>
           <b>Student List</b>
@@ -78,22 +78,22 @@ function Teacherstable() {
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="ms-3"
-            onClick={AddStudent}
+            onClick={AddTeacher}
           >
-            <FiPlus /> Add Student
+            <FiPlus /> Add Teacher
           </Button>
         </Col>
       </Row>
 
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
-        <Table responsive bordered hover>
+        <Table responsive  >
           <thead style={{ color: "#505050" }}>
             <tr>
-              <th>Student ID</th>
-              <th>Student Name</th>
+              <th>Teacher ID</th>
+              <th>Teacher Name</th>
               <th>Class</th>
               <th>Section</th>
-              <th> DOB</th>
+              <th> Subject</th>
               <th>Gender</th>
               <th>Date Of Join</th>
               <th>Phone No.</th>
@@ -107,7 +107,7 @@ function Teacherstable() {
               <td>Emma Thomas</td>
               <td>I</td>
               <td>A</td>
-              <td>02/06/2012</td>
+              <td>English</td>
               <td>Female</td>
               <td>07/12/2024</td>
               <td>+91 90876 54331</td>
@@ -127,7 +127,7 @@ function Teacherstable() {
                       href="Students/Details"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
-                      <LiaEyeSolid className="me-2" /> View Student
+                      <LiaEyeSolid className="me-2" /> View Teacher
                     </Dropdown.Item>
                     <Dropdown.Item
                       href="#/view"
@@ -135,26 +135,18 @@ function Teacherstable() {
                     >
                       <FaRegEdit className="me-2" /> Edit
                     </Dropdown.Item>
-                    <Dropdown.Item onClick={() => setModalShow(true)} style={{ borderBottom: "1px solid #D1D1D1" }}>
-
+                    <Dropdown.Item
+                      onClick={() => setModalShow(true)}
+                      style={{ borderBottom: "1px solid #D1D1D1" }}
+                    >
                       <CiLock className="me-2" /> Login Details
                     </Dropdown.Item>
 
                     <Dropdown.Item
-                      href="Students/Promote student"
-                      style={{ borderBottom: "1px solid #D1D1D1" }}
-                      
+                      href="#/delete"
+                      style={{ color: "red" }}
+                      onClick={() => setModalInactivate(true)}
                     >
-                      {" "}
-                      <img
-                        src={Promote}
-                        alt="Logo"
-                        className="me-3"
-                        style={{ maxHeight: "40px" }}
-                      />
-                      Promote Student
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/delete" style={{ color: "red" }}  onClick={() => setModalInactivate(true)}>
                       <MdOutlineToggleOff className="me-2" /> Inactivate
                     </Dropdown.Item>
                   </Dropdown.Menu>
@@ -165,10 +157,12 @@ function Teacherstable() {
         </Table>
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
-      <StInactivate show={modalInactivate} onHide={() => setModalInactivate(false)}/>
+      <StInactivate
+        show={modalInactivate}
+        onHide={() => setModalInactivate(false)}
+      />
     </div>
   );
 }
 
-
-export default Teacherstable
+export default Teacherstable;

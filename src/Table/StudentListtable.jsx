@@ -33,7 +33,7 @@ function StudentListTable() {
   const navigate = useNavigate();
 
   function AddStudent () {
-    navigate("/Students/AddStudent");
+    navigate("/Students/Add Student");
   }
   
   function ViewStudent () {
@@ -86,7 +86,7 @@ function StudentListTable() {
       </Row>
 
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
-        <Table responsive bordered hover>
+        <Table responsive              >
           <thead style={{ color: "#505050" }}>
             <tr>
               <th>Student ID</th>
