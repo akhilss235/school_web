@@ -28,7 +28,7 @@ export const Break = () => {
     ]
   return (
 
-    <div className='d-flex flex-row justify-content-between align-items-center gap-3 px-3' style={{width:"100%",}}>
+    <div className='d-flex flex-row justify-content-between align-items-center gap-3 ' style={{width:"100%",}}>
         {
             data?.map((item, index) => (
                 <div className='d-flex flex-column align-items-center justify-content-center' style={{width:"220px", height:"75px", borderRadius:"10px",border: `1px solid ${item.border}`}} >
