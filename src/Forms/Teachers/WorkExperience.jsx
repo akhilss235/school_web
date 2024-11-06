@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import InfoAccordion from "../../components/InfoAccordion";
 import { Button } from "react-bootstrap";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const WorkExperience = () => {
   return (
@@ -9,9 +10,6 @@ const WorkExperience = () => {
       <InfoAccordion title="Work Experience" iconName="WorkExperience">
         <div>
           <div className="section1 mb-5">
-          
-
-            
             <div className="row">
               <div className="col-sm-3 mt-3">
                 <Form.Label>
@@ -49,8 +47,8 @@ const WorkExperience = () => {
                   placeholder='Enter Previous School Phone No'
                 />
               </div>
-              <div className="col-sm-1 mt-3">
-              
+              <div className="col-sm-1 mt-5 ">
+              <RiDeleteBin6Line style={{fontSize:'2rem',color:'red'}}/>
               </div>
             </div>
             <Button className="addnewbuttone mt-5">Add New</Button>{" "}

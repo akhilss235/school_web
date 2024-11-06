@@ -9,6 +9,7 @@ import StDocuments from "./StDocuments";
 import StudentLoginDetails from "./StudentLoginDetails";
 import ParentLoginDetails from "./ParentLoginDetails";
 import WorkExperience from "./WorkExperience";
+import Payroll from "./Payroll";
 function AddTeachers() {
   return (
     <div className="p-3">
@@ -30,6 +31,16 @@ function AddTeachers() {
           <InfoHeader iconName="Address" title="Address" />
           <StAdderss />
         </div>
+
+        <div className="mt-5">
+          <InfoHeader iconName="Payroll" title="Payroll" />
+          <Payroll />
+        </div>
+
+
+
+
+
         <div className="mt-5">
           <TransportInformation />
         </div>
