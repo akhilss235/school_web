@@ -32,8 +32,8 @@ function Staffs() {
   };
   const navigate = useNavigate();
 
-  function AddTeacher() {
-    navigate("/Teachers/Add Teachers");
+  function AddStaff() {
+    navigate("/Staffs/Add Staff");
   }
 
   function ViewStudent() {
@@ -78,9 +78,9 @@ function Staffs() {
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="ms-3"
-            onClick={AddTeacher}
+            onClick={AddStaff}
           >
-            <FiPlus /> Add Teacher
+            <FiPlus /> Add Staff
           </Button>
         </Col>
       </Row>
@@ -89,11 +89,10 @@ function Staffs() {
         <Table responsive>
           <thead style={{ color: "#505050" }}>
             <tr>
-              <th>Teacher ID</th>
-              <th>Teacher Name</th>
-              <th>Class</th>
-              <th>Section</th>
-              <th> Subject</th>
+              <th>Staff ID</th>
+              <th>Staff Name</th>
+              <th>Department</th>
+              <th>Designation</th>
               <th>Gender</th>
               <th>Date Of Join</th>
               <th>Phone No.</th>
@@ -107,7 +106,6 @@ function Staffs() {
               <td>Emma Thomas</td>
               <td>I</td>
               <td>A</td>
-              <td>English</td>
               <td>Female</td>
               <td>07/12/2024</td>
               <td>+91 90876 54331</td>

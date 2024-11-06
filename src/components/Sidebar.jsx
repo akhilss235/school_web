@@ -44,6 +44,12 @@ const Sidebar = ({ children }) => {
       name: "Staffs",
       icon: <LuUsers style={{ width: "25px" }} />,
     },
+
+    {
+      path: "/Parents",
+      name: "Parents",
+      icon: <LuUsers style={{ width: "25px" }} />,
+    },
   ];
 
   const MenuItem = ({ item }) => {
