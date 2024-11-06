@@ -29,12 +29,6 @@
   transition: all 0.5s;
 }
 
-.linkss.active {
-  color: #148CF0;
-  background-color: #EBF5FD;
-  border-left: 2px solid #148CF0;
-
-}
 .linkss:hover {
   color: #148CF0;
   border-left: 2px solid #148CF0;
@@ -82,14 +76,25 @@
   transition: all 0.5s;
 }
 
-.submenu.active {
-  color: #148CF0;
 
-}
 .submenu:hover {
   color: #148CF0;
 
 }
 .icons {
   font-size: 10px;
+}
+
+
+
+.submenu.active {
+  color: #148CF0;
+
+}
+
+.linkss.active {
+  color: #148CF0;
+  background-color: #EBF5FD;
+  border-left: 2px solid #148CF0;
+
 }

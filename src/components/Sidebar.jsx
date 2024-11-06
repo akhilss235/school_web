@@ -26,11 +26,12 @@ const Sidebar = ({ children }) => {
     },
     {
       path: "/Students",
+      path: "/Student",
       name: "Students",
       icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
         { path: "/Students", name: "Students List", icon: <GoDotFill /> },
-        { path: "Students/Student Promotion", name: "Students Promotion", icon: <GoDotFill /> },
+        { path: "/Student/Students Promotion", name: "Student Promotion", icon: <GoDotFill /> },
       ],
     },
     {
@@ -49,12 +50,13 @@ const Sidebar = ({ children }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
     const location = useLocation();
 
+    // Determine if the current path matches any submenu paths to open the correct submenu
     useEffect(() => {
       if (item.subMenu) {
-        const isActiveSubMenu = item.subMenu.some((subItem) =>
-          location.pathname.includes(subItem.path)
+        const isSubMenuActive = item.subMenu.some((subItem) =>
+          location.pathname === subItem.path
         );
-        setIsSubMenuOpen(isActiveSubMenu);
+        setIsSubMenuOpen(isSubMenuActive);
       }
     }, [location.pathname, item.subMenu]);
 
@@ -63,6 +65,7 @@ const Sidebar = ({ children }) => {
       setIsSubMenuOpen((prev) => !prev);
     };
 
+    // Check if the main menu or exact submenu is active
     const isMainActive = () => {
       return (
         location.pathname === item.path ||
@@ -78,9 +81,7 @@ const Sidebar = ({ children }) => {
           className={`linkss ${isMainActive() ? "active" : ""}`}
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
-          <div className="icon mt-1 mb-1">
-            <>{item.icon}</>{" "}
-          </div>
+          <div className="icon mt-1 mb-1">{item.icon}</div>
           <div
             style={{ display: isOpen ? "block" : "none" }}
             className="link_text mt-2 mb-1"
@@ -136,14 +137,8 @@ const Sidebar = ({ children }) => {
       </div>
       <Offcanvas show={showModal} onHide={handleCloseModal}>
         <Offcanvas.Header closeButton>
-          <div className="">
-            {" "}
-            <img
-              src={logo}
-              alt="Logo"
-              style={{ maxHeight: "40px" }}
-              className="d-flex justify-content-center"
-            />
+          <div className="d-flex justify-content-center">
+            <img src={logo} alt="Logo" style={{ maxHeight: "40px" }} />
           </div>
         </Offcanvas.Header>
         <Offcanvas.Body>

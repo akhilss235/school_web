@@ -36,7 +36,7 @@ function App() {
             <Route path="Students" element={<Students />} />
 
             <Route path="Students/Add Student" element={<AddStudent />} />
-            <Route path="Students/Student Promotion" element={<Promotion />} />
+            <Route path="Student/Students Promotion" element={<Promotion />} />
             <Route path="Students/Promote student" element={<Promotion isStudent={true} />} />
             <Route path="Students/Details" element={<StudentDetails />}>
               <Route index element={<Details />} />

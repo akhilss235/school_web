@@ -86,7 +86,7 @@ function Teacherstable() {
       </Row>
 
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
-        <Table responsive  >
+        <Table responsive>
           <thead style={{ color: "#505050" }}>
             <tr>
               <th>Teacher ID</th>
@@ -158,8 +158,7 @@ function Teacherstable() {
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
       <StInactivate
-          className='custom-modal'
-
+        className="custom-modal"
         show={modalInactivate}
         onHide={() => setModalInactivate(false)}
       />
