@@ -74,6 +74,9 @@ const Icon = ({ iconName, fill="#EBF5FD" }) => {
 
   
 
+
+  
+
   return (
     <div style={{"backgroundColor":fill ,borderRadius:"10px"}} className='d-flex justify-content-center align-items-center svgsection' >
         <IconComponent  className='iconsvg'/>
