@@ -17,7 +17,7 @@ function PersonalInformation() {
     };
   
   return (
-    <div >
+    <div>
 
 
 {/* <div
@@ -36,6 +36,7 @@ function PersonalInformation() {
         </h4>
       </div> */}
       <InfoHeader iconName="Student" title="Personal Information"/>
+<div  style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}} className="p-2 pb-5">
 
       <div className="d-flex justify-content-start mt-5">
         {/* Image preview or placeholder */}
@@ -232,6 +233,7 @@ function PersonalInformation() {
           <Form.Control type="text" placeholder="Enter Email Address" />
         </div>
       </div>
+</div>
 
     </div>
   )

@@ -15,7 +15,7 @@ function GuardianDetails() {
 
   return (
     <div>
-      <div className="section1 mb-5">
+      <div className="section1 mb-5 p-2 pb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}} >
         <h4 className="mt-5">Guardian Details</h4>
         <div class="radio-wrapper-2">
           <label for="example-3">

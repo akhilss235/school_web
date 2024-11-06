@@ -1,45 +1,45 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 
-const Payroll = () => {
+const Leaves = () => {
   return (
     <>
-        <div style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px',}} className="p-2 pb-5  mb-5">
+        <div style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}} className="p-2 mb-5 pb-5">
             <div className="row">
               <div className="col-sm-3 mt-3">
                 <Form.Label>
-                  <b> EPF No </b>
+                  <b>Medical Leaves</b>
                 </Form.Label>
                 <Form.Control
                   type="number"
-                  placeholder='Enter EPF No'
-                />
-              </div>
-              <div className="col-sm-3 mt-3">   
-                <Form.Label>
-                  <b> Basic Salary </b>
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder='Enter Basic Salary'
+                  placeholder='Enter Medical Leaves'
                 />
               </div>
               <div className="col-sm-3 mt-3">
                 <Form.Label>
-                  <b> Contract Type </b>
+                  <b> Casual Leaves </b>
                 </Form.Label>
-                <Form.Select aria-label="Default select example">
-      <option>select Contract Type </option>
-      <option value="1">One</option>
-
-    </Form.Select>
+                <Form.Control
+                  type="number"
+                  placeholder='Enter Casual Leaves'
+                />
               </div>
               <div className="col-sm-3 mt-3">
                 <Form.Label>
-                  <b>Date of Leaving </b>
+                  <b> Maternity Leaves </b>
                 </Form.Label>
                 <Form.Control
-                  type="date"
+                  type="number"
+                  placeholder='Enter Maternity Leaves'
+                />
+              </div>
+              <div className="col-sm-3 mt-3">
+                <Form.Label>
+                  <b>Sick Leaves </b>
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter Sick Leaves"
                 />
               </div>
            
@@ -52,4 +52,4 @@ const Payroll = () => {
 };
 
 
-export default Payroll
+export default Leaves

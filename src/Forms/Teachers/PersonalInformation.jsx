@@ -37,13 +37,15 @@ function PersonalInformation() {
       }),
     };
   return (
-    <div >
+    <div style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px' }}>
 
 
 
-      <InfoHeader iconName="Student" title="Personal Information"/>
+      <InfoHeader iconName="Student" title="Personal Information" />
+<div className="p-3 pb-5">
 
-      <div className="d-flex justify-content-start mt-5">
+
+      <div className="d-flex justify-content-start mt-5 " style={{backgroundColor:'#FFFFFF'}}>
         {/* Image preview or placeholder */}
         <div>
           {imagePreview ? (
@@ -86,7 +88,7 @@ function PersonalInformation() {
         </div> 
       </div>
 
-      <div className="row">
+      <div className="row ">
         <div className="col-sm-3 mt-3">
           <Form.Label>
             <b>Teacher Id</b>
@@ -269,7 +271,7 @@ function PersonalInformation() {
           />
         </div>
       </div>
-
+</div>
     </div>
   )
 }

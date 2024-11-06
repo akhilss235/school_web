@@ -6,7 +6,7 @@ const HostelInformation = () => {
   return (
     <>
       <InfoAccordion title="Hostel Information" iconName="HostelInformation">
-        <div>
+        <div >
           <div className="section1 mb-5">
             <div className="row">
               <div className="col-sm-6 mt-3">

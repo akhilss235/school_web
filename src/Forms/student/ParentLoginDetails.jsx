@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 function ParentLoginDetails() {
   return (
     <div>
-          <div className="row">
+          <div className="row p-2 mb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>
               <div className="col-sm-6 mt-3">
                 <Form.Label>
                   <b> Username</b>

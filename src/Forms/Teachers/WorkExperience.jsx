@@ -8,8 +8,7 @@ const WorkExperience = () => {
   return (
     <>
       <InfoAccordion title="Work Experience" iconName="WorkExperience">
-        <div>
-          <div className="section1 mb-5">
+        <div  className=" mb-5">
             <div className="row">
               <div className="col-sm-3 mt-3">
                 <Form.Label>
@@ -52,7 +51,6 @@ const WorkExperience = () => {
               </div>
             </div>
             <Button className="addnewbuttone mt-5">Add New</Button>{" "}
-          </div>
         </div>{" "}
       </InfoAccordion>
 

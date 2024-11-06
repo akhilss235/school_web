@@ -7,7 +7,7 @@ const Siblings = () => {
   return (
     <>
       <InfoAccordion title="Sibling 1" iconName="Siblings">
-        <div>
+        <div >
           <div className="section1 mb-5">
             <h4 className="mt-5">Sibling Info</h4>
             <div class="radio-wrapper-2">

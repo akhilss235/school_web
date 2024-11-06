@@ -49,7 +49,7 @@ const InfoAccordion = ({ title, iconName, size = 24, children, isToggle=true, is
           }
         </div>
       </div>
-      {isOpen && <div className="accordion-body mt-2">{children}</div>}
+      {isOpen && <div className="accordion-body mt-2 p-2 pb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>{children}</div>}
     </div>
   );
 };

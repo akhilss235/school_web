@@ -3,13 +3,14 @@ import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import PersonalInformation from "./PersonalInformation";
 import InfoHeader from "../../components/InfoHeader";
 import StAdderss from "./StAdderss";
-import TransportInformation from "./TransportInformation";
-import HostelInformation from "./HostelInformation";
-import StDocuments from "./StDocuments";
-import StudentLoginDetails from "./StudentLoginDetails";
-import ParentLoginDetails from "./ParentLoginDetails";
+import TransportInformation from "../student/TransportInformation";
+import HostelInformation from "../student/HostelInformation";
+import StDocuments from "../student/StDocuments";
 import WorkExperience from "./WorkExperience";
 import Payroll from "./Payroll";
+import Leaves from "./Leaves";
+import BankAccountDetail from "./BankAccountDetail";
+import TeacherLoginDetails from "./TeacherLoginDetails";
 function AddTeachers() {
   return (
     <div className="p-3">
@@ -36,8 +37,15 @@ function AddTeachers() {
           <InfoHeader iconName="Payroll" title="Payroll" />
           <Payroll />
         </div>
+        <div className="mt-5">
+          <InfoHeader iconName="Leaves" title="Leaves" />
+          <Leaves />
+        </div>
 
-
+        <div className="mt-5">
+          <InfoHeader iconName="BankAccountDetail" title="Bank Account Detail" />
+          <BankAccountDetail />
+        </div>
 
 
 
@@ -50,24 +58,17 @@ function AddTeachers() {
         <div className="mt-5">
           <StDocuments />
         </div>
+
+
         <div className="mt-5">
-        </div>
-        <div className="mt-5">
-          <InfoHeader
+        <InfoHeader
             iconName="StudentLoginDetails"
-            title="Student Login Details"
+            title="Teacher Login Details"
           />
-          <StudentLoginDetails />
-        
+        <TeacherLoginDetails />
         </div>
-        <div className="mt-5">
-          <InfoHeader
-            iconName="StudentLoginDetails"
-            title="Parent Login Details"
-          />
-          <ParentLoginDetails />
- 
-        </div>
+      
+     
         <div className="d-flex justify-content-end mt-5 me-5 mb-5">
           <button type="button" className="btn btn-white mx-2" style={{color:'red',backgroundColor:'white',width:'200px'}}>
           Discard

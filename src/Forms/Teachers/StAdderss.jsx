@@ -3,8 +3,8 @@ import Form from 'react-bootstrap/Form';
 
 function StAdderss() {
   return (
-    <div>
-    <div className='row mt-3'> 
+    <div style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}} className='p-2 pb-5'>
+    <div className='row mt-3 '> 
 <div className='col-sm-6'>
 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label><b>Current Address</b></Form.Label>

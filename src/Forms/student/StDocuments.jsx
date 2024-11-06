@@ -7,8 +7,8 @@ const StDocuments = () => {
   return (
     <>
       <InfoAccordion title="Documents" iconName="Documents">
-        <div>
-          <div className="section1 mb-5">
+        <div >
+          <div className="section1 mb-5 ">
           
 
             

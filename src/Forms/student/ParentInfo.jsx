@@ -15,7 +15,7 @@ const ParentInfo = ({ title ,titles}) => {
   };
 
   return (
-    <div className="section1">
+    <div   style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}} className="p-2 pb-5">
       <h4 className="mt-5">{title}</h4>
       <div className="d-flex justify-content-start mt-3">
         <div>

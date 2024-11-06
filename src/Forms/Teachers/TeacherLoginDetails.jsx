@@ -1,10 +1,10 @@
 import React from 'react'
 import Form from "react-bootstrap/Form";
 
-function StudentLoginDetails() {
+function TeacherLoginDetails() {
   return (
-    <div>
-          <div className="row">
+    <div style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>
+          <div className="row p-2 pb-5 mb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>
               <div className="col-sm-6 mt-3">
                 <Form.Label>
                   <b> Username</b>
@@ -24,4 +24,4 @@ function StudentLoginDetails() {
   )
 }
 
-export default StudentLoginDetails
+export default TeacherLoginDetails

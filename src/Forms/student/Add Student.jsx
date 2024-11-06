@@ -24,7 +24,7 @@ function AddStudent() {
       <div className="mt-3">
         <PersonalInformation />
       </div>
-      <div className="mt-5">
+      <div className="mt-5"  >
         <InfoHeader iconName="Parents" title="Parents & Guardian Information" />
         <ParentInfo title="Father’s Info" titles="Father" />
         <ParentInfo title="Mother’s Info" titles="Mother" />
@@ -47,7 +47,7 @@ function AddStudent() {
         <div className="mt-5">
           <PreviousSchoolDetails />
         </div>
-        <div className="mt-5">
+        <div className="mt-5 mb-5">
           <InfoHeader
             iconName="StudentLoginDetails"
             title="Student Login Details"

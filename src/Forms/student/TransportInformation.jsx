@@ -7,8 +7,8 @@ const TransportInformation = () => {
   return (
     <>
       <InfoAccordion title="Transport Information" iconName="transport">
-        <div>
-          <div className="section1 mb-5">
+        <div  >
+          <div className="section1 mb-5 ">
             <div className="row">
               <div className="col-sm-4 mt-3">
                 <Form.Label>

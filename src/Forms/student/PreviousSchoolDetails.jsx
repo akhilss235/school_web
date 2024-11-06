@@ -7,7 +7,7 @@ function PreviousSchoolDetails() {
     <div>
           <InfoAccordion title="Previous School Details" iconName="PreviousSchoolDetails">
 
-      <div className="row mt-3">
+      <div className="row mt-3 "  >
         <div className="col">
           <Form.Label>
             <b>School Name</b>
