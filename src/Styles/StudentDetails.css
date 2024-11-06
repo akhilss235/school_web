@@ -28,11 +28,39 @@
     border: 1px solid #148CF0;
 
 }
+.image-cont{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+.default-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.details-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 @media screen and (max-width:1024px) {
     .detail-section{
         flex-direction: column;
     }
     .info-section{
         width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .student-detail-page{
+        margin: 0px;
+    }
+    .default-cont{
+        flex-direction: column;
     }
 }

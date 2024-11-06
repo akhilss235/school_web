@@ -4,7 +4,7 @@ import "../Styles/StudentDetails.css"
 import { StudentOutlet } from '../components/student/StudentOutlet'
 import { DetailSection } from '../components/student/DetailSection'
 
-export const StudentDetails = () => {
+export const StudentDetails = ({isTeacher}) => {
   return (
     <section className='student-detail-page'>
         <div className=' text-start'> 

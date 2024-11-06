@@ -57,7 +57,7 @@ export const DetailNav = ({title="students"}) => {
     }, [location.pathname]);
 
   return (
-    <div className='d-flex flex-row gap-4 align-items-center'>
+    <div className='details-nav'>
         {data[title]?.map((item) => (
             <div 
                 className={`d-flex flex-row gap-2 align-items-center item ${activeNav === item.title ? "item-active" : ""}`} 

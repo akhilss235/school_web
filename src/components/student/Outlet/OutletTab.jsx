@@ -21,6 +21,7 @@ export const OutletTab = ({columns}) => {
             columns.map((column, index)=>(
                 <p 
                     className={`m-0 p-1 px-4 outletTab ${selectedTab === column ? "selectedOutletTab" : ""}`} 
+                    style={{fontSize:"auto"}}
                     onClick={()=>handleChangeTab(column)}
                     key={index}
                 >
