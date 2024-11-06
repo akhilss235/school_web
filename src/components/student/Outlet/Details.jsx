@@ -51,7 +51,7 @@ export const Details = () => {
   return (
     <div className='d-flex flex-column gap-4'>
       <CustomCard iconName={"Parents"} title={"Parents Information"} label={"parents"} data={data["parents"]} />
-      <div className='d-flex flex-row gap-3'>
+      <div className='document-section'>
         <CustomCard iconName={"Documents"} title={"Documents"} label={"Documents"} data={data["documents"]} />
         <CustomCard iconName={"Address"} title={"Address"} label={"Address"} data={data["address"]}/>
       </div>

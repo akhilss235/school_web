@@ -47,7 +47,6 @@ export const TravelInfo = () => {
         }, 500); 
     };
 
-    console.log("displayedData", displayedData)
 
     return (
         <div className='info' style={{ gap: "10px", padding: "0px" }}>
@@ -63,7 +62,7 @@ export const TravelInfo = () => {
                 <div className={`d-flex flex-row gap-3 align-items-center icon-card-container ${isVisible ? 'icon-card-visible' : ''}`}>
                     {
                         displayedData[0]?.nestedValue?.map((item)=>(
-                        <div key={item.id}>
+                        <div key={item.id} style={{width:"100%"}}>
                             <p className='m-0' style={{ color:"#7A7A7A",fontSize:"14px",height: "20px" }}>{item.title}</p>
                             <p className='m-0 fw-semibold' style={{ fontSize:"14px",height: "20px" }}>{item.value}</p>
                         </div>

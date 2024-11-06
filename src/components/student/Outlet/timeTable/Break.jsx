@@ -28,10 +28,10 @@ export const Break = () => {
     ]
   return (
 
-    <div className='d-flex flex-row justify-content-between align-items-center gap-3 ' style={{width:"100%",}}>
+    <div className='class-break-cont' style={{width:"100%",}}>
         {
             data?.map((item, index) => (
-                <div className='d-flex flex-column align-items-center justify-content-center' style={{width:"220px", height:"75px", borderRadius:"10px",border: `1px solid ${item.border}`}} >
+                <div className='class-break-card' style={{border: `1px solid ${item.border}`}} key={index}>
                     <div className='d-flex align-items-center justify-content-center' style={{height:"30px", width:"100%",backgroundColor:item.border, color:item.color, borderTopLeftRadius:"10px", borderTopRightRadius:"10px"}}>
                         <h6 className='m-0' >{item?.title}</h6>
                     </div>

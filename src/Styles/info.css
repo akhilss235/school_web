@@ -37,97 +37,59 @@
 .item-active::after {
     transform: scaleX(1);
 }
-.icon-card-container {
-    opacity: 0;
-    transition: 0.5s ease-in-out; 
+
+.parent-card{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    transition: .5s ease-in-out;
+}
+.contact-cont{
+    align-items: center;
+    padding: 0px 20px;
 }
 
-.icon-card-visible {
-    opacity: 1;
-}
 
-
-.classtimetable {
-    /* width: 100% ; */
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  @media (max-width: 1760px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1680px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 900px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1600px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 800px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1440px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 730px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1360px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 600px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1280px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 530px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1176px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 450px;
-        margin: 0 auto;
-      }
-  }
-  @media (max-width: 1152px) {
-    .classtimetable {
-        /* width: 100% ; */
-        max-width: 350px;
-        margin: 0 auto;
-      }
-  }
 
   
   
-
-  .time-table {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 2px 2px 8px 0px rgba(171, 171, 171, 0.16);
-    overflow-x: auto;
-    transition: 0.5s ease-in-out;
-  }
-
-@media screen and (max-width:1024px) {
-    .info{
-        width: 100%;
-        /* align-items: center;
-        justify-content: center; */
+  
+    .document-section{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        transition: .5s ease-in-out;
     }
-    .info .student-card{
-        width: 100%;
+    
+    @media screen and (max-width:1024px) {
+        .info{
+            width: 100%;
+            /* align-items: center;
+            justify-content: center; */
+        }
+        .info .student-card{
+            width: auto;
+        }
+        .document-section{
+            flex-direction: column;
+        }
     }
-}
+    
+    @media screen and (max-width:600px) {
+        .parent-card{
+            flex-direction: column;
+            /* justify-content: flex-start; */
+        }
+        .parent-card .image-cont{
+            height: 80px;
+            width: 80px;
+        }
+        .contact-cont{
+            align-items: start;
+            padding: 0px;
+            
+        }
+    }
+    
+    

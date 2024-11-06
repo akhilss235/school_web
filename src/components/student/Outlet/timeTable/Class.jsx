@@ -311,9 +311,9 @@ export const Class = () => {
   );
 
   return (
-    <div>
+    <div className="period-table-cont">
       <div className="d-flex flex-column  classtimetable">
-        <div className="d-flex flex-column  time-table mb-5">
+        <div className="d-flex flex-column  time-table mb-5 p-2">
           <table>
             <thead>
               <tr>
@@ -334,7 +334,7 @@ export const Class = () => {
                   {timeTableData.map((dayData, dayIndex) => (
                     <td key={dayIndex} className="text-center">
                       {dayData.classes[rowIndex] ? (
-                        <div className="d-flex flex-column align-items-center p-1">
+                        <div className="d-flex flex-column align-items-center p-2">
                           <ClassScheduleCard
                             data={dayData.classes[rowIndex]}
                             bg={bg(dayData.classes[rowIndex].subject)}

@@ -15,14 +15,14 @@ export const Info = () => {
         <StudentCard isInfo={true} data={data}/>
         <p className='m-0 fw-semibold'  style={{fontSize:"18px"}}>Basic Information</p>
         <div className='d-flex flex-row gap-4'>
-            <div className='d-flex flex-column gap-1'> 
+            <div className='d-flex flex-column gap-1' style={{width:"100%"}}> 
                 {
                     studentInfoKey.map((key, index) => (
                         <p className='m-0 fw-semibold' key={index}>{key}</p>
                     ))
                 }
             </div>
-            <div className='d-flex flex-column gap-1'> 
+            <div className='d-flex flex-column gap-1' style={{width:"100%"}}> 
                 {
                     studentInfoValue.map((key, index) => (
                         <p className='m-0' key={index}>{key}</p>

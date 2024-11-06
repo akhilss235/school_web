@@ -9,7 +9,7 @@ export const CustomCard = ({iconName, title, label, data, isRow=false, columns})
   return (
     <div style={{border: "1px solid #EBF5FD", boxShadow: "2px 2px 8px 0px #ABABAB29", borderRadius:"15px", width:"100%"}}>
         <InfoHeader iconName={iconName} title={title} size={20}/>
-        <div className={`d-flex ${isRow ? "flex-row": "flex-column"} gap-3`} style={{padding:"15px"}}>
+        <div className={`d-flex ${isRow ? "flex-row": "flex-column"} gap-3 `} style={{padding:"15px"}}>
             {
                 data?.map((item)=>(
                     label === "parents" ?

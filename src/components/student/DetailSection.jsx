@@ -1,23 +1,38 @@
 import React from 'react'
 import { Info } from './Info'
-import { ContactInfo } from './ContactInfo'
-import { StudentCard } from './StudentCard'
+import { InfoCard } from '../InfoCard'
 import { TravelInfo } from '../TravelInfo'
 
-export const DetailSection = () => {
+export const DetailSection = ({isTeacher=false}) => {
   const data = {
     name:"murugasa",
     "class":"IV",
     "number":"325235325"
   }
+  const contactData = [
+    {
+        id:"1",
+        icon:"mobile",
+        title:"Phone Number",
+        value:"+1 123 456 7890"
+    },
+    {
+        id:"2",
+        icon:"email",
+        title:"Email",
+        value:"emma@gmail.com"   
+    }
+  ]
   return (
     <div className='d-flex flex-column gap-3 info-section'>
         <Info />
-        <ContactInfo />
-        <div className='info'>
-          <p className='m-0 fw-semibold'  style={{fontSize:"18px"}}>Sibling Information</p>
-          <StudentCard isInfo={false} data={data}/>
-        </div>
+        <InfoCard title={"Primary Contact Info"} data={contactData} />
+        {
+          isTeacher ?
+             <InfoCard title={"Work Details"} data={contactData} />
+          :  <InfoCard title={"Sibling Information"} data={data} isStudentCard={true}/>
+        }
+        
         <TravelInfo />
     </div>
   )
