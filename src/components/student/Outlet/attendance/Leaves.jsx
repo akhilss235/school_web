@@ -79,7 +79,7 @@ const Leaves = () => {
     setCurrentPage(page);
   };
   return (
-    <div className="">
+    <div >
       <Row className="text-start mb-3">
         <Col>
           <h4>
@@ -90,38 +90,36 @@ const Leaves = () => {
           <Search />
         </Col>
       </Row>
-      <Row
-        className="justify-content-between mb-3"
-      >
-        <Col>
-          <Row>
-            <Col sm={3}>
-              <div
-                className="card d-flex align-items-center justify-content-center filterbody p-2"
-                style={{width:'78px', height: "37.6px", cursor: "pointer" }}
-              >
-                <IconContext.Provider
-                  value={{ className: "react-icons", size: "1.5em" }}
-                >
-                  <div className="d-flex align-items-center">
-                    <GoFilter className="Filteric" />
-                    <span className="Filteric p-1">Filter</span>
-                  </div>
-                </IconContext.Provider>
+      <Row className="mb-3">
+        <Col sm={"auto"} className="mb-3">
+          <div
+            className="card d-flex align-items-center justify-content-center filterbody p-2"
+            style={{ width: "78px", height: "37.6px", cursor: "pointer" }}
+          >
+            <IconContext.Provider
+              value={{ className: "react-icons", size: "1.5em" }}
+            >
+              <div className="d-flex align-items-center">
+                <GoFilter className="Filteric" />
+                <span className="Filteric p-1">Filter</span>
               </div>
-            </Col>
-            <Col sm={"auto"}>
-              <DropdownFilter
-                filterOptions={filterOptions}
-                selectedOption={selectedLeaveType}
-                handleOptionChange={handleLeaveTypeChange}
-              />
-            </Col>
-          </Row>
+            </IconContext.Provider>
+          </div>
         </Col>
-        <Col className="d-flex gap-3">
-          <GetDate title="From" />
-          <GetDate title="To" />
+        <Col sm={"auto"} className="mb-3">
+          <DropdownFilter
+            filterOptions={filterOptions}
+            selectedOption={selectedLeaveType}
+            handleOptionChange={handleLeaveTypeChange}
+          />
+        </Col>
+        <Col sm={'auto'} className="d-flex flex-wrap">
+          <div className="me-2 mb-3" style={{ minWidth: "200px" }}>
+            <GetDate title="From" />
+          </div>
+          <div style={{ minWidth: "200px" }}>
+            <GetDate title="To" />
+          </div>
         </Col>
       </Row>
       <div>

@@ -2,7 +2,7 @@
 import React from "react";
 import { IconCard } from "./IconCard";
 import { Row, Col } from "react-bootstrap";
-import AttendanceDetails from './AttendanceDetails'; // Adjust the import path as needed
+import AttendanceDetails from './AttendanceDetails'; 
 
 const AttendanceRecords = () => {
   const addData = [
@@ -29,7 +29,7 @@ const AttendanceRecords = () => {
     <div>
       <Row className="align-items-center text-break">
         {addData.map((item) => (
-          <Col style={{ width: "auto" }} className="mb-3" sm={4} key={item.id}>
+          <Col xs={12} sm={4} md={4} className="mb-3" style={{minWidth:'260px'}} key={item.id}>
             <IconCard data={[item]} />
           </Col>
         ))}

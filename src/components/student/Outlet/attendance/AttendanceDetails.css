@@ -2,9 +2,8 @@
 .attendance-container{
   background-color: white;
 }
-/* .attendance-row{
-  width:800px;
-} */
+
+
 .attendance-row th {
     border-bottom: none !important; /* Remove bottom border */
 

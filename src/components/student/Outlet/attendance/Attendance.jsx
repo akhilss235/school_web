@@ -38,9 +38,9 @@ export const Attendance = () => {
   };
 
   return (
-    <div className="p-0">
+    <div className="p-0 attendancemaindiv">
       <Row className="mb-4">
-        <Col>
+        <Col  className="mb-2">
           <OutletTab columns={columns} />
         </Col>
         <Col sm={'auto'}>
@@ -54,7 +54,7 @@ export const Attendance = () => {
           )}
         </Col>
       </Row>
-      <div className="pt-3 p-3" style={{backgroundColor:'aliceblue',borderRadius:'10px'}} >{renderTabContent()}</div>
+      <div className="pt-3 p-3 rendertabcontent" style={{backgroundColor:'aliceblue',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };
