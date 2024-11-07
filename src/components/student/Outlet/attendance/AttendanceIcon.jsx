@@ -4,7 +4,6 @@ import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiCircleHalfFill } from "react-icons/pi";
 import { BsCircleHalf } from "react-icons/bs";
-import { IconCard } from "./IconCard";
 import holidayicon from "../../../../img/holidayimage.png"
 
 const AttendanceIcon = ({ type, label }) => {
@@ -25,7 +24,7 @@ const AttendanceIcon = ({ type, label }) => {
       case 'firstHalf':
         return <PiCircleHalfFill size={18}  style={{ color: '#E41DA5' }} />;
       case 'secondHalf':
-        return <BsCircleHalf size={15}  style={{ color: '#A01494' }} />;
+        return <BsCircleHalf size={15}  style={{ color: '#A01494' ,marginLeft:'1.5px'}} />;
       case 'holiday':
         return <img src={holidayicon} alt="Holiday" style={{ width: "18px", height: "18px" }} />;
         // <span role="img" aria-label="Holiday">🌴</span>;         

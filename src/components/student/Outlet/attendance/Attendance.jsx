@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap"; // Import Dropdown
 import { OutletTab } from "../OutletTab";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectTab } from "../../../../features/student/tabSlice";
 import Leaves from "./Leaves";
 import AttendanceRecords from "./AttendanceRecords";
-import { IoCalendarOutline } from "react-icons/io5";
 import DropdownFilter from "./DropdownFilter";
-
+import "./Attendance.css";
 
 export const Attendance = () => {
   const columns = ["Leaves", "Attendance"];
@@ -25,12 +24,9 @@ export const Attendance = () => {
     }
   };
 
-
   const filterOptions = {
     label: "Academic Year",
-    options: [
-"2024/2025"
-    ],
+    options: ["2024/2025"],
   };
 
   const handleLeaveTypeChange = (event) => {
@@ -38,23 +34,27 @@ export const Attendance = () => {
   };
 
   return (
-    <div className="p-0 attendancemaindiv">
-      <Row className="mb-4">
-        <Col  className="mb-2">
+    <div className="p-0 attendancesectionmaindiv">
+      <Row className="mb-3">
+        <Col className="mb-2">
           <OutletTab columns={columns} />
         </Col>
-        <Col sm={'auto'}>
+        <Col sm={"auto"}>
           {selectedTab === "Attendance" && (
-
-                <DropdownFilter
-                filterOptions={filterOptions}
-                selectedOption={selectedLeaveType}
-                handleOptionChange={handleLeaveTypeChange}
-              />
+            <DropdownFilter
+              filterOptions={filterOptions}
+              selectedOption={selectedLeaveType}
+              handleOptionChange={handleLeaveTypeChange}
+            />
           )}
         </Col>
       </Row>
-      <div className="pt-3 p-3 rendertabcontent" style={{backgroundColor:'aliceblue',borderRadius:'10px'}} >{renderTabContent()}</div>
+      <div
+        className="pt-3 p-3 rendertabcontent"
+        style={{  borderRadius: "10px" }}
+      >
+        {renderTabContent()}
+      </div>
     </div>
   );
 };

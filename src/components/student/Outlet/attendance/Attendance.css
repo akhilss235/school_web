@@ -1,0 +1,39 @@
+.attendancesectionmaindiv {
+  width: 100% ;
+}
+/* .rendertabcontent {
+  max-width: 100% ;
+}
+.attendancepage {
+  max-width: 100%;
+} */
+
+.attendance-container {
+  background-color: white;
+  border-radius: 10px;
+}
+.attendance-row th {
+  border-bottom: none !important;
+}
+.table-responsive {
+  overflow-x: auto;
+  table-layout: fixed;
+  width: 100%;
+}
+.table-responsive th,
+.table-responsive td {
+  text-align: center; 
+}
+.fixed-width-col {
+  width: 180px; 
+  min-width: 180px;
+  max-width: 180px;
+  text-align: start !important;
+}
+.no-border-bottom td{
+  border-bottom: none !important;
+}
+
+
+
+

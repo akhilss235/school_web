@@ -1,11 +1,6 @@
 import React from "react";
-import { Table, Dropdown } from "react-bootstrap";
-import { GoDotFill } from "react-icons/go";
-import { LiaEyeSolid } from "react-icons/lia";
-import { FaRegEdit } from "react-icons/fa";
-import { CiLock } from "react-icons/ci";
-import { MdOutlineToggleOff } from "react-icons/md";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { Table } from "react-bootstrap";
+
 
 function CustomTable({ headers, data }) {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../../../SvgComponent";
-import { Row, Col } from "react-bootstrap";
+// import { Row, Col } from "react-bootstrap";
 
 export const IconCard = ({
   data,

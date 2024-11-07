@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Table, OverlayTrigger } from "react-bootstrap";
 import AttendanceIcon from "./AttendanceIcon"; // Make sure this component is defined with icons
-import "./AttendanceDetails.css";
-import { FaStackOverflow } from "react-icons/fa";
+import "./Attendance.css";
+
 
 const AttendanceDetails = () => {
   const monthNames = [
@@ -51,15 +51,19 @@ const AttendanceDetails = () => {
       <Row className="attendance-row align-items-center">
         <Col
           xs={12}
-          sm={'auto'}
-          className="fixed-width-col fw-bold fs-20"
+          sm={"auto"}
+          className="fixed-width-col py-3 fw-bold fs-20"
           style={{ paddingLeft: "20px" }}
         >
           Attendance
         </Col>
-        <Col xs={12} sm={'auto'} style={{ paddingLeft: "20px" }}>
+        <Col xs={12} sm={"auto"} style={{ paddingLeft: "20px" }}>
           <Row className="justify-content-start align-items-start">
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14 text-start">
+            <Col
+              xs={6}
+              sm={"auto"}
+              className="py-3 fw-semibold fs-14 text-start"
+            >
               <AttendanceIcon type="present" label="Present" />
             </Col>
             <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
@@ -68,7 +72,7 @@ const AttendanceDetails = () => {
             <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
               <AttendanceIcon type="firstHalf" label="First Half" />
             </Col>
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
+            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14" >
               <AttendanceIcon type="secondHalf" label="Second Half" />
             </Col>
             <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
@@ -77,9 +81,8 @@ const AttendanceDetails = () => {
           </Row>
         </Col>
       </Row>
-      <div  style={{ overflowX: "auto",minWidth:'40vw',maxWidth:'50vw',width:'100%' }}>
-      <div className="table-responsive" >
-        <Table responsive >
+      <div className="table-responsive">
+        <Table responsive className="">
           <thead style={{ color: "#505050" }}>
             <tr>
               <th className="fixed-width-col fs-18">Date/Month</th>
@@ -92,7 +95,7 @@ const AttendanceDetails = () => {
           </thead>
           <tbody>
             {attendanceData.map((attendance, index) => (
-              <tr key={index}>
+              <tr key={index} className={attendance.month === "December" ? "no-border-bottom" : ""}>
                 <td className="fixed-width-col fw-semibold fs-14">
                   {attendance.month}
                 </td>
@@ -120,16 +123,17 @@ const AttendanceDetails = () => {
           </tbody>
         </Table>
       </div>
-      </div>
     </div>
   );
 };
 
 export default AttendanceDetails;
 
-
-            {/* Attendance Row */}
-            {/* <tr className="attendance-row">
+{
+  /* Attendance Row */
+}
+{
+  /* <tr className="attendance-row">
               <th className="fixed-width-col">Attendance</th>
               <th className="icon-header">
                 <AttendanceIcon type="present" label="Present" />
@@ -149,5 +153,8 @@ export default AttendanceDetails;
               {Array.from({ length: 25 }).map((_, i) => (
                 <th key={`spacer-${i}`}></th>
               ))}
-            </tr> */}
-            {/* Date Row */}
+            </tr> */
+}
+{
+  /* Date Row */
+}

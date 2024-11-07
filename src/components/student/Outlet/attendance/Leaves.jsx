@@ -10,7 +10,6 @@ import DropdownFilter from "./DropdownFilter";
 // import { selectTab } from '../../../features/student/tabSlice';
 import { GoFilter } from "react-icons/go";
 import { IconContext } from "react-icons";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import CustomTable from "./CustomTable";
 import Pagination from "./Pagination";
 import ResultsSummary from "./ResultsSummary";

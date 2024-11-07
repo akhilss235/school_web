@@ -2,7 +2,8 @@
 import React from "react";
 import { IconCard } from "./IconCard";
 import { Row, Col } from "react-bootstrap";
-import AttendanceDetails from './AttendanceDetails'; 
+import AttendanceDetails from "./AttendanceDetails";
+import "./Attendance.css";
 
 const AttendanceRecords = () => {
   const addData = [
@@ -26,16 +27,24 @@ const AttendanceRecords = () => {
     },
   ];
   return (
-    <div>
+    <div className="attendancepage">
       <Row className="align-items-center text-break">
         {addData.map((item) => (
-          <Col xs={12} sm={4} md={4} className="mb-3" style={{minWidth:'260px'}} key={item.id}>
+          <Col
+            xs={12}
+            sm={4}
+            className="mb-3"
+            style={{ minWidth: "260px",flexGrow:'1' }} 
+            key={item.id}
+          >
             <IconCard data={[item]} />
           </Col>
         ))}
       </Row>
       <Row>
-        <Col><AttendanceDetails/></Col>
+        <Col>
+          <AttendanceDetails />
+        </Col>
       </Row>
     </div>
   );
