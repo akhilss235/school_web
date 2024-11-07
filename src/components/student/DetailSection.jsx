@@ -23,13 +23,21 @@ export const DetailSection = ({isTeacher=false}) => {
         value:"emma@gmail.com"   
     }
   ]
+  const workDetailData = [
+    {
+      "id":1,
+      icon:"email",
+      title:"Contract Type",
+      value:"Permanent" 
+    }
+  ]
   return (
     <div className='d-flex flex-column gap-3 info-section'>
         <Info />
         <InfoCard title={"Primary Contact Info"} data={contactData} />
         {
           isTeacher ?
-             <InfoCard title={"Work Details"} data={contactData} />
+             <InfoCard title={"Work Details"} data={workDetailData} />
           :  <InfoCard title={"Sibling Information"} data={data} isStudentCard={true}/>
         }
         

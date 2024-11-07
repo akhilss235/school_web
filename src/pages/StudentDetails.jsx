@@ -5,15 +5,16 @@ import { StudentOutlet } from '../components/student/StudentOutlet'
 import { DetailSection } from '../components/student/DetailSection'
 
 export const StudentDetails = ({isTeacher}) => {
+  const title = isTeacher ? "Teacher Details" : "Student details"
   return (
     <section className='student-detail-page'>
         <div className=' text-start'> 
-            <h4><b>Student Details</b></h4>
+            <h4><b>{title}</b></h4>
             <BasicBreadcrumbs />
         </div>
         <div className='detail-section'>
-            <DetailSection />
-            <StudentOutlet />
+            <DetailSection isTeacher={isTeacher} />
+            <StudentOutlet isTeacher={isTeacher}/>
         </div>
     </section>
   )

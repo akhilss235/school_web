@@ -6,13 +6,13 @@ import { IoCashOutline } from "react-icons/io5";
 import { PiExam } from "react-icons/pi";
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export const DetailNav = ({title="students"}) => {
+export const DetailNav = ({title}) => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const [activeNav, setActiveNav] = useState(title === "Details" ? "Students" : "Teacher Details")
+    const [activeNav, setActiveNav] = useState("")
     const data = {
-        students:[
+        student:[
             {
                 id:"1",
                 icon: <PiStudentLight className='react-icon'/>,
@@ -38,22 +38,55 @@ export const DetailNav = ({title="students"}) => {
                 icon: <PiExam className='react-icon' />,
                 title:"Exams"
             },
-        ]
+        ],
+        teacher:[
+            {
+                id:"1",
+                icon: <PiStudentLight className='react-icon'/>,
+                title:"Teacher"
+            },
+            {
+                id:"2",
+                icon: <HiOutlineTableCells className='react-icon' />,
+                title:"Time Table"
+            },
+            {
+                id:"3",
+                icon: <IoIosFingerPrint className='react-icon' />,
+                title:"Attendance"
+            },
+            {
+                id:"5",
+                icon: <PiExam className='react-icon' />,
+                title:"Salary"
+            }
+           
+        ],
     }
 
     const handleChangeNav = (item)=>{
         setActiveNav(item)
-        if(item === "Details"){
-            navigate(`/students/Details`)
+        if(title === "teacher"){
+            if(item === "Teacher"){
+                navigate(`/Teachers/Details`)
+            }else{
+                navigate(`/Teachers/Details/${item}`)
+            }
         }else{
-            navigate(`/students/Details/${item}`)
+            if(item === "Details"){
+                navigate(`/students/Details`)
+            }else{
+                navigate(`/students/Details/${item}`)
+            }
         }
     }
 
     useEffect(() => {
         const pathSegments = location.pathname.split('/').filter(segment => segment);
         const lastSegment = pathSegments[pathSegments.length - 1].replace(/%20/g, " ");
-        setActiveNav(lastSegment);
+        lastSegment === "Details" &&  title === "teacher" ?
+        setActiveNav("Teacher")
+        :setActiveNav(lastSegment);
     }, [location.pathname]);
 
   return (

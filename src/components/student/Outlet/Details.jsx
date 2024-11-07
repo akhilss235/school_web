@@ -1,7 +1,7 @@
 import React from 'react'
 import { CustomCard } from '../../CustomCard'
 
-export const Details = () => {
+export const Details = ({isTeacher}) => {
   const data = {
     "parents": [
       {
@@ -27,6 +27,16 @@ export const Details = () => {
         "photoUrl": "path/to/photo.jpg"
       }
     ],
+    "profileDetails":[
+      {
+        fathersName:"Born",
+        mothersName:"Born",
+        dob:"22/11/2002",
+        martialStatus:"Single",
+        qualification:"BBA",
+        experience:"2 years"
+      }
+    ],
     "documents": [
       {
         "name": "Birth Certificate",
@@ -43,19 +53,38 @@ export const Details = () => {
     }],
     "previousSchool": [{
       "name": "National Public School",
-      "address": "228, Avvai Shanmugam Salai, Ganapathy Colony, Gopalapuram, Chennai, Tamil Nadu 600086"
+      "address": "228, Avvai Shanmugam Salai, Ganapathy Colony, Gopalapuram, Chennai, Tamil Nadu 600086",
+      "phoneNumber":"322433523"
+    }],
+    "bankDetails": [{
+      "accountName": "Glenn Maxwell",
+      "bankName":"Australian Bank",
+      "branch":"Sydney",
+      "accountNumber": "1234567890",
+      "ifscCode": "SYD2142412412"
     }]
   }
-  const addressColumn = {"Previous School Name":"name", "School Address":"address"}
+  const addressColumn = {"Previous School Name":"name", "School Address":"address", "Phone Number":"phoneNumber"}
+  const bankDetailsColumn = {"Account Name":"accountName", "Bank Name":"bankName", "Branch":"branch", "Account Number":"accountNumber","IFSC Code": "ifscCode"}
+  const teacherDetailsColumn = {"Father's Name":"fathersName", "Mother's Name":"mothersName", "DOB":"dob","Martial Status":"martialStatus","Qualification": "qualification", "Experience":"experience"}
 
   return (
     <div className='d-flex flex-column gap-4'>
-      <CustomCard iconName={"Parents"} title={"Parents Information"} label={"parents"} data={data["parents"]} />
+      {
+        isTeacher 
+        ? <CustomCard iconName={"School"} title={"Profile Details"} label={"School"} data={data["profileDetails"]} columns={teacherDetailsColumn} />
+        : <CustomCard iconName={"Parents"} title={"Parents Information"} label={"parents"} data={data["parents"]} />
+      }
       <div className='document-section'>
         <CustomCard iconName={"Documents"} title={"Documents"} label={"Documents"} data={data["documents"]} />
         <CustomCard iconName={"Address"} title={"Address"} label={"Address"} data={data["address"]}/>
       </div>
       <CustomCard iconName={"School"} title={"Previous School Details"} label={"School"} data={data["previousSchool"]} columns={addressColumn} />
+      {
+        isTeacher &&
+        <CustomCard iconName={"School"} title={"Bank Details"} label={"School"} data={data["bankDetails"]} columns={bankDetailsColumn} />
+      }
+
     </div>
   )
 }

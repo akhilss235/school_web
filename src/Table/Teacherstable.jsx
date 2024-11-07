@@ -124,7 +124,7 @@ function Teacherstable() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href="Students/Details"
+                      href="Teachers/Details"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View Teacher

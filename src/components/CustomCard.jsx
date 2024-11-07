@@ -19,7 +19,7 @@ export const CustomCard = ({iconName, title, label, data, isRow=false, columns})
                     : label === "Address" ? 
                         <AddressCard data={item} />
                     : 
-                     <DefaultShow item={item} columns={columns}/>
+                     <DefaultShow item={item} columns={columns} title={title}/>
                 ))
             }
         </div>  
