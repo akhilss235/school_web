@@ -35,7 +35,6 @@ function App() {
           <Route path="/" element={<SidebarLayout />}>
             <Route path="Dashboard" element={<Dashboard />} />
             <Route path="Students" element={<Students />} />
-
             <Route path="Students/Add Student" element={<AddStudent />} />
             <Route path="Students/Student Promotion" element={<Promotion />} />
             <Route path="Students/Promote student" element={<Promotion isStudent={true} />} />
@@ -45,8 +44,6 @@ function App() {
               <Route path="Attendance" element={<Attendance isTeacher={false}  />} />
               <Route path="Fees" element={<Fees />} />
               <Route path="Exams" element={<Exam />} />
-
-
             </Route>
             <Route path="Teachers" element={<Teachers />} />
             <Route path="Teachers/Details" element={<StudentDetails isTeacher={true} />}>

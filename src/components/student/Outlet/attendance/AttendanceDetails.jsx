@@ -112,6 +112,9 @@ const AttendanceDetails = ({isTeacher}) => {
                     {day.status === "holiday" && (
                       <AttendanceIcon type="holiday" label="" />
                     )}
+                    {day.status === "late" && (
+                      <AttendanceIcon type="late" label="" />
+                    )}
                   </td>
                 ))}
               </tr>

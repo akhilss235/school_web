@@ -26,7 +26,7 @@ import { ReactComponent as PresentIcon } from '../img/present.svg';
 import { ReactComponent as AbsentIcon } from '../img/absent.svg';
 import { ReactComponent as FirstHalfIcon } from '../img/firsthalf.svg';
 import { ReactComponent as HolidayIcon } from '../img/holiday.svg';
-
+import { ReactComponent as LateIcon } from '../img/late.svg';
 import { ReactComponent as Payroll } from '../img/Payroll.svg';
 import { ReactComponent as Leaves } from '../img/Leaves.svg';
 import { ReactComponent as BankAccountDetail } from '../img/BankAccountDetail.svg';
@@ -57,12 +57,13 @@ const icons = {
   WorkExperience:WorkExperience,
   Present:PresentIcon,
   Absent:AbsentIcon,
+  Late:LateIcon,
   FirstHalf:FirstHalfIcon,
   Holiday:HolidayIcon,
-
   Payroll:Payroll,
   Leaves:Leaves,
-  BankAccountDetail:BankAccountDetail
+  BankAccountDetail:BankAccountDetail,
+
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {
@@ -74,7 +75,7 @@ const Icon = ({ iconName, fill="#EBF5FD" }) => {
 
 
   return (
-    <div style={{"backgroundColor":fill ,borderRadius:"10px"}} className='d-flex justify-content-center align-items-center svgsection' >
+    <div style={{"backgroundColor":fill ,borderRadius:"10px"}} className='d-flex justify-content-center align-items-center svgsection'  >
         <IconComponent  className='iconsvg'/>
     </div>
   );
