@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Table, OverlayTrigger } from "react-bootstrap";
 import AttendanceIcon from "./AttendanceIcon"; // Make sure this component is defined with icons
 import "./Attendance.css";
+import { toCamelCase } from "../../../../utils/function";
 
 
-const AttendanceDetails = () => {
+const AttendanceDetails = ({isTeacher}) => {
   const monthNames = [
     "January",
     "February",
@@ -46,6 +47,13 @@ const AttendanceDetails = () => {
     fetchData();
   }, []);
 
+  const studentAttendanceStatus = ["Present", "Absent", "First Half", "Second Half", "Holiday"]
+  const teacherAttendanceStatus = ["Present", "Absent", "First Half", "Second Half", "Holiday", "Late"]
+
+  console.log("calCae", toCamelCase("First Half"))
+
+  const attendanceStatus = isTeacher ? teacherAttendanceStatus : studentAttendanceStatus
+
   return (
     <div className="attendance-container">
       <Row className="attendance-row align-items-center">
@@ -59,25 +67,13 @@ const AttendanceDetails = () => {
         </Col>
         <Col xs={12} sm={"auto"} style={{ paddingLeft: "20px" }}>
           <Row className="justify-content-start align-items-start">
-            <Col
-              xs={6}
-              sm={"auto"}
-              className="py-3 fw-semibold fs-14 text-start"
-            >
-              <AttendanceIcon type="present" label="Present" />
-            </Col>
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
-              <AttendanceIcon type="absent" label="Absent" />
-            </Col>
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
-              <AttendanceIcon type="firstHalf" label="First Half" />
-            </Col>
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14" >
-              <AttendanceIcon type="secondHalf" label="Second Half" />
-            </Col>
-            <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14">
-              <AttendanceIcon type="holiday" label="Holiday" />
-            </Col>
+            {
+              attendanceStatus.map((data, index)=>(
+                <Col xs={6} sm={"auto"} className="py-3 fw-semibold fs-14" key={index}>
+                  <AttendanceIcon type={toCamelCase(data)} label={data} />
+                </Col>
+              ))
+            }
           </Row>
         </Col>
       </Row>

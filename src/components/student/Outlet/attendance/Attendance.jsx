@@ -19,7 +19,7 @@ export const Attendance = ({isTeacher}) => {
       case "Leaves":
         return <Leaves isTeacher={isTeacher} />;
       case "Attendance":
-        return <AttendanceRecords />;
+        return <AttendanceRecords isTeacher={isTeacher}/>;
       default:
         return <Leaves isTeacher={isTeacher}  />; // Default to Leaves if no tab is selected
     }
@@ -50,7 +50,7 @@ export const Attendance = ({isTeacher}) => {
           )}
         </Col>
       </Row>
-      <div className="pt-3 p-3 rendertabcontent " style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
+      <div className="pt-3 p-3 rendertabcontent time-table" style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };

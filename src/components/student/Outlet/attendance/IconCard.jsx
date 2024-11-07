@@ -10,7 +10,9 @@ export const IconCard = ({
   borderColor = "",
 }) => {
   return (
-    <div className="d-flex">
+    <div 
+    className="d-flex" 
+    >
     {data?.map((item) => (
       <div
         key={item.id}
@@ -21,7 +23,12 @@ export const IconCard = ({
         //   margin: '10px', // This adds space between the cards
           display: 'flex',
           alignItems: 'center',
-          flexGrow:'1'
+          flexGrow:'1',
+          border: `1px solid ${item.icon === "Present" ? "#D5FDCE":
+          item.icon === "Absent" ? "#ECCDD5" :
+          item.icon === "FirstHalf" ? "#E2CCE2":
+          item.icon === "Late" ? "#F9EED1" :
+          "white"}`
           // width: '250px', // You can adjust the width as needed
         }}
       >

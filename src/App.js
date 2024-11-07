@@ -42,7 +42,7 @@ function App() {
             <Route path="Students/Details" element={<StudentDetails isTeacher={false} />}>
               <Route index element={<Details isTeacher={false}  />} />
               <Route path="Time Table" element={<TimeTable isTeacher={false}  />} />
-              <Route path="Attendance" element={<Attendance isTeacher={true}  />} />
+              <Route path="Attendance" element={<Attendance isTeacher={false}  />} />
               <Route path="Fees" element={<Fees />} />
               <Route path="Exams" element={<Exam />} />
 
