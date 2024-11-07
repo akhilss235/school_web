@@ -8,6 +8,7 @@ import Pagination from "./Outlet/attendance/Pagination"
 import CustomTable from "./Outlet/attendance/CustomTable"
 import { useState } from "react"
 import { GoFilter } from "react-icons/go";
+import { IconCard } from "./Outlet/attendance/IconCard"
 
 
 export const Salary = () => {
@@ -65,6 +66,27 @@ export const Salary = () => {
       netSalary: "24,000",
     },
   ];
+
+  const attentanceData = [
+    {
+      id: 1,
+      icon: "Present",
+      title: `Rs. 252352`,
+      value: "Total Net Salary",
+    },
+    {
+      id: 2,
+      icon: "Absent",
+      title: `Rs. 265222`,
+      value: "Total Gross Salary",
+    },
+    {
+      id: 3,
+      icon: "FirstHalf",
+      title: `Rs. 52325352`,
+      value: "Total Deduction",
+    },
+  ];
   const handleLeaveTypeChange = (event) => {
     setSelectedLeaveType(event.target.value);
   };
@@ -72,7 +94,20 @@ export const Salary = () => {
     setCurrentPage(page);
   };
   return (
-    <div className="salary-section">
+    <div className="d-flex flex-column gap-2">
+      <Row className="align-items-center text-break" >
+        {attentanceData?.map((item) => (
+          <Col
+            xs={12}
+            sm={4}
+            className="mb-3"
+            style={{ minWidth: "260px"}} 
+            key={item.id}
+          >
+            <IconCard data={[item]} />
+          </Col>
+        ))}
+      </Row>
       <div className="salary-table-section">
         <Row className="text-start mb-3 p-3">
           <Col>
