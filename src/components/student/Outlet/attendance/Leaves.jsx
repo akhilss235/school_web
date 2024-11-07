@@ -117,7 +117,7 @@ const Leaves = ({isTeacher}) => {
         </div>
       }
       <div>
-        <Row className="text-start mb-3">
+        <Row className="text-start mb-3" style={{width:"100%"}}>
           <Col>
             <h4>
               <b>Leaves</b>

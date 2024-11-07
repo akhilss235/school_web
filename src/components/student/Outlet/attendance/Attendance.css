@@ -33,7 +33,19 @@
 .no-border-bottom td{
   border-bottom: none !important;
 }
-
+.attendance-tab-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: .5s ease-in-out;
+}
+@media screen and (max-width:600px){
+  .attendance-tab-cont{
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
 
 

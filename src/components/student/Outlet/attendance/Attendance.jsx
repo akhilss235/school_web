@@ -35,11 +35,9 @@ export const Attendance = ({isTeacher}) => {
   };
 
   return (
-    <div className="p-0 attendancesectionmaindiv">
-      <Row className="mb-3">
-        <Col className="mb-2">
-          <OutletTab columns={columns} />
-        </Col>
+    <div className="d-flex flex-column gap-3">
+      <div className="attendance-tab-cont">
+        <OutletTab columns={columns} />
         <Col sm={"auto"}>
           {selectedTab === "Attendance" && (
             <DropdownFilter
@@ -49,8 +47,8 @@ export const Attendance = ({isTeacher}) => {
             />
           )}
         </Col>
-      </Row>
-      <div className="pt-3 p-3 rendertabcontent time-table" style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
+      </div>
+      <div className="time-table" style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };
