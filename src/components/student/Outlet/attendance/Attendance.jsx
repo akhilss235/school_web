@@ -8,19 +8,20 @@ import AttendanceRecords from "./AttendanceRecords";
 import DropdownFilter from "./DropdownFilter";
 import "./Attendance.css";
 
-export const Attendance = () => {
+export const Attendance = ({isTeacher}) => {
   const columns = ["Leaves", "Attendance"];
   const { selectedTab } = useSelector(selectTab);
   const [selectedLeaveType, setSelectedLeaveType] = useState("");
+
   // Function to render content based on selected tab
   const renderTabContent = () => {
     switch (selectedTab) {
       case "Leaves":
-        return <Leaves />;
+        return <Leaves isTeacher={isTeacher} />;
       case "Attendance":
         return <AttendanceRecords />;
       default:
-        return <Leaves />; // Default to Leaves if no tab is selected
+        return <Leaves isTeacher={isTeacher}  />; // Default to Leaves if no tab is selected
     }
   };
 
@@ -49,12 +50,7 @@ export const Attendance = () => {
           )}
         </Col>
       </Row>
-      <div
-        className="pt-3 p-3 rendertabcontent"
-        style={{  borderRadius: "10px" }}
-      >
-        {renderTabContent()}
-      </div>
+      <div className="pt-3 p-3 rendertabcontent " style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };

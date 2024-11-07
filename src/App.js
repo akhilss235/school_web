@@ -17,6 +17,7 @@ import { Promotion } from "./pages/Promotion";
 import Teachers from "./pages/Teachers";
 import Staffs from "./pages/Staffs";
 import AddTeachers from "./Forms/Teachers/Add Teachers";
+import { Salary } from "./components/student/Salary";
 
 
 const SidebarLayout = () => (
@@ -41,7 +42,7 @@ function App() {
             <Route path="Students/Details" element={<StudentDetails isTeacher={false} />}>
               <Route index element={<Details isTeacher={false}  />} />
               <Route path="Time Table" element={<TimeTable isTeacher={false}  />} />
-              <Route path="Attendance" element={<Attendance isTeacher={false}  />} />
+              <Route path="Attendance" element={<Attendance isTeacher={true}  />} />
               <Route path="Fees" element={<Fees />} />
               <Route path="Exams" element={<Exam />} />
 
@@ -52,7 +53,7 @@ function App() {
               <Route index element={<Details isTeacher={true} />} />
               <Route path="Time Table" element={<TimeTable isTeacher={true} />} />
               <Route path="Attendance" element={<Attendance isTeacher={true} />} />
-              <Route path="Salary" element={<Fees />} />
+              <Route path="Salary" element={<Salary />} />
             </Route>
             <Route path="Staffs" element={<Staffs />} />
             <Route path="Teachers/Add Teachers" element={<AddTeachers />} />
