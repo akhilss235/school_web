@@ -57,6 +57,22 @@
     gap: 20px;
     transition: .5s ease-in-out;
 }
+.leaves-card-cont{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.leave-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    width: 180px;
+    transition: .5s ease-in-out;
+}
 
 @media screen and (max-width:1024px) {
     .detail-section{
@@ -73,5 +89,10 @@
     }
     .default-cont{
         flex-direction: column;
+    }
+}
+@media screen and (max-width:425px) {
+    .leave-card{
+        width: 100%;
     }
 }

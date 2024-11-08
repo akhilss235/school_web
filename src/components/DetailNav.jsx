@@ -37,8 +37,8 @@ export const DetailNav = ({data, title}) => {
         const lastSegment = pathSegments[pathSegments.length - 1].replace(/%20/g, " ");
         lastSegment === "Details" &&  title === "teacher"? 
         setActiveNav("Teacher")
-        : title === "staff" ?
-        lastSegment === "Details" &&  setActiveNav("Staff")
+        : title === "staff" && lastSegment === "Details" ?
+        setActiveNav("Staff")
         :setActiveNav(lastSegment);
     }, [location.pathname]);
 

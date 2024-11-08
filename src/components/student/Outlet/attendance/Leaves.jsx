@@ -108,7 +108,7 @@ const Leaves = ({isTeacher}) => {
   return (
     <div className="d-flex flex-column gap-3">
       {isTeacher &&
-        <div className="d-flex flex-row gap-2">
+        <div className="leaves-card-cont">
           {
             data.map((item)=>(
               <LeaveCard data={item} key={item.id}/>
