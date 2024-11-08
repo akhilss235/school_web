@@ -38,7 +38,9 @@ export const Salary = () => {
     { label: "Date", key: "date" },
     { label: "Net Salary", key: "netSalary" },
     { label: "Action", key: "action" },
+    
   ];
+
 
   const datas = [
     {
