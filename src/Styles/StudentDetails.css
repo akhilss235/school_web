@@ -75,6 +75,11 @@
     width: 180px;
     transition: .5s ease-in-out;
 }
+.detail-container{
+    scroll-behavior: smooth;
+    /* scrollbar-color: #D1EAFF; */
+    scrollbar-color: #D1EAFF  #ABABAB29; 
+}
 
 @media screen and (max-width:1024px) {
     .detail-section{

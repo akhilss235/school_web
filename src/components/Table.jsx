@@ -14,7 +14,6 @@ export const Table = ({columns, rows, isBorder=true, bgColor="#0E7EA8", isResult
             border: !isBorder && "1px solid #EBF5FD",
             borderBottom: !isBorder && "none",
             borderRadius: "10px",
-            // overflow: "hidden"
         }}>
             <table className='exam-table' style={{
                 width: "100%",

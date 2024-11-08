@@ -5,11 +5,11 @@ import { StudentCard } from '../components/student/StudentCard';
 import { Table } from '../components/Table';
 
 function StLoginDetails(props) {
-  const data = {
+  const data = [{
     name:"emma stone",
     "number":"211241252",
     "class": "I A"
-  }
+  }]
   const columns = ["User Type", "Username", "Password"]
   const rows = [
     {
@@ -41,9 +41,13 @@ function StLoginDetails(props) {
       <CloseIcon onClose={props.onHide} />
     </div>
     <div className='d-flex flex-column gap-5' style={{padding:"20px"}}>
-        <div style={{borderRadius:"10px", backgroundColor:"#EBF5FD", padding:"10px"}}>
-            <StudentCard data={data} isInfo={false} />
-        </div>
+        {
+          data.map((item,index)=>(
+            <div style={{borderRadius:"10px", backgroundColor:"#EBF5FD", padding:"10px"}} key={index}>
+                <StudentCard data={item} isInfo={false} />
+            </div>
+          ))
+        }
         <Table columns={columns} rows={rows} isBorder={false} bgColor='#EBF5FD' />
     </div>
   </Modal>
