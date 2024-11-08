@@ -10,7 +10,7 @@ import { StudentDetails } from "./pages/StudentDetails";
 import AddStudent from "./Forms/student/Add Student";
 import { Details } from "./components/student/Outlet/Details";
 import { Attendance } from "./components/student/Outlet/attendance/Attendance";
-import { Fees } from "./components/student/Outlet/Fees";
+import { Fees } from "./components/student/Outlet/fees/Fees";
 import { TimeTable } from "./components/student/Outlet/timeTable/TimeTable";
 import { Exam } from "./components/student/Outlet/Exam/Exam";
 import { Promotion } from "./pages/Promotion";
