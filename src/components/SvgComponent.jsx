@@ -30,7 +30,7 @@ import { ReactComponent as LateIcon } from '../img/late.svg';
 import { ReactComponent as Payroll } from '../img/Payroll.svg';
 import { ReactComponent as Leaves } from '../img/Leaves.svg';
 import { ReactComponent as BankAccountDetail } from '../img/BankAccountDetail.svg';
-
+import { ReactComponent as FileIcon } from '../img/file.svg';
 
 
 const icons = {
@@ -63,7 +63,7 @@ const icons = {
   Payroll:Payroll,
   Leaves:Leaves,
   BankAccountDetail:BankAccountDetail,
-
+  file:FileIcon
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {

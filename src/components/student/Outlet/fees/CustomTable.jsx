@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Table, Button  } from "react-bootstrap";
 
 
 function CustomTable({ headers, data }) {
@@ -26,6 +26,19 @@ function CustomTable({ headers, data }) {
                   }
                 >
                   {row[header.key]}
+                  {/* Render the action button if this is the 'actions' column */}
+                  {header.key === "action" ? (
+                    <Button
+                      variant="primary"
+                      onClick={() => console.log("Action clicked", row)}
+                    >
+                      Action
+                    </Button>
+                  ) : (
+                    row[header.key]
+                  )}
+
+
                 </td>
               ))}
             </tr>
