@@ -21,7 +21,18 @@ import { Salary } from "./components/student/Salary";
 import StudentsList from "./submenu/Students List";
 import AddStaff from "./Forms/Staff/Add Staff";
 import Parents from "./pages/Parents";
+import Subjects from "./pages/Subjects";
+import ClassRooms from "./submenu/Class Rooms";
+import ClassesSections from "./submenu/Classes & Sections";
+import AllocateClassRooms from "./submenu/Allocate Class Rooms";
+import Exams from "./pages/Exams";
 
+import Feess from "./pages/Fees";
+import Attendances from "./pages/Attendance";
+import Accounts from "./pages/Accounts";
+import UserAccess from "./pages/User Access";
+import SetTiming from "./submenu/Set Timing";
+import ScheduleClasses from "./submenu/Schedule Classes";
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -74,6 +85,29 @@ function App() {
 
             <Route path="Parents" element={<Parents />} />
 
+
+
+
+
+            <Route path="Subjects" element={<Subjects />} />
+            
+            <Route path="Classes/Class Rooms" element={<ClassRooms />} />
+            <Route path="Classes/Classes & Sections" element={<ClassesSections />} />
+            <Route path="Classes/Allocate Class Rooms" element={<AllocateClassRooms />} />
+
+            
+            {/* TimeTable */}
+            <Route path="Time Tables/Set Timing" element={<SetTiming />} />
+            <Route path="Time Tables/Schedule Classes" element={<ScheduleClasses />} />
+
+            
+
+            <Route path="Exams" element={<Exams />} />
+            
+            <Route path="Fees" element={<Feess />} />
+            <Route path="Attendance" element={<Attendances />} />
+            <Route path="Accounts" element={<Accounts />} />
+            <Route path="User Access" element={<UserAccess />} />
 
           </Route>
         </Routes>
