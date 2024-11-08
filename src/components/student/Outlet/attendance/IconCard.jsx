@@ -24,7 +24,7 @@ export const IconCard = ({
           display: 'flex',
           alignItems: 'center',
           flexGrow:'1',
-          border: `1 px solid ${item.icon === "Present" ? "#D5FDCE":
+          border: `1px solid ${item.icon === "Present" ? "#D5FDCE":
           item.icon === "Absent" ? "#ECCDD5" :
           item.icon === "FirstHalf" ? "#E2CCE2":
           item.icon === "Late" ? "#F9EED1" :
