@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
@@ -14,6 +14,7 @@ import { LuUsers } from "react-icons/lu";
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => setIsOpen((prev) => !prev);
   const handleCloseModal = () => setShowModal(false);
@@ -26,12 +27,11 @@ const Sidebar = ({ children }) => {
     },
     {
       path: "/Students",
-      path: "/Student",
       name: "Students",
       icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
-        { path: "/Students", name: "Students List", icon: <GoDotFill /> },
-        { path: "/Student/Students Promotion", name: "Student Promotion", icon: <GoDotFill /> },
+        { path: "/Students List", name: "Students List", icon: <GoDotFill /> },
+        { path: "Students/Students Promotion", name: "Student Promotion", icon: <GoDotFill /> },
       ],
     },
     {
@@ -44,7 +44,6 @@ const Sidebar = ({ children }) => {
       name: "Staffs",
       icon: <LuUsers style={{ width: "25px" }} />,
     },
-
     {
       path: "/Parents",
       name: "Parents",
@@ -54,36 +53,20 @@ const Sidebar = ({ children }) => {
 
   const MenuItem = ({ item }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-    const location = useLocation();
-
-    // Determine if the current path matches any submenu paths to open the correct submenu
-    useEffect(() => {
-      if (item.subMenu) {
-        const isSubMenuActive = item.subMenu.some((subItem) =>
-          location.pathname === subItem.path
-        );
-        setIsSubMenuOpen(isSubMenuActive);
-      }
-    }, [location.pathname, item.subMenu]);
 
     const handleToggleSubMenu = (e) => {
       e.preventDefault();
       setIsSubMenuOpen((prev) => !prev);
     };
 
-    // Check if the main menu or exact submenu is active
-    const isMainActive = () => {
-      return (
-        location.pathname === item.path ||
-        (item.subMenu &&
-          item.subMenu.some((subItem) => location.pathname === subItem.path))
-      );
-    };
+    const isActive = (path) => location.pathname.startsWith(path);
+    const isMainActive = () =>
+      isActive(item.path) || (item.subMenu && item.subMenu.some((sub) => isActive(sub.path)));
 
     return (
       <div>
         <NavLink
-          to={item.path}
+          to={item.path || "#"}
           className={`linkss ${isMainActive() ? "active" : ""}`}
           onClick={item.subMenu ? handleToggleSubMenu : null}
         >
@@ -109,9 +92,7 @@ const Sidebar = ({ children }) => {
               <NavLink
                 key={subIndex}
                 to={subItem.path}
-                className={`submenu ${
-                  location.pathname === subItem.path ? "active" : ""
-                }`}
+                className={`submenu ${isActive(subItem.path) ? "active" : ""}`}
               >
                 <div className="icons mt-1 mb-1">{subItem.icon}</div>
                 <div className="link_text">{subItem.name}</div>
