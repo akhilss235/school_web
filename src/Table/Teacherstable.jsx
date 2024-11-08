@@ -43,7 +43,7 @@ function Teacherstable() {
     <div>
       <div className="text-start mb-3">
         <h4>
-          <b>Student List</b>
+          <b>Teachers</b>
         </h4>
         <BasicBreadcrumbs />
       </div>

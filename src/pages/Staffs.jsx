@@ -21,8 +21,8 @@ function Staffs() {
   const [modalInactivate, setModalInactivate] = useState(false);
 
   const filterOptions = [
-    { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
-    { label: "Section", options: ["All", "A", "B", "C"] },
+    { label: "Department", options: ["All", "Admin", "Management", "Management"] },
+    { label: "Designation", options: ["All", "Technical Head", "Accounts Manager", "Receptionist"] },
     { label: "Gender", options: ["All", "Male", "Female"] },
     { label: "Status", options: ["All", "Active", "Inactive"] },
   ];
@@ -43,7 +43,7 @@ function Staffs() {
     <div className="p-3">
       <div className="text-start mb-3">
         <h4>
-          <b>Student List</b>
+          <b>Staffs</b>
         </h4>
         <BasicBreadcrumbs />
       </div>
@@ -122,7 +122,7 @@ function Staffs() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href="Students/Details"
+                      href="/staffs/Details/Salary"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View Teacher
