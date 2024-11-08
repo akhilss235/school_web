@@ -38,9 +38,7 @@ export const Salary = () => {
     { label: "Date", key: "date" },
     { label: "Net Salary", key: "netSalary" },
     { label: "Action", key: "action" },
-    
   ];
-
 
   const datas = [
     {
@@ -102,7 +100,7 @@ export const Salary = () => {
           <Col
             xs={12}
             sm={4}
-            style={{ width: "maxContent"}} 
+            style={{ minWidth: "260px"}} 
             key={item.id}
           >
             <IconCard data={[item]} />
