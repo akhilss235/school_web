@@ -22,6 +22,30 @@ function Subjects() {
   const [modalShow, setModalShow] = useState(false);
   const [modalInactivate, setModalInactivate] = useState(false);
   const [modalDelete,setModalDelete ] = useState(false);
+  const inputData = [
+    {
+      id:1,
+      name:"Subject ID",
+      type:"input",
+    },
+    {
+      id:2,
+      name:"Code",
+      type:"input",
+    },
+    {
+      id:1,
+      name:"Subject Name",
+      type:"input",
+    },
+    {
+      id:1,
+      name:"Subject Name",
+      type:"select",
+      value:["Theory", "Practical"]
+    },
+    
+  ]
 
 
   const handleApplyFilters = (filters) => {
@@ -38,7 +62,7 @@ function Subjects() {
     <div className="p-3">
       <div className="text-start mb-3">
         <h4>
-          <b>Staffs</b>
+          <b>Subjects</b>
         </h4>
         <BasicBreadcrumbs />
       </div>
@@ -137,12 +161,9 @@ function Subjects() {
           </tbody>
         </Table>
       </div>
-      <NewSubject show={modalShow} onHide={() => setModalShow(false)}/>
-
-<Delete show={modalDelete} onHide={() => setModalDelete(false)}/>
-<Subjectnactivate       show={modalInactivate}
-        onHide={() => setModalInactivate(false)}/>
-
+      <NewSubject show={modalShow} onHide={() => setModalShow(false)} title={"New Subject"} data={inputData}/>
+      <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Subject"} isInactive={true} label={"inactivate the subject"}/>
+      <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Subject"} isDelete={true} label={"delete the subject"}/>
     </div>
   );
 }

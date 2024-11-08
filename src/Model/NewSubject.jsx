@@ -1,25 +1,58 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { CloseIcon } from '../components/CloseIcon';
+import { Dropdown } from '../components/student/Dropdown';
+import { Input } from '../components/Input';
 
-function NewSubject(props) {
+function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false, label="" }) {
 
+  const buttonTitle = label !== "" ? title : `Add ${title}`
   return (
     <Modal
-    {...props}
-    size="lg"
+    {...{show, onHide}}
+    size="auto"
+    border="none"
     aria-labelledby="contained-modal-title-vcenter"
     centered
-    style={{
-      boxShadow: "2px 2px 8px 0px #ABABAB29",  // Custom box shadow style
-      border: "none",
-    }}
   >
-    <div className='d-flex flex-row justify-content-between align-items-center p-3'>
-      <Modal.Title id="contained-modal-title-vcenter">Login Details</Modal.Title>
-      <CloseIcon onClose={props.onHide} />
-    </div>
-
+    {
+      label === "" ?
+      <div className='d-flex flex-row justify-content-between align-items-center p-3'>
+        <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
+        <CloseIcon onClose={onHide} />
+      </div> :
+      <div className='d-flex flex-row justify-content-center align-items-center p-3' style={{position:"relative"}}>
+        <Modal.Title id="contained-modal-title-vcenter " className='text-center'>{title}</Modal.Title>
+        <div style={{position:"absolute", right:"20px"}}>
+          <CloseIcon onClose={onHide} />
+        </div>
+      </div>
+    }
+      <div className='d-flex flex-column gap-1 align-items-center p-3'>
+        {
+          (isInactive || isDelete) &&
+          <p>Are you sure you want to {label}</p>
+        }
+        {
+          data && data.map((item)=>(
+            item.type === "select" ?
+              <Dropdown label={item?.name} value={item?.value} />
+            :
+              <Input label={item?.name} />
+          ))
+        }
+      </div>
+    <div className='d-flex flex-row justify-content-center align-items-center gap-2 p-3'>
+        <div 
+          className='discard-btn' 
+          onClick={onHide}
+        >
+          <p className="sign-in">Discard</p>
+        </div>
+        <div className="login-button" style={{width:"200px", height:"50px"}}>
+          <p className="sign-in">{buttonTitle}</p>
+        </div>
+      </div>
   </Modal>
   
   );
