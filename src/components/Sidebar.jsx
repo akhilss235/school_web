@@ -13,6 +13,7 @@ import { LuUsers } from "react-icons/lu";
 import { MdFamilyRestroom } from "react-icons/md";
 import { GiBookshelf } from "react-icons/gi";
 import { GiTeacher } from "react-icons/gi";
+import { TbTable } from "react-icons/tb";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -88,7 +89,7 @@ const Sidebar = ({ children }) => {
     {
       path: "/Time Tables",
       name: "Time Table",
-      icon: <GiTeacher style={{ width: "25px" }} />,
+      icon: <TbTable style={{ width: "25px" }} />,
       subMenu: [
         {
           path: "Time Tables/Set Timing",
