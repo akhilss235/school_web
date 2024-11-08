@@ -1,7 +1,5 @@
 import React from "react";
-import { Col } from "react-bootstrap";
 import { GoFilter } from "react-icons/go";
-import { IconContext } from "react-icons";
 
 const StaticFilter = () => {
   return (
@@ -12,6 +10,7 @@ const StaticFilter = () => {
         height: "37.6px",
         cursor: "pointer",
         border: "1px solid #dee2e6",
+        color: "#212529",
       }}
     >
       <GoFilter size={"1.5em"} />

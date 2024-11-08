@@ -3,6 +3,7 @@ import { InputGroup, Form } from "react-bootstrap";
 
 const DropdownFilter = ({
   filterOptions,
+  name,
   selectedOption,
   handleOptionChange,
 }) => {
@@ -14,6 +15,7 @@ const DropdownFilter = ({
       <Form.Select
         aria-describedby="basic-addon1"
         style={{ borderLeft: "none" }}
+        name={name}
         value={selectedOption}
         onChange={handleOptionChange}
       >
