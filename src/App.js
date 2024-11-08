@@ -46,6 +46,7 @@ function App() {
               <Route path="Exams" element={<Exam />} />
             </Route>
             <Route path="Teachers" element={<Teachers />} />
+            <Route path="Teachers/Add Teachers" element={<AddTeachers />} />
             <Route path="Teachers/Details" element={<StudentDetails isTeacher={true} />}>
               <Route index element={<Details isTeacher={true} />} />
               <Route path="Time Table" element={<TimeTable isTeacher={true} />} />
@@ -53,7 +54,12 @@ function App() {
               <Route path="Salary" element={<Salary />} />
             </Route>
             <Route path="Staffs" element={<Staffs />} />
-            <Route path="Teachers/Add Teachers" element={<AddTeachers />} />
+            <Route path="Staffs/Details" element={<StudentDetails isTeacher={true} isStaff={true}/>}>
+              <Route index element={<Details isTeacher={true} />} />
+              <Route path="Time Table" element={<TimeTable isTeacher={true} />} />
+              <Route path="Attendance" element={<Attendance isTeacher={true} />} />
+              <Route path="Salary" element={<Salary />} />
+            </Route>
 
           </Route>
         </Routes>
