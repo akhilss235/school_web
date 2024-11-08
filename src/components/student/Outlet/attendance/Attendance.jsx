@@ -48,7 +48,7 @@ export const Attendance = ({isTeacher}) => {
           )}
         </Col>
       </div>
-      <div className="time-table" style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
+      <div className="time-table pt-3" style={{backgroundColor:'white',borderRadius:'10px'}} >{renderTabContent()}</div>
     </div>
   );
 };

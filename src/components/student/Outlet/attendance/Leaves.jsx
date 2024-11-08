@@ -10,8 +10,9 @@ import CustomTable from "./CustomTable";
 import Pagination from "./Pagination";
 import ResultsSummary from "./ResultsSummary";
 import { LeaveCard } from "../../../LeaveCard";
+import StaticFilter from "../../../../filter/StaticFilter";
 
-const Leaves = ({isTeacher}) => {
+const Leaves = ({ isTeacher }) => {
   const [selectedLeaveType, setSelectedLeaveType] = useState("");
 
   const itemsPerPage = 10;
@@ -70,34 +71,34 @@ const Leaves = ({isTeacher}) => {
 
   const data = [
     {
-      id:"1",
-      leaveType:"Medical Leave",
-      leaveCount:"10",
-      usedCount:"3",
-      remainingCount:"7"
+      id: "1",
+      leaveType: "Medical Leave",
+      leaveCount: "10",
+      usedCount: "3",
+      remainingCount: "7",
     },
     {
-      id:"2",
-      leaveType:"Casual Leave",
-      leaveCount:"10",
-      usedCount:"3",
-      remainingCount:"7"
+      id: "2",
+      leaveType: "Casual Leave",
+      leaveCount: "10",
+      usedCount: "3",
+      remainingCount: "7",
     },
     {
-      id:"4",
-      leaveType:"Maternity Leave",
-      leaveCount:"10",
-      usedCount:"3",
-      remainingCount:"7"
+      id: "4",
+      leaveType: "Maternity Leave",
+      leaveCount: "10",
+      usedCount: "3",
+      remainingCount: "7",
     },
     {
-      id:"5",
-      leaveType:"Sick Leave",
-      leaveCount:"10",
-      usedCount:"3",
-      remainingCount:"7"
-    }
-  ]
+      id: "5",
+      leaveType: "Sick Leave",
+      leaveCount: "10",
+      usedCount: "3",
+      remainingCount: "7",
+    },
+  ];
 
   const handleLeaveTypeChange = (event) => {
     setSelectedLeaveType(event.target.value);
@@ -107,41 +108,30 @@ const Leaves = ({isTeacher}) => {
   };
   return (
     <div className="d-flex flex-column gap-3">
-      {isTeacher &&
+      {isTeacher && (
         <div className="leaves-card-cont">
-          {
-            data.map((item)=>(
-              <LeaveCard data={item} key={item.id}/>
-            ))
-          }
+          {data.map((item) => (
+            <LeaveCard data={item} key={item.id} />
+          ))}
         </div>
-      }
+      )}
       <div>
-        <Row className="text-start mb-3" style={{width:"100%"}}>
-          <Col>
+        <Row
+          className="text-start mb-3 align-items-center"
+          style={{ width: "100%" }}
+        >
+          <Col xs={"auto"}>
             <h4>
               <b>Leaves</b>
             </h4>
           </Col>
-          <Col className="d-flex justify-content-md-end mt-2 mt-md-0">
+          <Col className="d-flex justify-content-md-end">
             <Search />
           </Col>
         </Row>
         <Row className="mb-3">
           <Col sm={"auto"} className="mb-3">
-            <div
-              className="card d-flex align-items-center justify-content-center filterbody p-2"
-              style={{ width: "78px", height: "37.6px", cursor: "pointer" }}
-            >
-              <IconContext.Provider
-                value={{ className: "react-icons", size: "1.5em" }}
-              >
-                <div className="d-flex align-items-center">
-                  <GoFilter className="Filteric" />
-                  <span className="Filteric p-1">Filter</span>
-                </div>
-              </IconContext.Provider>
-            </div>
+            <StaticFilter />
           </Col>
           <Col sm={"auto"} className="mb-3">
             <DropdownFilter
@@ -150,7 +140,7 @@ const Leaves = ({isTeacher}) => {
               handleOptionChange={handleLeaveTypeChange}
             />
           </Col>
-          <Col sm={'auto'} className="d-flex flex-wrap">
+          <Col sm={"auto"} className="d-flex flex-wrap">
             <div className="me-2 mb-3" style={{ minWidth: "200px" }}>
               <GetDate title="From" />
             </div>
@@ -165,7 +155,11 @@ const Leaves = ({isTeacher}) => {
         <Row>
           <Col className="d-flex justify-content-between">
             <div style={{ marginTop: "auto", marginBottom: "auto" }}>
-              <ResultsSummary currentPage={1} pageSize={8} totalResults={25} />
+              <ResultsSummary
+                currentPage={currentPage}
+                pageSize={itemsPerPage}
+                totalResults={datas.length}
+              />
             </div>
             {datas.length > 0 && (
               <Pagination

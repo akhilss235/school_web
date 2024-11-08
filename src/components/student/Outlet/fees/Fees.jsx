@@ -1,15 +1,25 @@
 import React, { useState } from "react";
 import CustomTable from "./CustomTable";
-import { Row, Col } from "react-bootstrap"; // Import Dropdown
+import { Row, Col, Button } from "react-bootstrap"; // Import Dropdown
 import StaticFilter from "../../../../filter/StaticFilter";
 import Search from "../../../../filter/Search";
 import { GetDate } from "../../../../filter/Date";
 import DropdownFilter from "./DropdownFilter";
+import Pagination from "../attendance/Pagination";
+import ResultsSummary from "../attendance/ResultsSummary";
+import { FiPlus } from "react-icons/fi";
+import "./Fees.css";
 
 export const Fees = () => {
   const [filters, setFilters] = useState({
     academicYear: "",
     paymentMode: "",
+  });
+  const itemsPerPage = 10;
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const savedPage = sessionStorage.getItem("currentPage");
+    return savedPage ? Number(savedPage) : 1;
   });
 
   const filterConfigs = [
@@ -69,13 +79,31 @@ export const Fees = () => {
     setFilters((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
-    <div>
+    <div className="mytablestyle" style={{ backgroundColor: "white" }}>
       <Row className="text-start mb-3 gy-3">
-        <Col xs={'auto'}>
+        <Col xs={"auto"}>
           <h4 className="m-0 mt-1">
-            <b >Fees</b>
+            <b>Fees</b>
           </h4>
+        </Col>
+        <Col className="d-flex justify-content-end">
+          <Button
+            variant="#148CF0"
+            style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
+            className="d-flex align-items-center gap-2"
+            // onClick={AddStudent}
+          >
+            <FiPlus size={18} /> Add Fee
+          </Button>
+        </Col>
+      </Row>
+      <Row className="mb-3 gy-3">
+        <Col xs={"auto"}>
+          <StaticFilter />
         </Col>
         <Col xs={"auto"}>
           <DropdownFilter
@@ -89,9 +117,6 @@ export const Fees = () => {
           />
         </Col>
         <Col xs={"auto"}>
-          <StaticFilter />
-        </Col>
-        <Col xs={"auto"}>
           <DropdownFilter
             filterOptions={{
               label: filterConfigs[1].label,
@@ -102,6 +127,9 @@ export const Fees = () => {
             handleOptionChange={handleFilterChange}
           />
         </Col>
+        <Col xs={"auto"}>
+          <Search />
+        </Col>
         <Col sm={"auto"} className="d-flex flex-wrap gap-3">
           <div className="" style={{ minWidth: "200px" }}>
             <GetDate title="From" />
@@ -110,16 +138,29 @@ export const Fees = () => {
             <GetDate title="To" />
           </div>
         </Col>
-        <Col xs={'auto'}>
-          <Search />
-        </Col>
-      </Row>
-      <Row className="mb-3 gy-3">
 
       </Row>
       <div>
         <CustomTable headers={headers} data={datas} />
       </div>
+      <Row>
+        <Col className="d-flex justify-content-between">
+          <div style={{ marginTop: "auto", marginBottom: "auto" }}>
+            <ResultsSummary
+              currentPage={currentPage}
+              pageSize={itemsPerPage}
+              totalResults={datas.length}
+            />
+          </div>
+          {datas.length > 0 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={Math.ceil(datas.length / itemsPerPage)}
+              onPageChange={handlePageChange}
+            />
+          )}
+        </Col>
+      </Row>
     </div>
   );
 };

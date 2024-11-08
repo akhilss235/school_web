@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 
 function Search() {
   return (
-    <div>
+    <div style={{width:'200px'}}>
       {" "}
       <Form.Control placeholder="Search...." type="text" />
     </div>
