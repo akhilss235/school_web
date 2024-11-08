@@ -1,6 +1,6 @@
 import React from "react";
-import { Table, Button  } from "react-bootstrap";
-
+import { Table, Button } from "react-bootstrap";
+import { ReactComponent as FileIcon } from "../../../../img/file.svg";
 
 function CustomTable({ headers, data }) {
   return (
@@ -9,7 +9,14 @@ function CustomTable({ headers, data }) {
         <thead style={{ color: "#505050" }}>
           <tr>
             {headers.map((header, index) => (
-              <th key={index}>{header.label}</th>
+              <th
+                key={index}
+                className={`${
+                  header.label === "Action" ? "text-center" : "text-start"
+                }`}
+              >
+                {header.label}
+              </th>
             ))}
           </tr>
         </thead>
@@ -19,26 +26,26 @@ function CustomTable({ headers, data }) {
               {headers.map((header, colIndex) => (
                 <td
                   key={colIndex}
-                  style={
-                    header.key === "leaveDate"
-                      ? { color: "#148CF0" }
-                      : undefined
-                  }
+                  style={{
+                    color: header.label === "Fees Type" ? "#148CF0" : "",
+                    textAlign: "start",
+                  }}
                 >
-                  {row[header.key]}
-                  {/* Render the action button if this is the 'actions' column */}
-                  {header.key === "action" ? (
-                    <Button
-                      variant="primary"
-                      onClick={() => console.log("Action clicked", row)}
+                  {header.label === "Action" ? (
+                    <div
+                      style={{
+                        backgroundColor: "#FDEEE2",
+                        borderRadius: "5px",
+                        width: "30px",
+                        height: "30px",
+                      }}
+                      className="d-flex justify-content-center align-items-center mx-auto"
                     >
-                      Action
-                    </Button>
+                      <FileIcon />
+                    </div>
                   ) : (
                     row[header.key]
                   )}
-
-
                 </td>
               ))}
             </tr>

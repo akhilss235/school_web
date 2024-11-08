@@ -10,6 +10,9 @@ import { PiStudent } from "react-icons/pi";
 import logo from "../img/School.png";
 import { PiChalkboardTeacherThin } from "react-icons/pi";
 import { LuUsers } from "react-icons/lu";
+import { MdFamilyRestroom } from "react-icons/md";
+import { GiBookshelf } from "react-icons/gi";
+import { GiTeacher } from "react-icons/gi";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -31,7 +34,11 @@ const Sidebar = ({ children }) => {
       icon: <PiStudent style={{ width: "25px" }} />,
       subMenu: [
         { path: "/Students List", name: "Students List", icon: <GoDotFill /> },
-        { path: "Students/Students Promotion", name: "Student Promotion", icon: <GoDotFill /> },
+        {
+          path: "Students/Students Promotion",
+          name: "Student Promotion",
+          icon: <GoDotFill />,
+        },
       ],
     },
     {
@@ -47,8 +54,85 @@ const Sidebar = ({ children }) => {
     {
       path: "/Parents",
       name: "Parents",
-      icon: <LuUsers style={{ width: "25px" }} />,
+      icon: <MdFamilyRestroom style={{ width: "25px" }} />,
     },
+    {
+      path: "/Subjects",
+      name: "Subjects",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+    },
+    {
+      path: "/Classes",
+      name: "Classes",
+      icon: <GiTeacher style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Classes/Class Rooms",
+          name: "Class Rooms",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Classes/Classes & Sections",
+          name: "Classes & Sections",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Classes/Allocate Class Rooms",
+          name: "Allocate Class Rooms",
+          icon: <GoDotFill />,
+        },
+      ],
+    },
+
+
+    {
+      path: "/Time Tables",
+      name: "Time Table",
+      icon: <GiTeacher style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Time Tables/Set Timing",
+          name: "Set Timing",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Time Tables/Schedule Classes",
+          name: "Schedule Classes",
+          icon: <GoDotFill />,
+        },
+    
+      ],
+    },
+
+    
+
+    {
+      path: "/Exams",
+      name: "Exams",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+    },
+    {
+      path: "/Fees",
+      name: "Fees",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+
+    },
+    {
+      path: "/Attendance",
+      name: "Attendance",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+    },
+    {
+      path: "/Accounts",
+      name: "Accounts",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+    },
+    {
+      path: "/User Access",
+      name: "User Access",
+      icon: <GiBookshelf style={{ width: "25px" }} />,
+    },
+
   ];
 
   const MenuItem = ({ item }) => {
@@ -61,7 +145,8 @@ const Sidebar = ({ children }) => {
 
     const isActive = (path) => location.pathname.startsWith(path);
     const isMainActive = () =>
-      isActive(item.path) || (item.subMenu && item.subMenu.some((sub) => isActive(sub.path)));
+      isActive(item.path) ||
+      (item.subMenu && item.subMenu.some((sub) => isActive(sub.path)));
 
     return (
       <div>

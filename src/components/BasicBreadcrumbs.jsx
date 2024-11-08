@@ -12,7 +12,6 @@ function BasicBreadcrumbs() {
   const linkStyle = {
     textDecoration: "none",
     color: "#505050",
-    fontSize: "",
   };
 
   return (
@@ -25,13 +24,16 @@ function BasicBreadcrumbs() {
           Dashboard
         </Breadcrumb.Item>
         {pathName.map((value, index) => {
-          // Check if the path is 'Students' and redirect to 'Students List'
+          // Determine the path for special cases or build path normally
           let to;
-          if (value.toLowerCase() === "students") {
-            to = "/Students List";
+          const currentPath = pathnames.slice(0, index + 1).join("/");
+
+          if (value.toLowerCase() === "classes") {
+            to = "/Classes/Class Rooms"; // Default to "Class Rooms" for "Classes"
+          } else if (value.toLowerCase() === "time tables") {
+            to = "/Time Tables/Set Timing"; // Default to "Set Timing" for "Time Table"
           } else {
-            // Corrected this line to use backticks
-            to = `/${pathnames.slice(0, index + 1).join("/")}`;
+            to = `/${currentPath}`;
           }
 
           return (
@@ -50,5 +52,3 @@ function BasicBreadcrumbs() {
 }
 
 export default BasicBreadcrumbs;
-
-
