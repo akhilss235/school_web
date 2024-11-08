@@ -19,6 +19,8 @@ import Staffs from "./pages/Staffs";
 import AddTeachers from "./Forms/Teachers/Add Teachers";
 import { Salary } from "./components/student/Salary";
 import StudentsList from "./submenu/Students List";
+import AddStaff from "./Forms/Staff/Add Staff";
+import Parents from "./pages/Parents";
 
 
 const SidebarLayout = () => (
@@ -58,12 +60,20 @@ function App() {
               <Route path="Salary" element={<Salary />} />
             </Route>
             <Route path="Staffs" element={<Staffs />} />
+            <Route path="/Staffs/Add Staff" element={<AddStaff />} />
+
             <Route path="Staffs/Details" element={<StudentDetails isTeacher={true} isStaff={true}/>}>
               <Route index element={<Details isTeacher={true} />} />
               <Route path="Time Table" element={<TimeTable isTeacher={true} />} />
               <Route path="Attendance" element={<Attendance isTeacher={true} />} />
               <Route path="Salary" element={<Salary />} />
             </Route>
+
+            
+
+
+            <Route path="Parents" element={<Parents />} />
+
 
           </Route>
         </Routes>
