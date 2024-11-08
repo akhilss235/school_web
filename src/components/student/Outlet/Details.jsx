@@ -45,6 +45,14 @@ export const Details = ({isTeacher}) => {
       {
         "name": "Transfer Certificate",
         "downloadUrl": "path/to/transfer-certificate.pdf"
+      },
+      {
+        "name": "Birth Certificate",
+        "downloadUrl": "path/to/birth-certificate.pdf"
+      },
+      {
+        "name": "Transfer Certificate",
+        "downloadUrl": "path/to/transfer-certificate.pdf"
       }
     ],
     "address": [{

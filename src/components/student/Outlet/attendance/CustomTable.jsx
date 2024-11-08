@@ -28,7 +28,17 @@ function CustomTable({ headers, data }) {
                 >
                 {
                   header.label === "Action" ?
-                  <div style={{"backgroundColor":"#E2F1FD" ,borderRadius:"5px", width:"35px", height:"35px"}} className='d-flex justify-content-center align-items-center'  >
+                  <div 
+                  style={{
+                    backgroundColor: "#E2F1FD",
+                    borderRadius: "5px",
+                    width: "35px",
+                    height: "35px",
+                    display: "flex", 
+                    justifyContent: "center",
+                    alignItems: "center", 
+                  }}  
+                  >
                       <Eye />
                   </div>
                   :row[header.key]

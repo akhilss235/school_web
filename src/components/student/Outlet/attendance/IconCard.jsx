@@ -9,6 +9,12 @@ export const IconCard = ({
   isBorder = false,
   borderColor = "",
 }) => {
+  const color = (item)=>{
+    return item.icon === "Present" || item.icon === "GrossSalary"  ? "#D5FDCE":
+    item.icon === "Absent" || item.icon === "NetSalary" ? "#ECCDD5" :
+    item.icon === "FirstHalf" || item.icon === "Deduction"  ? "#E2CCE2":
+    item.icon === "Late" ? "#F9EED1" : "white"
+  }
   return (
     <div 
     className="d-flex" 
@@ -24,23 +30,14 @@ export const IconCard = ({
           display: 'flex',
           alignItems: 'center',
           flexGrow:'1',
-          border: `1px solid ${item.icon === "Present" ? "#D5FDCE":
-          item.icon === "Absent" ? "#ECCDD5" :
-          item.icon === "FirstHalf" ? "#E2CCE2":
-          item.icon === "Late" ? "#F9EED1" :
-          "white"}`
+          border: `1px solid ${color(item)}`
           // width: '250px', // You can adjust the width as needed
         }}
       >
         <div style={{ width: '50px', marginRight: '10px' }}>
           <Icon
             iconName={item.icon}
-            fill={
-              item.icon === "Present" ? "#D5FDCE":
-              item.icon === "Absent" ? "#ECCDD5" :
-              item.icon === "FirstHalf" ? "#E2CCE2":
-              "white"
-            }
+            fill={color(item)}
             width={item.icon === "Present" ? "35px" : "25px"}
             height="30px"
           />
