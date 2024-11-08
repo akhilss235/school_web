@@ -62,6 +62,8 @@
     flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
+    padding: 10px;
+    transition: .5s ease-in-out;
 }
 .leave-card{
     display: flex;

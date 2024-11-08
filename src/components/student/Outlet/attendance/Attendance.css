@@ -52,6 +52,9 @@
     flex-direction: column;
     gap: 15px;
   }
+  .salary-cont{
+    flex-direction: column;
+  }
 }
 
 

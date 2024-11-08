@@ -97,14 +97,9 @@ export const Salary = () => {
     <div className="d-flex flex-column gap-2">
       <div className="salary-cont" >
         {attentanceData?.map((item) => (
-          <Col
-            xs={12}
-            sm={4}
-            style={{ minWidth: "260px"}} 
-            key={item.id}
-          >
+          <div key={item.id} style={{flex:"auto"}}>
             <IconCard data={[item]} />
-          </Col>
+          </div>
         ))}
       </div>
       <div className="salary-table-section">

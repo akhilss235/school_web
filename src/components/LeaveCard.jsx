@@ -2,7 +2,7 @@ import React from 'react'
 
 export const LeaveCard = ({data}) => {
   return (
-    <div className='leave-card'>
+    <div className='leave-card' style={{flex:"auto"}}>
         <p className='m-0 fw-semibold'>{data?.leaveType} ({data?.leaveCount})</p>
         <div className='d-flex flex-row' style={{fontSize:"14px"}}>
             <p className='m-0' style={{color:"red"}}>Used : {data?.usedCount}</p>
