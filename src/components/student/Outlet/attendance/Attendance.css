@@ -40,6 +40,13 @@
   align-items: center;
   transition: .5s ease-in-out;
 }
+.salary-cont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  gap: 10px;
+}
 @media screen and (max-width:600px){
   .attendance-tab-cont{
     flex-direction: column;

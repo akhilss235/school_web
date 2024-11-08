@@ -95,35 +95,27 @@ export const Salary = () => {
   };
   return (
     <div className="d-flex flex-column gap-2">
-      <Row className="align-items-center text-break" >
+      <div className="salary-cont" >
         {attentanceData?.map((item) => (
           <Col
             xs={12}
             sm={4}
-            className="mb-3"
-            style={{ minWidth: "260px"}} 
+            style={{ width: "maxContent"}} 
             key={item.id}
           >
             <IconCard data={[item]} />
           </Col>
         ))}
-      </Row>
+      </div>
       <div className="salary-table-section">
-        <Row className="text-start mb-3 p-3">
-          <Col>
-            <h4>
-              <b>Salary</b>
-            </h4>
-          </Col>
-          <Col className="d-flex justify-content-md-end mt-2 mt-md-0">
+        <div className="d-flex flex-row justify-content-between p-3 pb-0">
+            <h4><b>Salary</b></h4>
             <Search />
-          </Col>
-        </Row>
+        </div>
         <div>
           <CustomTable headers={headers} data={datas} />
         </div>
-        <Row className="p-3">
-          <Col className="d-flex justify-content-between">
+        <div className="d-flex flex-row gap-1 justify-content-between p-3 pt-0">
             <div style={{ marginTop: "auto", marginBottom: "auto" }}>
               <ResultsSummary currentPage={1} pageSize={8} totalResults={25} />
             </div>
@@ -134,8 +126,7 @@ export const Salary = () => {
                 onPageChange={handlePageChange}
               />
             )}
-          </Col>
-        </Row>
+        </div>
       </div>
   </div>
   )
