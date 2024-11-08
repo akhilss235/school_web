@@ -18,6 +18,7 @@ import Teachers from "./pages/Teachers";
 import Staffs from "./pages/Staffs";
 import AddTeachers from "./Forms/Teachers/Add Teachers";
 import { Salary } from "./components/student/Salary";
+import StudentsList from "./submenu/Students List";
 
 
 const SidebarLayout = () => (
@@ -34,9 +35,12 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/" element={<SidebarLayout />}>
             <Route path="Dashboard" element={<Dashboard />} />
-            <Route path="Students" element={<Students />} />
+            {/* <Route path="Students" element={<Students />} /> */}
+            <Route path="Students List" element={<StudentsList />} />
+
+
             <Route path="Students/Add Student" element={<AddStudent />} />
-            <Route path="Students/Student Promotion" element={<Promotion />} />
+            <Route path="Students/Students Promotion" element={<Promotion />} />
             <Route path="Students/Promote student" element={<Promotion isStudent={true} />} />
             <Route path="Students/Details" element={<StudentDetails isTeacher={false} />}>
               <Route index element={<Details isTeacher={false}  />} />
