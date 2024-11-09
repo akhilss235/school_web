@@ -9,8 +9,11 @@ import Pagination from "../attendance/Pagination";
 import ResultsSummary from "../attendance/ResultsSummary";
 import { FiPlus } from "react-icons/fi";
 import "./Fees.css";
+import AddFeeModal from "./AddFeeModal";
 
 export const Fees = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const [filters, setFilters] = useState({
     academicYear: "",
     paymentMode: "",
@@ -82,20 +85,23 @@ export const Fees = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+  const onClose = () => {
+    setShowModal(false);
+  };
   return (
     <div className="mytablestyle" style={{ backgroundColor: "white" }}>
-      <Row className="text-start mb-3 gy-3">
+      <Row className="text-start mb-3 gy-3 justify-content-between">
         <Col xs={"auto"}>
           <h4 className="m-0 mt-1">
             <b>Fees</b>
           </h4>
         </Col>
-        <Col className="d-flex justify-content-end">
+        <Col xs={'auto'}>
           <Button
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="d-flex align-items-center gap-2"
-            // onClick={AddStudent}
+            onClick={()=>setShowModal(true)}
           >
             <FiPlus size={18} /> Add Fee
           </Button>
@@ -161,6 +167,11 @@ export const Fees = () => {
           )}
         </Col>
       </Row>
+      {showModal && (
+        <div className="modal-container">
+          <AddFeeModal open={showModal} onClose={onClose} />
+        </div>
+      )}
     </div>
   );
 };

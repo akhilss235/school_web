@@ -11,9 +11,9 @@ function CustomTable({ headers, data }) {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className={`${
-                  header.label === "Action" ? "text-center" : "text-start"
-                }`}
+                // className={`${
+                //   header.label === "Action" ? "text-center" : "text-start"
+                // }`}
               >
                 {header.label}
               </th>
@@ -28,7 +28,7 @@ function CustomTable({ headers, data }) {
                   key={colIndex}
                   style={{
                     color: header.label === "Fees Type" ? "#148CF0" : "",
-                    textAlign: "start",
+                    // textAlign: "start",
                   }}
                 >
                   {header.label === "Action" ? (

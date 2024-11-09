@@ -114,31 +114,28 @@ const Leaves = ({ isTeacher }) => {
         </div>
       )}
       <div>
-        <Row
-          className="text-start mb-3 align-items-center"
-          style={{ width: "100%" }}
-        >
+        <Row className="text-start mb-3 gy-3 justify-content-between align-items-center">
           <Col xs={"auto"}>
-            <h4>
+            <h4 className="mb-0">
               <b>Leaves</b>
             </h4>
           </Col>
-          <Col className="d-flex justify-content-md-end">
+          <Col xs={"auto"}>
             <Search />
           </Col>
         </Row>
         <Row className="mb-3">
-          <Col sm={"auto"} className="mb-3">
+          <Col xs={"auto"} className="mb-3">
             <StaticFilter />
           </Col>
-          <Col sm={"auto"} className="mb-3">
+          <Col xs={"auto"} className="mb-3">
             <DropdownFilter
               filterOptions={filterOptions}
               selectedOption={selectedLeaveType}
               handleOptionChange={handleLeaveTypeChange}
             />
           </Col>
-          <Col sm={"auto"} className="d-flex flex-wrap">
+          <Col xs={"auto"} className="d-flex flex-wrap">
             <div className="me-2 mb-3" style={{ minWidth: "200px" }}>
               <GetDate title="From" />
             </div>
