@@ -2,30 +2,49 @@ import React, { useState } from 'react';
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap"; // Import Dropdown
 import BasicBreadcrumbs from "../components/BasicBreadcrumbs";
 import Search from "../filter/Search";
-import Filter from "../filter/Filter";
-import { GetDate } from "../filter/Date";
 import { FiPlus } from "react-icons/fi";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { GoDotFill } from "react-icons/go";
-import { LiaEyeSolid } from "react-icons/lia";
 import { FaRegEdit } from "react-icons/fa";
-import { CiLock } from "react-icons/ci";
-import Promote from "../img/Promote.png";
 import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import StLoginDetails from '../Model/StLoginDetails';
 import StInactivate from '../Model/StInactivate';
+import StaticFilter from '../filter/StaticFilter';
+import { StatusTag } from '../components/StatusTag';
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import DropdownFilter from '../components/student/Outlet/fees/DropdownFilter';
+import NewSubject from '../Model/NewSubject';
 
 function ClassesSections() {
   const [modalShow, setModalShow] = useState(false);
   const [modalInactivate, setModalInactivate] = useState(false);
+  const [modalDelete, setModalDelete] = useState(false);
+  const [selectedLeaveType, setSelectedLeaveType] = useState("");
+
 
   const filterOptions = [
     { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
-    { label: "Section", options: ["All", "A", "B", "C"] },
-    { label: "Gender", options: ["All", "Male", "Female"] },
+    { label: "Section", options: ["All", "Class 1", "Class 2", "Class 3"] },
     { label: "Status", options: ["All", "Active", "Inactive"] },
   ];
+
+  const inputData = [
+    {
+      id:"1",
+      name:"Class",
+      type:"input"
+    },
+    {
+      id:"2",
+      name:"Section",
+      type:"input"
+    },
+    {
+      id:"3",
+      name:"No. of Students",
+      type:"input"
+    },
+  ]
 
   const handleApplyFilters = (filters) => {
     console.log("Applied Filters:", filters);
@@ -35,15 +54,18 @@ function ClassesSections() {
   function AddStudent () {
     navigate("/Students/Add Student");
   }
+  const handleLeaveTypeChange = (event) => {
+    setSelectedLeaveType(event.target.value);
+  };
+  const handlePageChange = (page) => {
+    // setCurrentPage(page);
+  };
   
-  function ViewStudent () {
-    navigate("Students/Details");
-  }
   return (
     <div >
       <div className="text-start mb-3">
         <h4>
-          <b>Student List</b>
+          <b>Classes & Sections</b>
         </h4>
         <BasicBreadcrumbs />
       </div>
@@ -52,18 +74,20 @@ function ClassesSections() {
         className="align-items-center mb-4"
         style={{ backgroundColor: "#FFFFFF" }}
       >
-        <Col xs={12} md={8} lg={6} className="d-flex flex-wrap">
+        <Col xs={12} md={8} lg={6} className="d-flex flex-wrap gap-1">
           <div className="me-3 mb-2 mb-md-0">
-            <Filter
-              filterOptions={filterOptions}
-              onApply={handleApplyFilters}
-            />
+            <StaticFilter />
           </div>
-          <div className="me-3 mb-2 mb-md-0">
-            <GetDate title="From" />
-          </div>
-          <div className="me-3 mb-2 mb-md-0">
-            <GetDate title="To" />
+          <div className="d-flex flex-row gap-2">
+            {
+              filterOptions.map((item)=>(
+                <DropdownFilter
+                  filterOptions={item}
+                  selectedOption={selectedLeaveType}
+                  handleOptionChange={handleLeaveTypeChange}
+                />
+              ))
+            }
           </div>
         </Col>
 
@@ -78,9 +102,9 @@ function ClassesSections() {
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="ms-3"
-            onClick={AddStudent}
+            onClick={()=>setModalShow(true)}
           >
-            <FiPlus /> Add Student
+            <FiPlus /> New Class & Section
           </Button>
         </Col>
       </Row>
@@ -89,30 +113,21 @@ function ClassesSections() {
         <Table responsive              >
           <thead style={{ color: "#505050" }}>
             <tr>
-              <th>Student ID</th>
-              <th>Student Name</th>
               <th>Class</th>
               <th>Section</th>
-              <th> DOB</th>
-              <th>Gender</th>
-              <th>Date Of Join</th>
-              <th>Phone No.</th>
+              <th>No of Students</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>20240015678</td>
-              <td>Emma Thomas</td>
+            
               <td>I</td>
               <td>A</td>
-              <td>02/06/2012</td>
-              <td>Female</td>
-              <td>07/12/2024</td>
-              <td>+91 90876 54331</td>
-              <td style={{ color: "#16BE16" }}>
-                <GoDotFill /> Active
+              <td>50</td>
+              <td style={{textAlign:"center", verticalAlign:"middle"}}>
+                <StatusTag  status={"Inactive"}/>
               </td>
               <td>
                 <Dropdown>
@@ -124,35 +139,13 @@ function ClassesSections() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href="Students/Details"
-                      style={{ borderBottom: "1px solid #D1D1D1" }}
-                    >
-                      <LiaEyeSolid className="me-2" /> View Student
-                    </Dropdown.Item>
-                    <Dropdown.Item
                       href="#/view"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <FaRegEdit className="me-2" /> Edit
                     </Dropdown.Item>
-                    <Dropdown.Item onClick={() => setModalShow(true)} style={{ borderBottom: "1px solid #D1D1D1" }}>
-
-                      <CiLock className="me-2" /> Login Details
-                    </Dropdown.Item>
-
-                    <Dropdown.Item
-                      href="Students/Promote student"
-                      style={{ borderBottom: "1px solid #D1D1D1" }}
-                      
-                    >
-                      {" "}
-                      <img
-                        src={Promote}
-                        alt="Logo"
-                        className="me-3"
-                        style={{ maxHeight: "40px" }}
-                      />
-                      Promote Student
+                    <Dropdown.Item onClick={() => setModalDelete(true)} style={{ borderBottom: "1px solid #D1D1D1",color:"#148CF0"}}>
+                      <MdOutlineDeleteOutline className="me-2" /> Delete
                     </Dropdown.Item>
                     <Dropdown.Item href="#/delete" style={{ color: "red" }}  onClick={() => setModalInactivate(true)}>
                       <MdOutlineToggleOff className="me-2" /> Inactivate
@@ -164,8 +157,9 @@ function ClassesSections() {
           </tbody>
         </Table>
       </div>
-      <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
-      <StInactivate show={modalInactivate} onHide={() => setModalInactivate(false)}/>
+      <NewSubject show={modalShow} onHide={() => setModalShow(false)} data={inputData} title={"Class & Section"} />
+      <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} isInactive={true} title={"Inactivate Class & Section"} label={'inactive the class & section'} btnTitle={"Inactivate"}/>
+      <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Class & Section"} isDelete={true} label={"delete the class & section"} btnTitle={"Delete"}/>
     </div>
   );
 }

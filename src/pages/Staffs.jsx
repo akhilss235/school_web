@@ -166,7 +166,7 @@ function Staffs() {
         show={modalInactivate}
         onHide={() => setModalInactivate(false)}
       />
-      <NewSubject show={modalInactivate}  onHide={() => setModalInactivate(false)} data={data} isInactive={true} title={"Inactive Staff"} label={"inactive the staff"}/>
+      <NewSubject show={modalInactivate}  onHide={() => setModalInactivate(false)} data={data} isInactive={true} title={"Inactive Staff"} label={"inactive the staff"} btnTitle={"Inactivate"}/>
     </div>
   );
 }

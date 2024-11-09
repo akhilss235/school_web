@@ -162,8 +162,8 @@ function Subjects() {
         </Table>
       </div>
       <NewSubject show={modalShow} onHide={() => setModalShow(false)} title={"New Subject"} data={inputData}/>
-      <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Subject"} isInactive={true} label={"inactivate the subject"}/>
-      <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Subject"} isDelete={true} label={"delete the subject"}/>
+      <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Subject"} isInactive={true} label={"inactivate the subject"} btnTitle={"Inactivate"}/>
+      <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Subject"} isDelete={true} label={"delete the subject"} btnTitle={"Delete"}/>
     </div>
   );
 }

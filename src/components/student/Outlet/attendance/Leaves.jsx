@@ -4,8 +4,6 @@ import { Row, Col } from "react-bootstrap"; // Import Dropdown
 import Search from "../../../../filter/Search";
 import { GetDate } from "../../../../filter/Date";
 import DropdownFilter from "./DropdownFilter";
-import { GoFilter } from "react-icons/go";
-import { IconContext } from "react-icons";
 import CustomTable from "./CustomTable";
 import Pagination from "./Pagination";
 import ResultsSummary from "./ResultsSummary";

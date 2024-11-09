@@ -5,9 +5,18 @@ import { Dropdown } from '../components/student/Dropdown';
 import { Input } from '../components/Input';
 import { StudentCard } from '../components/student/StudentCard';
 
-function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false, label="" }) {
+function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false, label="", btnTitle}) {
 
-  const buttonTitle = label !== "" ? title : `Add ${title}`
+  const buttonTitle = btnTitle === "" ? title : btnTitle
+
+  const Form = ({item}) => (
+    item.type === "select" ?
+      <Dropdown label={item?.name} value={item?.value} />
+      : item.type === "input" ?
+        <Input label={item?.name} />
+        : null
+  );
+
   return (
     <Modal
     {...{show, onHide}}
@@ -41,12 +50,19 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
           </div>
         }
         {
-          data && !isInactive && data.map((item)=>(
-            item.type === "select" ?
-              <Dropdown label={item?.name} value={item?.value} />
-            :
-              <Input label={item?.name} />
-          ))
+          data && !isInactive && data.map((item, index) => {
+            console.log("item", Array.isArray(item))
+            return(
+            Array.isArray(item) ? (
+              <div key={index} className='d-flex flex-row gap-4' style={{ width: "100%" }}>
+                {item.map((it) => (
+                  <Form key={it.id} item={it} />
+                ))}
+              </div>
+            ) : (
+              <Form key={item.id} item={item} />
+            )
+          )})
         }
       </div>
     <div className='d-flex flex-row justify-content-center align-items-center gap-2 p-3'>

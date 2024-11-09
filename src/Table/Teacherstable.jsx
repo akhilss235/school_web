@@ -163,7 +163,7 @@ function Teacherstable() {
         </Table>
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
-      <NewSubject  show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Teacher"} data={data} isInactive={true} label={"inactivate the teacher"} />
+      <NewSubject  show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Teacher"} data={data} isInactive={true} label={"inactivate the teacher"} btnTitle={"Inactivate"} />
     </div>
   );
 }
