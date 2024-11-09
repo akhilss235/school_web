@@ -416,3 +416,12 @@ border-style: dashed;
 .fs-20 {
   font-size: 20px;
 }
+.dropdownInput:focus{
+  outline: none;
+}
+
+/* .subjectInput::-webkit-inner-spin-button,
+.subjectInput::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */

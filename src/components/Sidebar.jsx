@@ -111,6 +111,24 @@ const Sidebar = ({ children }) => {
       path: "/Exams",
       name: "Exams",
       icon: <GiBookshelf style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Exams/Set Exams",
+          name: "Set Exams",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Exams/Schedule Exams",
+          name: "Schedule Exams",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Exams/Grade Settings",
+          name: "Grade Settings",
+          icon: <GoDotFill />,
+        },
+    
+      ],
     },
     {
       path: "/Fees",

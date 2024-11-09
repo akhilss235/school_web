@@ -46,7 +46,7 @@ function ClassRooms() {
     // setCurrentPage(page);
   };
   return (
-    <div >
+    <div className='p-3'>
       <div className="text-start mb-3">
         <h4>
           <b>Class Rooms</b>

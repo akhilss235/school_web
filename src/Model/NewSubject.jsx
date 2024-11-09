@@ -1,21 +1,27 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { Input } from '../components/Input';
 import { CloseIcon } from '../components/CloseIcon';
 import { Dropdown } from '../components/student/Dropdown';
-import { Input } from '../components/Input';
 import { StudentCard } from '../components/student/StudentCard';
+import { InputDropdown } from '../components/InputDropdown';
 
 function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false, label="", btnTitle}) {
 
   const buttonTitle = btnTitle === "" ? title : btnTitle
 
   const Form = ({item}) => (
-    item.type === "select" ?
-      <Dropdown label={item?.name} value={item?.value} />
+    item.name.toLowerCase() === "duration" ?
+        <InputDropdown name={item?.name} value={item?.value} />
+      : item.type === "select" ?
+        <Dropdown label={item?.name} value={item?.value} />
       : item.type === "input" ?
         <Input label={item?.name} />
-        : null
+      : item.type === "date" ?
+        <Input label={item?.name} type="date" />
+      : null
   );
+
 
   return (
     <Modal
@@ -38,7 +44,7 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
         </div>
       </div>
     }
-      <div className='d-flex flex-column gap-1 justifu-content-center align-items-center p-3'>
+      <div className='d-flex flex-column gap-3 justifu-content-center align-items-center p-3'>
         {
           (isInactive || isDelete) &&
           <div className='d-flex flex-column gap-3 justifu-content-center align-items-center'>
@@ -50,9 +56,7 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
           </div>
         }
         {
-          data && !isInactive && data.map((item, index) => {
-            console.log("item", Array.isArray(item))
-            return(
+          data && !isInactive && data.map((item, index) =>(
             Array.isArray(item) ? (
               <div key={index} className='d-flex flex-row gap-4' style={{ width: "100%" }}>
                 {item.map((it) => (
@@ -62,7 +66,7 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
             ) : (
               <Form key={item.id} item={item} />
             )
-          )})
+          ))
         }
       </div>
     <div className='d-flex flex-row justify-content-center align-items-center gap-2 p-3'>

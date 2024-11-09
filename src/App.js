@@ -33,6 +33,10 @@ import Accounts from "./pages/Accounts";
 import UserAccess from "./pages/User Access";
 import SetTiming from "./submenu/Set Timing";
 import ScheduleClasses from "./submenu/Schedule Classes";
+import { SetExam } from "./pages/Exam/SetExam";
+import { ScheduleExam } from "./pages/Exam/ScheduleExam";
+import { GradeSetting } from "./pages/Exam/GradeSetting";
+import { AllocateList } from "./components/AllocateList";
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -51,10 +55,9 @@ function App() {
             {/* <Route path="Students" element={<Students />} /> */}
             <Route path="Students List" element={<StudentsList />} />
 
-
             <Route path="Students/Add Student" element={<AddStudent />} />
-            <Route path="Students/Students Promotion" element={<Promotion />} />
-            <Route path="Students/Promote student" element={<Promotion isStudent={true} />} />
+            <Route path="Students/Students Promotion" element={<Promotion  title={"student"} />} />
+            <Route path="Students/Promote student" element={<Promotion isStudent={true} title={"student"} />} />
             <Route path="Students/Details" element={<StudentDetails isTeacher={false} />}>
               <Route index element={<Details isTeacher={false}  />} />
               <Route path="Time Table" element={<TimeTable isTeacher={false}  />} />
@@ -79,22 +82,15 @@ function App() {
               <Route path="Attendance" element={<Attendance isTeacher={true} />} />
               <Route path="Salary" element={<Salary />} />
             </Route>
-
-            
-
-
             <Route path="Parents" element={<Parents />} />
-
-
-
-
-
             <Route path="Subjects" element={<Subjects />} />
             
             <Route path="Classes/Class Rooms" element={<ClassRooms />} />
             <Route path="Classes/Classes & Sections" element={<ClassesSections />} />
-            <Route path="Classes/Allocate Class Rooms" element={<AllocateClassRooms />} />
-
+            <Route path="Classes/Allocate Class Rooms" element={<AllocateClassRooms />}>
+              <Route index element={<AllocateList />} />
+              <Route path="shift class" element={<Promotion isCrumbsNeeded={false}  title={"class"}  />} />
+            </Route>
             
             {/* TimeTable */}
             <Route path="Time Tables/Set Timing" element={<SetTiming />} />
@@ -102,7 +98,9 @@ function App() {
 
             
 
-            <Route path="Exams" element={<Exams />} />
+            <Route path="Exams/Set Exams" element={<SetExam />} />
+            <Route path="Exams/Schedule Exams" element={<ScheduleExam />} />
+            <Route path="Exams/Grade Settings" element={<GradeSetting />} />
             
             <Route path="Fees" element={<Feess />} />
             <Route path="Attendance" element={<Attendances />} />
