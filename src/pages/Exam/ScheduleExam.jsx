@@ -7,7 +7,7 @@ import Search from "../../filter/Search";
 import NewSubject from "../../Model/NewSubject";
 import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import StaticFilter from "../../filter/StaticFilter";
-import DropdownFilter from "../../components/student/Outlet/fees/DropdownFilter";
+import DropdownFilter from "../../filter/DropdownFilter";
 
 export const ScheduleExam = () => {
   const [selectedLeaveType, setSelectedLeaveType] = useState("");

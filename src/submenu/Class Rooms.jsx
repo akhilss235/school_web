@@ -10,7 +10,7 @@ import NewSubject from '../Model/NewSubject';
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { StatusTag } from '../components/StatusTag';
 import StaticFilter from '../filter/StaticFilter';
-import DropdownFilter from '../components/student/Outlet/fees/DropdownFilter';
+import DropdownFilter from '../filter/DropdownFilter';
 
 function ClassRooms() {
   const [modalShow, setModalShow] = useState(false);

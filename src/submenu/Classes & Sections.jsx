@@ -12,7 +12,7 @@ import StInactivate from '../Model/StInactivate';
 import StaticFilter from '../filter/StaticFilter';
 import { StatusTag } from '../components/StatusTag';
 import { MdOutlineDeleteOutline } from "react-icons/md";
-import DropdownFilter from '../components/student/Outlet/fees/DropdownFilter';
+import DropdownFilter from '../filter/DropdownFilter';
 import NewSubject from '../Model/NewSubject';
 
 function ClassesSections() {

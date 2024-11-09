@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Dropdown, Row, Table } from "react-bootstrap";
 import StaticFilter from "../filter/StaticFilter";
-import DropdownFilter from "./student/Outlet/fees/DropdownFilter";
+import DropdownFilter from "../filter/DropdownFilter";
 import Search from "../filter/Search";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdOutlineDeleteOutline } from "react-icons/md";
