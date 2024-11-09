@@ -16,20 +16,20 @@ function ScheduleClasses() {
   const [modalInactivate, setModalInactivate] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
   const [filters, setFilters] = useState({
-    academicYear: "",
-    paymentMode: "",
+    class: "",
+    section: "",
   });
 
   const filterConfigs = [
     {
-      label: "Academic Year",
-      options: ["2023/2024", "2024/2025"],
-      name: "academicYear",
+      label: "Class",
+      options: ["LKG", "UKG", "1", "2"],
+      name: "class",
     },
     {
-      label: "Mode",
-      options: ["All", "Cash", "Cheque", "Online"],
-      name: "paymentMode",
+      label: "Section",
+      options: ["A", "B", "C", "D"],
+      name: "section",
     },
   ];
 
@@ -68,7 +68,19 @@ function ScheduleClasses() {
         <BasicBreadcrumbs />
       </div>
       <Row className="justify-content-end mb-4 gy-3">
-      <Col xs={"auto"}>
+        <Col xs={"auto"}>
+          <Button
+            variant="#148CF0"
+            style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
+            className="d-flex align-items-center gap-2"
+            // onClick={() => setModalShow(true)}
+          >
+            <FiPlus size={18} /> Schedule Class
+          </Button>
+        </Col>
+      </Row>
+      <Row className="align-items-center mb-3 gy-3">
+        <Col xs={"auto"}>
           <StaticFilter />
         </Col>
         <Col xs={"auto"}>
@@ -93,22 +105,10 @@ function ScheduleClasses() {
             handleOptionChange={handleFilterChange}
           />
         </Col>
-
         <Col xs={"auto"}>
           <Search />
         </Col>
-        <Col xs={"auto"}>
-          <Button
-            variant="#148CF0"
-            style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
-            className="d-flex align-items-center gap-2"
-            onClick={() => setModalShow(true)}
-          >
-            <FiPlus size={18} /> Add Timing
-          </Button>
-        </Col>
       </Row>
-
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
         <Table responsive>
           <thead style={{ color: "#505050" }}>
@@ -135,20 +135,20 @@ function ScheduleClasses() {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                  <Dropdown.Item
-                      href="Students/Details"
+                    <Dropdown.Item
+                      // href="Students/Details"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View
                     </Dropdown.Item>
                     <Dropdown.Item
-                      onClick={() => setModalShow(true)}
+                      // onClick={() => setModalShow(true)}
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <FaRegEdit className="me-2" /> Edit
                     </Dropdown.Item>
                     <Dropdown.Item
-                      onClick={() => setModalDelete(true)}
+                      // onClick={() => setModalDelete(true)}
                       style={{ color: "#ED1C00" }}
                     >
                       <MdOutlineDeleteOutline className="me-2" /> Delete
@@ -180,7 +180,7 @@ function ScheduleClasses() {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default ScheduleClasses
+export default ScheduleClasses;
