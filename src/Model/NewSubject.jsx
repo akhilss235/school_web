@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { CloseIcon } from '../components/CloseIcon';
 import { Dropdown } from '../components/student/Dropdown';
 import { Input } from '../components/Input';
+import { StudentCard } from '../components/student/StudentCard';
 
 function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false, label="" }) {
 
@@ -18,23 +19,29 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
     {
       label === "" ?
       <div className='d-flex flex-row justify-content-between align-items-center p-3'>
-        <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter fw-semibold'">{title}</Modal.Title>
         <CloseIcon onClose={onHide} />
       </div> :
       <div className='d-flex flex-row justify-content-center align-items-center p-3' style={{position:"relative"}}>
-        <Modal.Title id="contained-modal-title-vcenter " className='text-center'>{title}</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter " className='text-center fw-semibold'>{title}</Modal.Title>
         <div style={{position:"absolute", right:"20px"}}>
           <CloseIcon onClose={onHide} />
         </div>
       </div>
     }
-      <div className='d-flex flex-column gap-1 align-items-center p-3'>
+      <div className='d-flex flex-column gap-1 justifu-content-center align-items-center p-3'>
         {
           (isInactive || isDelete) &&
-          <p>Are you sure you want to {label}</p>
+          <div className='d-flex flex-column gap-3 justifu-content-center align-items-center'>
+            {
+              data &&
+              <StudentCard data={data} isInfo={false}/>
+            }
+            <p className='m-0'>Are you sure you want to {label}</p>
+          </div>
         }
         {
-          data && data.map((item)=>(
+          data && !isInactive && data.map((item)=>(
             item.type === "select" ?
               <Dropdown label={item?.name} value={item?.value} />
             :

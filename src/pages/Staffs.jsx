@@ -15,10 +15,16 @@ import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import StLoginDetails from "../Model/StLoginDetails";
 import StInactivate from "../Model/StInactivate";
+import NewSubject from "../Model/NewSubject";
 
 function Staffs() {
   const [modalShow, setModalShow] = useState(false);
   const [modalInactivate, setModalInactivate] = useState(false);
+
+  const data = {
+    name:"enk peru illada",
+    "number":"211241252",
+  }
 
   const filterOptions = [
     { label: "Department", options: ["All", "Admin", "Management", "Management"] },
@@ -160,6 +166,7 @@ function Staffs() {
         show={modalInactivate}
         onHide={() => setModalInactivate(false)}
       />
+      <NewSubject show={modalInactivate}  onHide={() => setModalInactivate(false)} data={data} isInactive={true} title={"Inactive Staff"} label={"inactive the staff"}/>
     </div>
   );
 }

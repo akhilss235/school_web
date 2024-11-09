@@ -15,6 +15,7 @@ import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import StLoginDetails from "../Model/StLoginDetails";
 import StInactivate from "../Model/StInactivate";
+import NewSubject from "../Model/NewSubject";
 
 function Teacherstable() {
   const [modalShow, setModalShow] = useState(false);
@@ -26,6 +27,11 @@ function Teacherstable() {
     { label: "Gender", options: ["All", "Male", "Female"] },
     { label: "Status", options: ["All", "Active", "Inactive"] },
   ];
+  const data = {
+    name:"enk peru illada",
+    "number":"211241252",
+    "class":"yeeii"
+  }
 
   const handleApplyFilters = (filters) => {
     console.log("Applied Filters:", filters);
@@ -157,11 +163,7 @@ function Teacherstable() {
         </Table>
       </div>
       <StLoginDetails show={modalShow} onHide={() => setModalShow(false)} />
-      <StInactivate
-        className="custom-modal"
-        show={modalInactivate}
-        onHide={() => setModalInactivate(false)}
-      />
+      <NewSubject  show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Teacher"} data={data} isInactive={true} label={"inactivate the teacher"} />
     </div>
   );
 }
