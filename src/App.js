@@ -55,6 +55,7 @@ import AccountDetails from "./pages/Fees/Account Details";
 import ScheduleClassesList from "./components/Timetable/ScheduleClassesList";
 import ScheduleNewClass from "./components/Timetable/ScheduleNewClass";
 import ViewScheduleClasses from "./components/Timetable/ViewScheduleClasses";
+import ViewStudent from "./components/Fees/View Student";
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -213,6 +214,8 @@ function App() {
             <Route path="Fees/Fees Type" element={<FeesType />} />
             <Route path="Fees/Fees Master" element={<FeesMaster />} />
             <Route path="Fees/Account Details" element={<AccountDetails />} />
+            <Route path="Fees/Collect Fees/View Student" element={<ViewStudent />} />
+
           </Route>
         </Routes>
       </Router>
