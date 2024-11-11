@@ -10,7 +10,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import NewSubject from "../Model/NewSubject";
-import ClassTiming from "./ClassTiming";
+import ClassTiming from "../components/ClassTiming";
 
 function ScheduleClasses() {
   const [modalShow, setModalShow] = useState(false);
@@ -55,6 +55,33 @@ function ScheduleClasses() {
     ],
   ];
 
+  const classTimingData = [
+    {
+      id: 1,
+      icon: "classandsection",
+      title: "Class & Section",
+      value: "IV A",
+    },
+    {
+      id: 2,
+      icon: "startandendtime",
+      title: "Start Time",
+      value: "09:00 AM",
+    },
+    {
+      id: 3,
+      icon: "startandendtime",
+      title: "End Time",
+      value: "04:45 PM",
+    },
+    {
+      id: 4,
+      icon: "noofsubjects",
+      title: "No. of Subjects",
+      value: "08",
+    },
+  ];
+
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
     setFilters((prevValues) => ({ ...prevValues, [name]: value }));
@@ -68,12 +95,11 @@ function ScheduleClasses() {
         </h4>
         <BasicBreadcrumbs />
       </div>
-<Row>
-  <Col>
-  <ClassTiming />
-  </Col>
-</Row>
-
+      <Row>
+        <Col>
+          <ClassTiming data={classTimingData} />
+        </Col>
+      </Row>
       <Row className="justify-content-end mb-4 gy-3">
         <Col xs={"auto"}>
           <Button
@@ -143,7 +169,7 @@ function ScheduleClasses() {
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      // href="Students/Details"
+                      href="View Schedule Classes"
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View
