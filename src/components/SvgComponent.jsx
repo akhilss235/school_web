@@ -34,6 +34,8 @@ import { ReactComponent as FileIcon } from '../img/file.svg';
 import { ReactComponent as ClassAndSectionIcon } from '../img/classandsection.svg';
 import { ReactComponent as StartAndEndTime } from '../img/startandendtime.svg';
 import { ReactComponent as NoOfSubjects } from '../img/noofsubjects.svg';
+import { ReactComponent as InfoIcon } from '../img/info.svg';
+import { ReactComponent as SetTimeTable } from '../img/settimetable.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -69,6 +71,8 @@ const icons = {
   classandsection:ClassAndSectionIcon,
   startandendtime:StartAndEndTime,
   noofsubjects:NoOfSubjects,
+  info:InfoIcon,
+  settimetable:SetTimeTable
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {

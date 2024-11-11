@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap";
 import StaticFilter from "../../filter/StaticFilter";
 import DropdownFilter from "../../filter/DropdownFilter";
@@ -22,9 +21,9 @@ function ScheduleClassesList() {
     section: "",
   });
 
-  const navigateTo=function navigateTo(url) {
+  const navigateTo = function navigateTo(url) {
     navigate(url);
-  }
+  };
 
   const filterConfigs = [
     {

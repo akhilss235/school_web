@@ -1,16 +1,7 @@
 import React, { useState } from "react";
-import BasicBreadcrumbs from "../BasicBreadcrumbs";
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap";
-import StaticFilter from "../../filter/StaticFilter";
-import DropdownFilter from "../../filter/DropdownFilter";
-import Search from "../../filter/Search";
-import { FiPlus } from "react-icons/fi";
-import { LiaEyeSolid } from "react-icons/lia";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaRegEdit } from "react-icons/fa";
-import { MdOutlineDeleteOutline } from "react-icons/md";
-import NewSubject from "../../Model/NewSubject";
 import ClassTiming from "../ClassTiming";
+import { Class } from "../../components/student/Outlet/timeTable/Class";
 
 function ViewScheduleClasses() {
   const classTimingData = [
@@ -41,10 +32,15 @@ function ViewScheduleClasses() {
   ];
 
   return (
-    <div >
+    <div>
       <Row>
         <Col>
           <ClassTiming data={classTimingData} />
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12}>
+          <Class isTeacher={false} />
         </Col>
       </Row>
     </div>
