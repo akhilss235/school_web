@@ -35,6 +35,12 @@ function BasicBreadcrumbs() {
             to = "/Time Tables/Set Timing";
           } else if (value.toLowerCase() === "attendance") {
             to = "/Attendance/Teachers Attendance";
+          }else if (value.toLowerCase() === "accounts") {
+            to = "/Accounts/Expense";
+          } else if (value.toLowerCase() === "leave") {
+            to = "/Leave/Leave Request";
+          } else if (value.toLowerCase() === "fees") {
+            to = "/Fees/Collect Fees";
           } else {
             to = `/${currentPath}`;
           }

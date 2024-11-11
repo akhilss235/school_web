@@ -19,6 +19,7 @@ import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { IoFingerPrint } from "react-icons/io5";
 import { LiaCoinsSolid } from "react-icons/lia";
 import { MdAddCard } from "react-icons/md";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -136,12 +137,51 @@ const Sidebar = ({ children }) => {
     
       ],
     },
+
+
+
     {
       path: "/Fees",
       name: "Fees",
-      icon: <FaMoneyCheckDollar style={{ width: "25px" }} />,
+      icon: <FaRegMoneyBillAlt style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Fees/Collect Fees",
+          name: "Collect Fees",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Fees/Fees Group",
+          name: "Fees Group",
+          icon: <GoDotFill />,
+        },
+    
 
+        {
+          path: "Fees/Fees Type",
+          name: "Fees Type",
+          icon: <GoDotFill />,
+
+        },  {
+          path: "Fees/Fees Master",
+          name: "Fees Master",
+          icon: <GoDotFill />,
+          
+          
+        },
+        {
+          path: "Fees/Account Details",
+          name: "Account Details",
+          icon: <GoDotFill />,
+        },
+      ],
     },
+    // {
+    //   path: "/Fees",
+    //   name: "Fees",
+    //   icon: <FaRegMoneyBillAlt style={{ width: "25px" }} />,
+
+    // },
     {
       path: "/Attendance",
       name: "Attendance",
@@ -166,11 +206,56 @@ const Sidebar = ({ children }) => {
       ],
     },
 
+
+
+
     {
       path: "/Accounts",
       name: "Accounts",
       icon: <LiaCoinsSolid style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Accounts/Expense",
+          name: "Expense",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Accounts/Transaction",
+          name: "Transaction",
+          icon: <GoDotFill />,
+        },
+
+    
+      ],
     },
+
+    {
+      path: "/Leave",
+      name: "Leave",
+      icon: <LiaCoinsSolid style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Leave/Leave Request",
+          name: "Leave Request",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Leave/Leave Settings",
+          name: "Leave Settings",
+          icon: <GoDotFill />,
+        },
+
+    
+      ],
+    },
+
+
+
+
+
+
+
+ 
     {
       path: "/User Access",
       name: "User Access",
