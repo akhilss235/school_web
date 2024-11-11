@@ -146,7 +146,26 @@ const Sidebar = ({ children }) => {
       path: "/Attendance",
       name: "Attendance",
       icon: <IoFingerPrint style={{ width: "25px" }} />,
+      subMenu: [
+        {
+          path: "Attendance/Teachers Attendance",
+          name: "Teachers Attendance",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Attendance/Staff Attendance",
+          name: "Staff Attendance",
+          icon: <GoDotFill />,
+        },
+        {
+          path: "Attendance/Attendance History",
+          name: "Attendance History",
+          icon: <GoDotFill />,
+        },
+    
+      ],
     },
+
     {
       path: "/Accounts",
       name: "Accounts",

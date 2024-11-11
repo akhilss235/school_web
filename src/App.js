@@ -28,7 +28,7 @@ import AllocateClassRooms from "./submenu/Allocate Class Rooms";
 import Exams from "./pages/Exams";
 
 import Feess from "./pages/Fees";
-import Attendances from "./pages/Attendance";
+// import Attendances from "./pages/Attendance";
 import Accounts from "./pages/Accounts";
 import UserAccess from "./pages/User Access";
 import SetTiming from "./submenu/Set Timing";
@@ -40,7 +40,9 @@ import { AllocateList } from "./components/AllocateList";
 import { ScheduleExamList } from "./components/ScheduleExam/ScheduleExamList";
 import { ScheduleExamTable } from "./components/ScheduleExam/ScheduleExamTable";
 import { ScheduleExamForm } from "./components/ScheduleExam/ScheduleExamForm";
-
+import TeachersAttendance from "./pages/Attendance/Teachers Attendance";
+import StaffAttendance from "./pages/Attendance/Staff Attendance";
+import AttendanceHistory from "./pages/Attendance/Attendance History";
 const SidebarLayout = () => (
   <Sidebar>
     <Outlet />
@@ -110,9 +112,16 @@ function App() {
             <Route path="Exams/Grade Settings" element={<GradeSetting />} />
             
             <Route path="Fees" element={<Feess />} />
-            <Route path="Attendance" element={<Attendances />} />
+            {/* <Route path="Attendance" element={<Attendances />} /> */}
             <Route path="Accounts" element={<Accounts />} />
             <Route path="User Access" element={<UserAccess />} />
+
+
+
+          {/* Attendance  */}
+          <Route path="Attendance/Teachers Attendance" element={<TeachersAttendance />} />
+            <Route path="Attendance/Staff Attendance" element={<StaffAttendance />} />
+            <Route path="Attendance/Attendance History" element={<AttendanceHistory />} />
 
           </Route>
         </Routes>
@@ -122,3 +131,45 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

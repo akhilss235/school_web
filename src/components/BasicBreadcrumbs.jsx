@@ -33,6 +33,8 @@ function BasicBreadcrumbs() {
             to = "/Classes/Class Rooms";
           } else if (value.toLowerCase() === "time tables") {
             to = "/Time Tables/Set Timing";
+          } else if (value.toLowerCase() === "attendance") {
+            to = "/Attendance/Teachers Attendance";
           } else {
             to = `/${currentPath}`;
           }
