@@ -52,6 +52,10 @@ import FeesGroup from "./pages/Fees/Fees Group";
 import FeesType from "./pages/Fees/Fees Type";
 import FeesMaster from "./pages/Fees/Fees Master";
 import AccountDetails from "./pages/Fees/Account Details";
+import ScheduleClassesList from "./components/Timetable/ScheduleClassesList";
+import ScheduleNewClass from "./components/Timetable/ScheduleNewClass";
+import ViewScheduleClasses from "./components/Timetable/ViewScheduleClasses";
+
 const SidebarLayout = () => (
   <Sidebar>
     <Outlet />
@@ -153,7 +157,17 @@ function App() {
             <Route
               path="Time Tables/Schedule Classes"
               element={<ScheduleClasses />}
-            />
+            >
+              <Route index element={<ScheduleClassesList />} />
+              <Route
+                path="Schedule New Class"
+                element={<ScheduleNewClass />}
+              />
+              <Route
+                path="View Schedule Classes"
+                element={<ViewScheduleClasses />}
+              />
+            </Route>
 
             <Route path="Exams/Set Exams" element={<SetExam />} />
             <Route path="Exams/Schedule Exams" element={<ScheduleExam />}>

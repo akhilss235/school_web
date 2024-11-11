@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-import BasicBreadcrumbs from "../components/BasicBreadcrumbs";
+import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
 import { Button, Table, Row, Col, Dropdown } from "react-bootstrap";
-import StaticFilter from "../filter/StaticFilter";
-import DropdownFilter from "../filter/DropdownFilter";
-import Search from "../filter/Search";
+import StaticFilter from "../../filter/StaticFilter";
+import DropdownFilter from "../../filter/DropdownFilter";
+import Search from "../../filter/Search";
 import { FiPlus } from "react-icons/fi";
 import { LiaEyeSolid } from "react-icons/lia";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
-import NewSubject from "../Model/NewSubject";
-import ClassTiming from "../components/ClassTiming";
-import { Outlet } from "react-router-dom";
+import NewSubject from "../../Model/NewSubject";
+import { useNavigate } from "react-router-dom";
 
-
-
-
-function ScheduleClasses() {
+function ScheduleClassesList() {
+  const navigate = useNavigate();
   const [modalShow, setModalShow] = useState(false);
   const [modalInactivate, setModalInactivate] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
@@ -24,6 +21,10 @@ function ScheduleClasses() {
     class: "",
     section: "",
   });
+
+  const navigateTo=function navigateTo(url) {
+    navigate(url);
+  }
 
   const filterConfigs = [
     {
@@ -92,21 +93,14 @@ function ScheduleClasses() {
   };
 
   return (
-    <div className="p-3">
-      <div className="text-start mb-3">
-        <h4>
-          <b>Schedule Classes</b>
-        </h4>
-        <BasicBreadcrumbs />
-      </div>
-      <Outlet />
-      {/* <Row className="justify-content-end mb-4 gy-3">
+    <div>
+      <Row className="justify-content-end mb-4 gy-3">
         <Col xs={"auto"}>
           <Button
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="d-flex align-items-center gap-2"
-            // onClick={() => setModalShow(true)}
+            onClick={() => navigateTo("Schedule New Class")}
           >
             <FiPlus size={18} /> Schedule Class
           </Button>
@@ -163,12 +157,13 @@ function ScheduleClasses() {
                 <Dropdown>
                   <Dropdown.Toggle variant="link" bsPrefix="p-0">
                     {" "}
+                    {/* Removes default button styling */}
                     <BsThreeDotsVertical />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href="View Schedule Classes"
+                      onClick={() => navigateTo("View Schedule Classes")}
                       style={{ borderBottom: "1px solid #D1D1D1" }}
                     >
                       <LiaEyeSolid className="me-2" /> View
@@ -210,9 +205,9 @@ function ScheduleClasses() {
           label={"delete the Timing?"}
           btnTitle={"Delete"}
         />
-      )} */}
+      )}
     </div>
   );
 }
 
-export default ScheduleClasses;
+export default ScheduleClassesList;
