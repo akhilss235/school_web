@@ -58,7 +58,7 @@ function NewSubject({show, onHide, title, data, isInactive=false, isDelete=false
         {
           data && !isInactive && data.map((item, index) =>(
             Array.isArray(item) ? (
-              <div key={index} className='d-flex flex-row gap-4' style={{ width: "100%" }}>
+              <div key={index} className='modal-form-input' style={{ width: "100%" }}>
                 {item.map((it) => (
                   <Form key={it.id} item={it} />
                 ))}

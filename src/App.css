@@ -419,6 +419,18 @@ border-style: dashed;
 .dropdownInput:focus{
   outline: none;
 }
+.modal-form-input{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  transition: .5s ease-in-out;
+}
+
+@media screen and (max-width:600px) {
+  .modal-form-input{
+    flex-direction: column;
+  }
+}
 
 /* .subjectInput::-webkit-inner-spin-button,
 .subjectInput::-webkit-calendar-picker-indicator {

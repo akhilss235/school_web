@@ -11,6 +11,8 @@ export const Promotion = ({isStudent, isCrumbsNeeded=true, title}) => {
       {
         title:"Shift Class Room",
         description:"Choose a new classroom to replace the old one",
+        btnTitle:"Shift Class Room",
+        resetTitle:"Reset",
         currentSectionData:{
           content:[
             {
@@ -68,6 +70,8 @@ export const Promotion = ({isStudent, isCrumbsNeeded=true, title}) => {
       {
         title:"Promotion",
         description:"Select a Class to Promote next session and new class",
+        btnTitle:"Promote Student",
+        resetTitle:"Reset Promotion",
         currentSectionData:{
           content:{
               title: 'Current Session',
@@ -162,10 +166,10 @@ const item = promotionData[title]
           <div 
             className='reset-btn' 
           >
-            <p className="sign-in">Reset Promotion</p>
+            <p className="sign-in">{item?.resetTitle}</p>
           </div>
           <div className="login-button" style={{width:"200px", height:"50px"}}>
-            <p className="sign-in">Promote Student</p>
+            <p className="sign-in" style={{fontSize:"16px"}}>{item?.btnTitle}</p>
           </div>
         </div>
       </div>

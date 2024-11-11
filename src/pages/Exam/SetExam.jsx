@@ -3,11 +3,11 @@ import { Button, Table, Row, Col, Dropdown } from "react-bootstrap";
 import { FiPlus } from "react-icons/fi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
-import { MdOutlineToggleOff } from "react-icons/md";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import Search from "../../filter/Search";
 import NewSubject from "../../Model/NewSubject";
 import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
+import { StatusTag } from "../../components/StatusTag";
 
 export const SetExam = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -86,20 +86,21 @@ export const SetExam = () => {
         <Table responsive>
           <thead style={{ color: "#505050" }}>
             <tr>
-              <th>Exam Name</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Duration</th>
-              <th>Timing</th>
+              <th>Grade</th>
+              <th>Range</th>
+              <th>Grade Point</th>
+              <th>Result</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Monthly Exam(March)</td>
-              <td>10/11/2024</td>
-              <td>10/11/2024</td>
-              <td>01 hr</td>
+              <td>O+</td>
+              <td>90-100</td>
+              <td>10</td>
+              <td style={{textAlign:"center", verticalAlign:"center"}}>
+                <StatusTag status={"Pass"} />
+              </td>
               <td>09:00 AM - 10:00 AM</td>
               <td>
                 <Dropdown>
