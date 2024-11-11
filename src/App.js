@@ -188,46 +188,17 @@ function App() {
               element={<AttendanceHistory />}
             />
 
-<Route
-              path="Accounts/Expense"
-              element={<Expense />}
-            />
+            <Route path="Accounts/Expense" element={<Expense />} />
 
-<Route
-              path="Accounts/Transaction"
-              element={<Transaction />}
-            />
-            <Route
-              path="Leave/Leave Request"
-              element={<LeaveRequest />}
-            />
-           <Route
-              path="Leave/Leave Settings"
-              element={<LeaveSettings />}
-            />
+            <Route path="Accounts/Transaction" element={<Transaction />} />
+            <Route path="Leave/Leave Request" element={<LeaveRequest />} />
+            <Route path="Leave/Leave Settings" element={<LeaveSettings />} />
 
-
-
-<Route
-              path="Fees/Collect Fees"
-              element={<CollectFees />}
-            />
-            <Route
-              path="Fees/Fees Group"
-              element={<FeesGroup />}
-            />
-                        <Route
-              path="Fees/Fees Type"
-              element={<FeesType />}
-            />
-                                 <Route
-              path="Fees/Fees Master"
-              element={<FeesMaster />}
-            />
-                                             <Route
-              path="Fees/Account Details"
-              element={<AccountDetails />}
-            />
+            <Route path="Fees/Collect Fees" element={<CollectFees />} />
+            <Route path="Fees/Fees Group" element={<FeesGroup />} />
+            <Route path="Fees/Fees Type" element={<FeesType />} />
+            <Route path="Fees/Fees Master" element={<FeesMaster />} />
+            <Route path="Fees/Account Details" element={<AccountDetails />} />
           </Route>
         </Routes>
       </Router>
