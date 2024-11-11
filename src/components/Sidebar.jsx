@@ -14,6 +14,11 @@ import { MdFamilyRestroom } from "react-icons/md";
 import { GiBookshelf } from "react-icons/gi";
 import { GiTeacher } from "react-icons/gi";
 import { TbTable } from "react-icons/tb";
+import { PiExamLight } from "react-icons/pi";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { IoFingerPrint } from "react-icons/io5";
+import { LiaCoinsSolid } from "react-icons/lia";
+import { MdAddCard } from "react-icons/md";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -110,6 +115,7 @@ const Sidebar = ({ children }) => {
     {
       path: "/Exams",
       name: "Exams",
+      // icon: <PiExamLight style={{ width: "25px" }} />,
       icon: <GiBookshelf style={{ width: "25px" }} />,
       subMenu: [
         {
@@ -133,23 +139,23 @@ const Sidebar = ({ children }) => {
     {
       path: "/Fees",
       name: "Fees",
-      icon: <GiBookshelf style={{ width: "25px" }} />,
+      icon: <FaMoneyCheckDollar style={{ width: "25px" }} />,
 
     },
     {
       path: "/Attendance",
       name: "Attendance",
-      icon: <GiBookshelf style={{ width: "25px" }} />,
+      icon: <IoFingerPrint style={{ width: "25px" }} />,
     },
     {
       path: "/Accounts",
       name: "Accounts",
-      icon: <GiBookshelf style={{ width: "25px" }} />,
+      icon: <LiaCoinsSolid style={{ width: "25px" }} />,
     },
     {
       path: "/User Access",
       name: "User Access",
-      icon: <GiBookshelf style={{ width: "25px" }} />,
+      icon: <MdAddCard style={{ width: "25px" }} />,
     },
 
   ];

@@ -27,11 +27,12 @@ function BasicBreadcrumbs() {
           // Determine the path for special cases or build path normally
           let to;
           const currentPath = pathnames.slice(0, index + 1).join("/");
-
-          if (value.toLowerCase() === "classes") {
-            to = "/Classes/Class Rooms"; // Default to "Class Rooms" for "Classes"
+          if (value.toLowerCase() === "students") {
+            to = "/Students List";
+          } else if (value.toLowerCase() === "classes") {
+            to = "/Classes/Class Rooms";
           } else if (value.toLowerCase() === "time tables") {
-            to = "/Time Tables/Set Timing"; // Default to "Set Timing" for "Time Table"
+            to = "/Time Tables/Set Timing";
           } else {
             to = `/${currentPath}`;
           }
