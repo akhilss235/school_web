@@ -1,16 +1,23 @@
-import React, { useState } from "react";
-import { Button, Table, Row, Col, Dropdown } from "react-bootstrap";
-import { FiPlus } from "react-icons/fi";
+import { Table, Row, Col, Dropdown } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { IoCalendarOutline } from "react-icons/io5";
+import React, { useState } from "react";
 import Search from "../../filter/Search";
-import NewSubject from "../../Model/NewSubject";
-import BasicBreadcrumbs from "../../components/BasicBreadcrumbs";
+import DropdownFilter from "../../filter/DropdownFilter";
+import StaticFilter from "../../filter/StaticFilter";
+import { useNavigate } from "react-router-dom";
 
-export const SetExam = () => {
-  const [modalShow, setModalShow] = useState(false);
-  const [modalDelete, setModalDelete] = useState(false);
+
+
+export const ScheduleExamList = () => {
+  const navigate = useNavigate()
+  const [selectedLeaveType, setSelectedLeaveType] = useState("");
+
+  const filterOptions = [
+    { label: "Class", options: ["All", "Class 1", "Class 2", "Class 3"] },
+    { label: "Section", options: ["All", "A", "B", "C"] },
+  ];
 
   const inputData = [
     {
@@ -50,19 +57,32 @@ export const SetExam = () => {
     ],
 
   ];
+  const handleLeaveTypeChange = (event) => {
+    setSelectedLeaveType(event.target.value);
+  };
+  const handleClickScheduleExam = (page) => {
+    navigate("/Exams/Schedule Exams/Exam Table")
+  };
   return (
-    <div className="p-3">
-      <div className="text-start mb-3">
-        <h4>
-          <b>Set Exam</b>
-        </h4>
-        <BasicBreadcrumbs />
-      </div>
-
+    <div>
       <Row
         className="justify-content-end mb-4"
         style={{ backgroundColor: "#FFFFFF" }}
       >
+        <Col xs={12} md={8} lg={6} className="d-flex flex-wrap gap-1">
+          <div className="me-3 mb-2 mb-md-0">
+            <StaticFilter />
+          </div>
+          <div className="d-flex flex-row gap-2">
+            {filterOptions.map((item) => (
+              <DropdownFilter
+                filterOptions={item}
+                selectedOption={selectedLeaveType}
+                handleOptionChange={handleLeaveTypeChange}
+              />
+            ))}
+          </div>
+        </Col>
         <Col
           xs={12}
           md={4}
@@ -70,36 +90,26 @@ export const SetExam = () => {
           className="d-flex justify-content-md-end mt-2 mt-md-0"
         >
           <Search />
-          <Button
-            variant="#148CF0"
-            style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
-            className="ms-3"
-            onClick={() => setModalShow(true)}
-          >
-            <FiPlus /> New Exam
-          </Button>
         </Col>
       </Row>
 
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
         <Table responsive>
           <thead style={{ color: "#505050" }}>
-          <tr>
-              <th>Exam Name</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Duration</th>
-              <th>Timing</th>
+            <tr>
+              <th>Class</th>
+              <th>Section</th>
+              <th>No. of Subjects</th>
+              <th>No. of Students</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Monthly Exam(March)</td>
-              <td>10/11/2024</td>
-              <td>10/11/2024</td>
-              <td>01 hr</td>
-              <td>09:00 AM - 10:00 AM</td>
+              <td>I</td>
+              <td>A</td>
+              <td>06</td>
+              <td>50</td>
               <td>
                 <Dropdown>
                   <Dropdown.Toggle variant="link" bsPrefix="p-0">
@@ -116,13 +126,12 @@ export const SetExam = () => {
                       <FaRegEdit className="me-2" /> Edit
                     </Dropdown.Item>
                     <Dropdown.Item
-                      onClick={() => setModalDelete(true)}
                       style={{
                         borderBottom: "1px solid #D1D1D1",
-                        color: "#148CF0",
                       }}
+                      onClick={handleClickScheduleExam}
                     >
-                      <MdOutlineDeleteOutline className="me-2" /> Delete
+                      <IoCalendarOutline className="me-2" /> Schedule Exam
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -131,22 +140,6 @@ export const SetExam = () => {
           </tbody>
         </Table>
       </div>
-
-      <NewSubject
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        data={inputData}
-        title={"New Exam"}
-        btnTitle={"Save"}
-      />
-      <NewSubject
-        show={modalDelete}
-        onHide={() => setModalDelete(false)}
-        title={"Delete Room"}
-        isDelete={true}
-        label={"delete the Room"}
-        btnTitle={"Delete"}
-      />
     </div>
   );
 };

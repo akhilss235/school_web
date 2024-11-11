@@ -37,6 +37,9 @@ import { SetExam } from "./pages/Exam/SetExam";
 import { ScheduleExam } from "./pages/Exam/ScheduleExam";
 import { GradeSetting } from "./pages/Exam/GradeSetting";
 import { AllocateList } from "./components/AllocateList";
+import { ScheduleExamList } from "./components/ScheduleExam/ScheduleExamList";
+import { ScheduleExamTable } from "./components/ScheduleExam/ScheduleExamTable";
+import { ScheduleExamForm } from "./components/ScheduleExam/ScheduleExamForm";
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -99,7 +102,11 @@ function App() {
             
 
             <Route path="Exams/Set Exams" element={<SetExam />} />
-            <Route path="Exams/Schedule Exams" element={<ScheduleExam />} />
+            <Route path="Exams/Schedule Exams" element={<ScheduleExam />}>
+              <Route index element={<ScheduleExamList />} />
+              <Route path="Exam Table" element={<ScheduleExamTable />} />
+              <Route path="Add Exam" element={<ScheduleExamForm />} />
+            </Route>
             <Route path="Exams/Grade Settings" element={<GradeSetting />} />
             
             <Route path="Fees" element={<Feess />} />
