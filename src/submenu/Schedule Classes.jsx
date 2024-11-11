@@ -10,6 +10,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import NewSubject from "../Model/NewSubject";
+import ClassTiming from "./ClassTiming";
 
 function ScheduleClasses() {
   const [modalShow, setModalShow] = useState(false);
@@ -60,13 +61,19 @@ function ScheduleClasses() {
   };
 
   return (
-    <div>
+    <div className="p-3">
       <div className="text-start mb-3">
         <h4>
           <b>Schedule Classes</b>
         </h4>
         <BasicBreadcrumbs />
       </div>
+<Row>
+  <Col>
+  <ClassTiming />
+  </Col>
+</Row>
+
       <Row className="justify-content-end mb-4 gy-3">
         <Col xs={"auto"}>
           <Button

@@ -35,7 +35,7 @@ function SetTiming() {
   ];
 
   return (
-    <div>
+    <div className="p-3">
       <div className="text-start mb-3">
         <h4>
           <b>Set Timing</b>

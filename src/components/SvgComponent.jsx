@@ -31,7 +31,9 @@ import { ReactComponent as Payroll } from '../img/Payroll.svg';
 import { ReactComponent as Leaves } from '../img/Leaves.svg';
 import { ReactComponent as BankAccountDetail } from '../img/BankAccountDetail.svg';
 import { ReactComponent as FileIcon } from '../img/file.svg';
-
+import { ReactComponent as ClassAndSectionIcon } from '../img/classandsection.svg';
+import { ReactComponent as StartAndEndTime } from '../img/startandendtime.svg';
+import { ReactComponent as NoOfSubjects } from '../img/noofsubjects.svg';
 
 const icons = {
   mobile: MobileIcon,
@@ -63,7 +65,10 @@ const icons = {
   Payroll:Payroll,
   Leaves:Leaves,
   BankAccountDetail:BankAccountDetail,
-  file:FileIcon
+  file:FileIcon,
+  classandsection:ClassAndSectionIcon,
+  startandendtime:StartAndEndTime,
+  noofsubjects:NoOfSubjects,
 };
 
 const Icon = ({ iconName, fill="#EBF5FD" }) => {
