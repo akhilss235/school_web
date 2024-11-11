@@ -15,13 +15,11 @@ const InfoAccordion = ({ title, iconName, size = 24, children, isToggle=true, is
   return (
     <div className="info-accordion">
       <div
-        className="d-flex align-items-center p-3"
+        className="d-flex align-items-center p-3 info-head"
         style={{
-          borderBottom: isLine ? "2px solid #2393F1" : "",
-          backgroundColor: "#EBF5FD",
-          borderTopLeftRadius:"15px",
-          borderTopRightRadius:"15px",
-          borderRadius: isBorder ? "15px" : "none"
+          borderBottomLeftRadius: isBorder && !isOpen ? "15px" : "",
+          borderBottomRightRadius: isBorder && !isOpen ? "15px" : "",
+          borderBottom: isLine && isOpen ? "2px solid #2393F1" : "",
         }}
       >
         <span className="me-3">
@@ -49,7 +47,7 @@ const InfoAccordion = ({ title, iconName, size = 24, children, isToggle=true, is
           }
         </div>
       </div>
-      {isOpen && <div className="accordion-body mt-2 p-2 pb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>{children}</div>}
+      {isOpen && <div className="accordion-body  p-2 pb-5" style={{backgroundColor:'#FFFFFF',borderBottomLeftRadius:'15px' ,borderBottomRightRadius:'15px'}}>{children}</div>}
     </div>
   );
 };

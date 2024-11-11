@@ -425,6 +425,11 @@ border-style: dashed;
   gap: 20px;
   transition: .5s ease-in-out;
 }
+.info-head{
+  background-color: #EBF5FD;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
 
 @media screen and (max-width:600px) {
   .modal-form-input{

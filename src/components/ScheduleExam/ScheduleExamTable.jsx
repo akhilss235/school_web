@@ -1,10 +1,15 @@
 import React from 'react'
 import { ExamTimeTable } from '../student/Outlet/timeTable/ExamTimeTable'
+import { ScheduleExamForm } from './ScheduleExamForm'
 
-export const ScheduleExamTable = () => {
+export const ScheduleExamTable = ({isExam}) => {
   return (
     <div className='p-3'>
-        <ExamTimeTable />
+        {
+          isExam 
+          ?  <ExamTimeTable isLine={true} isBorder={true}/>
+          :  <ScheduleExamForm />
+        }
     </div>
   )
 }

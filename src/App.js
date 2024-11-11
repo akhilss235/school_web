@@ -104,8 +104,8 @@ function App() {
             <Route path="Exams/Set Exams" element={<SetExam />} />
             <Route path="Exams/Schedule Exams" element={<ScheduleExam />}>
               <Route index element={<ScheduleExamList />} />
-              <Route path="Exam Table" element={<ScheduleExamTable />} />
-              <Route path="Add Exam" element={<ScheduleExamForm />} />
+              <Route path="Exam Table" element={<ScheduleExamTable isExam={true}/>} />
+              <Route path="Add Exam" element={<ScheduleExamTable isExam={false}/>} />
             </Route>
             <Route path="Exams/Grade Settings" element={<GradeSetting />} />
             
