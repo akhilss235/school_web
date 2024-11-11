@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import clockIcon from "../img/clock.png"
 
-export const Input = ({label,type="text"}) => {
-    const [value, setValue] = useState("")
+export const Input = ({label,type="text", value="", onChange}) => {
 
   const clockContent = ["start time", "end time", "from", "to"]
 
@@ -12,7 +11,7 @@ export const Input = ({label,type="text"}) => {
         <input 
         type={type}  
         value={value}    
-        onChange={(e)=>setValue(e.target.value)}
+        onChange={onChange}
         // placeholder={label}
         className='subjectInput'
         style={{borderRadius:"5px", height:"50px", padding:"7px",border: "1px solid #CCCCCC", appearance:"none"}}
