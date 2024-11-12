@@ -6,7 +6,6 @@ import { Dropdown } from "../components/student/Dropdown";
 import { StudentCard } from "../components/student/StudentCard";
 import { InputDropdown } from "../components/InputDropdown";
 import { ModalButton } from "../components/ModalButton";
-import { toCamelCase } from "../utils/function";
 
 function NewSubject({
   show,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
@@ -26,7 +26,6 @@ import ClassRooms from "./submenu/Class Rooms";
 import ClassesSections from "./submenu/Classes & Sections";
 import AllocateClassRooms from "./submenu/Allocate Class Rooms";
 import Exams from "./pages/Exams";
-
 // import Feess from "./pages/Fees";
 // import Attendances from "./pages/Attendance";
 // import Accounts from "./pages/Accounts";
@@ -56,6 +55,8 @@ import ScheduleClassesList from "./components/Timetable/ScheduleClassesList";
 import ScheduleNewClass from "./components/Timetable/ScheduleNewClass";
 import ViewScheduleClasses from "./components/Timetable/ViewScheduleClasses";
 import ViewStudent from "./components/Fees/View Student";
+import { useDispatch } from "react-redux";
+import { resetState } from "./features/modal/modalSlice";
 
 const SidebarLayout = () => (
   <Sidebar>
@@ -64,6 +65,12 @@ const SidebarLayout = () => (
 );
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(resetState())
+  },[dispatch])
   return (
     <div className="App">
       <Router>

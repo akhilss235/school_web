@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
-import { toCamelCase } from '../utils/function';
+import { toCamelCase, color, checkColor } from '../utils/function';
 import { useDispatch, useSelector } from 'react-redux';
 import { onChange, selectAllModalData } from '../features/modal/modalSlice';
 
 export const RadioButton = ({label, options}) => {
   const dispatch = useDispatch()
   const data = useSelector(selectAllModalData)
-  const color = (item) => {
-    return item.toLowerCase() === ("pass" || "active") ? "#16BE16" : "#ED1C00";
-  };
-  
-  const handleChange = (e)=>{
-    dispatch(onChange(e))
-  }
-
+  console.log("data", data)
   const name = label === "Result of the Grade" ? "resultGrade" : toCamelCase(label)
+  
+  const handleChange = (item)=>{
+    dispatch(onChange({name:name, value:item}))
+  }
+  
   return (
     options.map((item, index) => (
         <div key={index} className="d-flex gap-2">
@@ -28,13 +26,9 @@ export const RadioButton = ({label, options}) => {
             }`}
           />
           <label
-            className={`form-check-label ${
-              item.toLowerCase() === "pass" || item.toLowerCase() === "active"
-                ? "green"
-                : "red"
-            }`}
-            style={{ color: color(item) }}
-            onClick={() => handleChange({name:name, value:item})}
+            className={`form-check-label ${checkColor(item)}`}
+            style={{ color: color(item)}}
+            onClick={() => handleChange(item)}
           >
             {item}
           </label>

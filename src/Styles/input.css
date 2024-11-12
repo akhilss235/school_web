@@ -19,7 +19,10 @@
     line-height: 25px; 
 }
 .green::before,
-.red::before {
+.red::before,
+.yellow:before,
+.pink:before,
+.purple:before {
     content: "";
     position: absolute;
     top: 5px;
@@ -39,9 +42,24 @@
     background-color:#ED1C00;
     border: 5px solid  #ED1C00;
 }
+.yellow::before{
+    background-color:#E4AD1D;
+    border: 5px solid  #E4AD1D;
+}
+.pink::before{
+    background-color:#E41DA5;
+    border: 5px solid  #E41DA5;
+}
+.purple::before{
+    background-color:#A01494;
+    border: 5px solid  #A01494;
+}
 
 .green::after,
-.red::after {
+.red::after,
+.yellow:after,
+.pink:after,
+.purple:after {
     content: "";
     position: absolute;
     top: 6.5px;
@@ -55,11 +73,14 @@
 }
 
 .form-check-input:checked + .green::after,
-.form-check-input:checked + .red::after {
-    top: 8px;
-    left: -17px;
-    height: 9px;
-    width: 9px;
+.form-check-input:checked + .red::after,
+.form-check-input:checked + .yellow::after,
+.form-check-input:checked + .pink::after,
+.form-check-input:checked + .purple::after  {
+    top: 8.5px;
+    left: -16.5px;
+    height: 8px;
+    width: 8px;
 }
 
 /* .form-check-input:checked + .green::before{

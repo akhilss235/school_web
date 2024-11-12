@@ -9,7 +9,6 @@ export const Input = ({
   label,
   type = "text",
   value = "",
-  // onChange,
   options,
 }) => {
   const dispatch = useDispatch()
