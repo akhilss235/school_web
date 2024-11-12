@@ -5,7 +5,7 @@ import { IconCard } from "./IconCard";
 function ClassTiming({data}) {
   return (
     <div
-      className="p-4 mb-3"
+      className="allocate-room mb-3"
       style={{ backgroundColor: "#EBF5FD", borderRadius: "10px" }}
     >
       <Row className="gy-3">

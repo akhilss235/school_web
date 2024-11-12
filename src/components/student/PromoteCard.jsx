@@ -1,6 +1,7 @@
 import React from 'react'
 import { Dropdown } from './Dropdown'
 import { Input } from '../Input'
+import "../../Styles/promotion.css"
 
 export const PromoteCard = ({data}) => {
     
@@ -16,16 +17,16 @@ export const PromoteCard = ({data}) => {
     const ShowContent = ({item})=>{
         console.log("item", item)
         return(
-        <div className="d-flex flex-column gap-1" style={{height:"78px", width:"100%"}}>
-            <label className='fw-semibold ' style={{height:"28px",fontSize:"16px"}}>{item?.title}</label>
+        <div className="d-flex flex-column gap-1" style={{height:"auto", width:"100%"}}>
+            <label className='fw-semibold ' style={{height:"auto",fontSize:"16px"}}>{item?.title}</label>
             <p className='m-0' style={{ verticalAlign:"middle", paddingLeft:"10%"}}>{item?.value}</p>
         </div>
     )}
   return (
-    <div className='d-flex flex-column p-3 gap-3' style={{width:"100%", borderRadius:"10px", border: "1px solid #EBF5FD"}}>
+    <div className='d-flex flex-column p-3 gap-3' style={{width:"100%", borderRadius:"10px", border: "1px solid #EBF5FD", height:"auto"}}>
         {
             Array.isArray(data?.content) ? (
-              <div className='d-flex flex-row gap-4' style={{ width: "100%" }}>
+              <div className='card-cont' style={{ width: "100%", height:"maxContent" }}>
                 {data?.content.map((it, index) => (
                   <Form item={it} key={index}/>
                 ))}
@@ -35,11 +36,11 @@ export const PromoteCard = ({data}) => {
             )
         }
         <label className='fw-medium'>{data?.cardTitle}</label>
-        <div className='d-flex flex-row align-items-center gap-3' style={{width:"100%"}}>
+        <div className='card-section-cont'>
             {
-                data.fields.map((item)=>(
-                    <Form item={item} />
-                ))
+              data.fields.map((item)=>(
+                  <Form item={item} />
+              ))
             }
         </div>
     </div>

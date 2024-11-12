@@ -1,0 +1,69 @@
+.schedule-section{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: .5s ease-in-out;
+}
+.schedule-first-row,
+.schedule-second-row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 15px;
+    transition: .5s ease-in-out;
+}
+
+.trash-icon{
+    height: 30px;
+    width: 30px;
+}
+.input-img-cont{
+    display: flex;
+    gap: 10px;
+}
+.dis-btn,
+.save-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    min-width: 150px;
+    border-radius: 10px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.dis-btn{
+    color: #ED1C00;
+}
+.save-btn{
+    color: white;
+    background-color: #148CF0;
+}
+.dis-btn:hover{
+    background-color: #ED1C00;
+    color: white;
+}
+.save-btn:hover{
+    background-color: white;
+    border-color: #148CF0;
+    color: #148CF0;
+}
+
+@media screen and (max-width:650px) {
+    .schedule-first-row,
+    .schedule-second-row{
+        flex-direction: column;
+    }
+    .trash-icon{
+        height: 25px;
+        width: 25px;
+    }
+    .dis-btn,
+    .save-btn{
+        min-width: 100px;
+    }
+}

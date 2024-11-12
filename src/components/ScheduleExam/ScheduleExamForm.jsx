@@ -3,6 +3,7 @@ import InfoHeader from '../InfoHeader'
 import { Dropdown } from '../student/Dropdown'
 import { Input } from '../Input';
 import trashCan from "../../img/delete.png"
+import "../../Styles/scheduleExam.css"
 
 export const ScheduleExamForm = () => {
     const [formData, setFormData] = useState({})
@@ -17,7 +18,6 @@ export const ScheduleExamForm = () => {
     
     const handleFieldChange = (selectedIndex, fieldId, e) => {
         const { value } = e.target;
-        console.log("value", value)
         const date = new Date(value);
         const dayOfWeek = date.toLocaleString('en-US', { weekday: 'long' });
     
@@ -56,9 +56,7 @@ export const ScheduleExamForm = () => {
         });
     
         updatedForm["subjects"] = allSubjects;
-    
         setFormData(updatedForm);
-        console.log("Updated form data:", formData);
     };
     
     
@@ -77,7 +75,12 @@ export const ScheduleExamForm = () => {
         item.type === "select" ?
             <Dropdown label={item?.label} value={item?.options} selectedValue={item?.value} onChange={(e)=>handleFieldChange(selectedIndex, item.id, e)} />
         : item.type === "input" ?
-            <Input label={item?.label} value={item?.value} onChange={(e)=>handleFieldChange(selectedIndex, item.id, e)}   />
+            <div className='input-img-cont'>
+                <Input label={item?.label} value={item?.value} onChange={(e)=>handleFieldChange(selectedIndex, item.id, e)}  />
+                <div className='d-flex justify-content-center align-items-end pb-2' style={{cursor:"pointer"}} onClick={()=>handleRemoveFields(selectedIndex)}>
+                    <img src={trashCan} className='trash-icon' />
+                </div>
+            </div>
         : item.type === "date" ?
             <Input label={item?.label} type='date' value={item?.value} onChange={(e)=>handleFieldChange(selectedIndex, item.id, e)}   />
         : null
@@ -86,32 +89,33 @@ export const ScheduleExamForm = () => {
   return (
     <div>
         <InfoHeader title="Set Time Table" iconName="HostelInformation" isLine={true} />
-        <div className='d-flex flex-column' style={{backgroundColor:"white", borderBottomLeftRadius:"15px", borderBottomRightRadius:"15px"}}>
-            <div className='d-flex flex-row gap-2 p-3'>
+        <div className='schedule-section'>
+            <div className='schedule-first-row'>
                 <Dropdown label={"Exam Name"} value={examValue} />
                 <Dropdown label={"Timing"} value={timing} />
             </div>
             <div style={{width:"100%", height:"1px", backgroundColor:"#EBF5FD"}}></div>
                 {
                     inputFields?.map((item, index)=>(
-                        <div className='d-flex flex-row gap-2  p-3' key={index}>
+                        <div className='schedule-second-row' key={index}>
                             {
                                 item?.map((data, i)=>(
                                     <Form item={data} key={i} selectedIndex={index}  />
                                 ))
                             }
-                            <div className='d-flex justify-content-center align-items-end pb-2' style={{cursor:"pointer"}} onClick={()=>handleRemoveFields(index)}>
-                                <img src={trashCan} height={"30px"} width={"30px"} />
-                            </div>
                         </div>
                     ))
                 }
-            <div className='ms-3 add-new-btn' onClick={handleAddFields} >
+            <div className='ms-3 mt-2 add-new-btn' onClick={handleAddFields} >
                 <p className='m-0 p-2'>Add New</p>
             </div>
-            <div className='d-flex justify-content-end align-items-center gap-3'>
-                <p className='m-0'>Discard</p>
-                <p className='m-0' onClick={handleSubmit}>Save</p>
+            <div className='d-flex justify-content-end align-items-center gap-3 p-2 px-3'>
+                <div className='dis-btn'>
+                    <p className='m-0 '>Discard</p>
+                </div>
+                <div className='save-btn'>
+                    <p className='m-0' onClick={handleSubmit}>Save</p>
+                </div>
             </div>
         </div>
     </div>

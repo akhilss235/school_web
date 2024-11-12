@@ -443,11 +443,7 @@ border-style: dashed;
   color: white;
 }
 
-@media screen and (max-width:600px) {
-  .modal-form-input{
-    flex-direction: column;
-  }
-}
+
 
 /* .subjectInput::-webkit-inner-spin-button,
 .subjectInput::-webkit-calendar-picker-indicator {
@@ -526,6 +522,40 @@ border-style: dashed;
     opacity: 0;
     transition: all 0.6s ease;
   }
+  .radio-button-checked {
+    accent-color: #16BE16;
+  }
+  
+  .radio-button-unchecked {
+    outline: #ED1C00;
+  }
+  .allocate-room{
+    padding: 16px;
+    transition: .5s ease-in-out;
+  }
+  .list-search-filter-cont{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    transition: .5s ease-in-out;
+  }
+
+  @media screen and (max-width:600px) {
+    .modal-form-input{
+      flex-direction: column;
+    }
+    .allocate-room{
+      padding: 10px;
+    }
+    .list-search-filter-cont{
+      flex-direction: column;
+    }
+    .list-filter-cont{
+      flex-direction: column;
+    }
+  }
+ 
 
   @keyframes wave-46 {
     50% {

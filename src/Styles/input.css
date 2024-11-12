@@ -1,0 +1,70 @@
+.subjectInput{
+    border-radius: 5px;
+    height: 50px;
+    padding: 7px;
+    border: 1px solid #CCCCCC;
+    appearance: none;
+}
+.clock-img{
+    height: 20px;
+    width: 20px;
+}
+.form-check-input{
+    /* display: none; */
+    opacity: 0;
+}
+.form-check-label {
+    position: relative;
+    cursor: pointer;  
+    line-height: 25px; 
+}
+.green::before,
+.red::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -20px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: transparent; 
+    transition: .5s ease-in-out;
+    border: 5px solid transparent;
+}
+.green::before{
+    background-color:#16BE16;
+    border: 5px solid  #16BE16;
+}
+.red::before{
+    background-color:#ED1C00;
+    border: 5px solid  #ED1C00;
+}
+
+.green::after,
+.red::after {
+    content: "";
+    position: absolute;
+    top: 6.5px;
+    left: -18.5px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: white; 
+    opacity: 1;
+    transition: .3s ease-in-out;
+}
+
+.form-check-input:checked + .green::after,
+.form-check-input:checked + .red::after {
+    top: 8px;
+    left: -17px;
+    height: 9px;
+    width: 9px;
+}
+
+/* .form-check-input:checked + .green::before{
+    border: 2px solid #16BE16;
+}
+.form-check-input:checked + .red::before{
+    border: 2px solid #ED1C00;
+} */

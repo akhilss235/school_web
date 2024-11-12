@@ -86,7 +86,7 @@ function ClassRooms() {
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
             className="ms-3"
-            onHide={() => setModalShow(true)} 
+            onClick={() => setModalShow(true)} 
           >
             <FiPlus /> New Room
           </Button>
@@ -138,7 +138,7 @@ function ClassRooms() {
           </tbody>
         </Table>
       </div>
-      <NewSubject show={modalShow} onHide={() => setModalShow(false)} data={inputData} title={"Class Room"} />
+      <NewSubject show={modalShow} onHide={() => setModalShow(false)} data={inputData} title={"Class Room"} btnTitle={"Add Room"}/>
       <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} isInactive={true} title={"Inactivate Room"} label={"inactivate the room"} btnTitle={"Inactivate"}  />
       <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Room"} isDelete={true} label={"delete the Room"} btnTitle={"Delete"}/>
 

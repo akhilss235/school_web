@@ -6,7 +6,7 @@ function AllocateClassRooms() {
   
   
   return (
-    <div className="p-4">
+    <div className="allocate-room">
       <div className="text-start mb-3">
         <h4>
           <b>Allocate Class Rooms</b>

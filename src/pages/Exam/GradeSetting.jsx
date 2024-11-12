@@ -36,6 +36,12 @@ export const GradeSetting = () => {
       name: "Grade points",
       type: "input",
     },
+    {
+      id:"5",
+      name:"Result of the Grade",
+      type:"radio",
+      options:["Pass", "Fail"]
+    }
   ];
   return (
     <div className="p-3">

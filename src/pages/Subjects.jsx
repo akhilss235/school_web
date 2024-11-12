@@ -10,12 +10,9 @@ import { FaRegEdit } from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
 import { MdOutlineToggleOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import StInactivate from "../Model/StInactivate";
 import StaticFilter from "../filter/StaticFilter";
 import NewSubject from "../Model/NewSubject";
 import { MdOutlineDeleteOutline } from "react-icons/md";
-import Delete from "../Model/Delete";
-import Subjectnactivate from "../Model/Subjectnactivate";
 
 
 function Subjects() {
@@ -83,23 +80,19 @@ function Subjects() {
           </div>
         </Col>
 
-        <Col
-          xs={12}
-          md={4}
-          lg={6}
-          className="d-flex justify-content-md-end mt-2 mt-md-0"
+        <div
+          className="list-search-filter-cont"
         >
           <Search />
           <Button
             variant="#148CF0"
             style={{ backgroundColor: "#148CF0", color: "#FFFFFF" }}
-            className="ms-3"
             onClick={() => setModalShow(true)}
 
           >
             <FiPlus /> New Subject
           </Button>
-        </Col>
+        </div>
       </Row>
 
       <div className="table-responsive" style={{ backgroundColor: "#FFFFFF" }}>
@@ -161,7 +154,7 @@ function Subjects() {
           </tbody>
         </Table>
       </div>
-      <NewSubject show={modalShow} onHide={() => setModalShow(false)} title={"New Subject"} data={inputData}/>
+      <NewSubject show={modalShow} onHide={() => setModalShow(false)} title={"New Subject"} data={inputData} btnTitle={"Add Subject"}/>
       <NewSubject show={modalInactivate} onHide={() => setModalInactivate(false)} title={"Inactivate Subject"} isInactive={true} label={"inactivate the subject"} btnTitle={"Inactivate"}/>
       <NewSubject show={modalDelete} onHide={() => setModalDelete(false)} title={"Delete Subject"} isDelete={true} label={"delete the subject"} btnTitle={"Delete"}/>
     </div>

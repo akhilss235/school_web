@@ -3,7 +3,7 @@ import BasicBreadcrumbs from '../components/BasicBreadcrumbs'
 import Icon from '../components/SvgComponent'
 import { StudentCard } from '../components/student/StudentCard'
 import { PromoteCard } from '../components/student/PromoteCard'
-
+import "../Styles/promotion.css"
 export const Promotion = ({isStudent, isCrumbsNeeded=true, title}) => {
 
   const promotionData = {
@@ -135,7 +135,7 @@ export const Promotion = ({isStudent, isCrumbsNeeded=true, title}) => {
 }]
 const item = promotionData[title]
   return (
-    <section className="p-4 d-flex flex-column gap-5">
+    <section className="promotion-page">
       {
         isCrumbsNeeded &&
         <>
@@ -158,11 +158,11 @@ const item = promotionData[title]
             <StudentCard data={data} isInfo={false} />
           </div>
         }
-        <div className='d-flex flex-row gap-3'>
+        <div className='promote-card-cont'>
           <PromoteCard data={item?.currentSectionData}/>
           <PromoteCard data={item?.selctedData} />
         </div>
-        <div className='d-flex flex-row justify-content-center align-items-center gap-2'>
+        <div className='btn-cont'>
           <div 
             className='reset-btn' 
           >
